@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 
-
 export default class Instructores extends Component {
+
+
 
     render() {
         return (
