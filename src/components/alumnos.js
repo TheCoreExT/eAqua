@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import {Client}  from 'pg-native';
+const { Client } = require('pg')
 
 const connectionData={
     user: 'alan',
-    host: '',
+    host: 'localhost:3000',
     database: 'eaqua',
     password: '',
     port: 5432
