@@ -19,6 +19,10 @@ CREATE TABLE alumno (
     otro_padecimiento VARCHAR(100) NOT NULL
 );
 
+INSERT INTO alumno (nombre, password, telefono, correo, estatura, peso, seguro, tipo_sangre, alergias, otro_padecimiento) VALUES 
+            ('Diego Rosas', 'abcde', '');
+INSERT INTO alumno (nombre, password, telefono, correo, estatura, peso, seguro, tipo_sangre, alergias, otro_padecimiento) VALUES ;
+
 CREATE TABLE pago_alumno (
     pago_alumno_id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     alumno_id INT NOT NULL REFERENCES alumno(alumno_id),
