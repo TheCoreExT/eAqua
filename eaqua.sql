@@ -20,7 +20,7 @@ CREATE TABLE alumno (
 );
 
 INSERT INTO alumno (nombre, password, telefono, correo, estatura, peso, seguro, tipo_sangre, alergias, otro_padecimiento) VALUES 
-            ('Diego Rosas', 'abcde', '');
+            ('Diego Rosas Gonza', 'abcde', '');
 INSERT INTO alumno (nombre, password, telefono, correo, estatura, peso, seguro, tipo_sangre, alergias, otro_padecimiento) VALUES ;
 
 CREATE TABLE pago_alumno (
