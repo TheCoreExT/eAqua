@@ -2,8 +2,8 @@ import React,{Component} from 'react';
 import {Client}  from 'pg-native';
 
 const connectionData={
-    user: 'alan',
-    host: '',
+    user: 'postgres',
+    host: 'localhost',
     database: 'eaqua',
     password: '',
     port: 5432
