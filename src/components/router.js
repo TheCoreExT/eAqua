@@ -10,6 +10,13 @@ import Clases from './clases'
 
 
 export default class Routes extends Component {
+    state = {users: []}
+    componentDidMount() {
+        fetch('/users')
+        //fetch('/index')
+          .then(res => res.json())
+          .then(users => this.setState({ users }));
+    }
 
     render() {
         return (
@@ -22,7 +29,14 @@ export default class Routes extends Component {
                     <Route exact path="/alumnos" component={Alumnos} />
                     <Route exact path="/clases" component={Clases} />
                     <Route component={Error}/>
+                    
                 </Switch>
+                <div className="App">
+                        <h1>aaaaaaaaaaaaaa</h1>
+                        {this.state.users.map(user =>
+                            <div key={user.id}>Hey {user.name}</div>
+                        )}
+                     </div>
             </BrowserRouter>
         );
     }
