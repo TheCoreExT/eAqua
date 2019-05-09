@@ -10,6 +10,8 @@ const connection = mysql.createConnection({
   password: '1234',
   database: 'eaqua'
 });
+
+connection.connect();
 //var MongoClient = require('mongodb').MongoClient;
 
 // var url = "mongodb://localhost:27017/test";
@@ -29,17 +31,20 @@ MongoClient.connect(url,
   });
 });
 */
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Conected');
+// connection.connect((err) => {
+//   if (err) throw err;
+//   console.log('Conected');
+// });
+
+connection.query('SELECT * from instructor', function(err, rows, fields) {
+  if (!err)
+    console.log('The solution is: ', rows);
+  else
+    console.log('Error while performing Query.');
 });
-res.json([{
-  id: 1,
-  name: "samsepi0l"
-}, {
-  id: 2,
-  name: "D0loresH4ze"
-}]);
+
+connection.end();
+
 
 });
 
