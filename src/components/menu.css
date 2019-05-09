@@ -1,7 +1,35 @@
-.menu{
-    display: flex;
+*{
+	
 }
 
-p{
-    padding-left: 2rem;
+.menu{
+    position:fixed;
+	width:70px;
+	height:100%;
+	background-color:#ffffff;
+	overflow:hidden;
+	-webkit-transition:width 0.5s cubic-bezier(.61,.01,.37,1);
+}
+
+.menu:hover{
+    width:170px;
+}
+
+.icons{
+    margin-top:20px;
+	margin-left:10px;
+	width:130px;
+    height:40px;
+    
+}
+
+p.title-menu{
+	margin-left:60px;
+	line-height: 40px;
+}
+
+.Images{
+	width:40px;
+	height:40px;
+    float: left;
 }

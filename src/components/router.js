@@ -16,7 +16,6 @@ export default class Routes extends Component {
             <BrowserRouter>
                 <Header />
                 <Menu />
-                <h1>eAqua</h1>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/instructores" component={Instructores} />
