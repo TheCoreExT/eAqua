@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 const { Client } = require('pg')
 
 const connectionData={
-
     user: 'alan',
     host: 'localhost:3000',
     database: 'eaqua',
