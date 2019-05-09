@@ -20,19 +20,22 @@ connection.connect();
 
 connection.query('SELECT * FROM instructor', function(err, rows, fields) {
   if(!err)
-    console.log('The solution is: ', rows);
+    console.log( rows);
   else
     console.log('Error while performind Query');
+  
+    console.log(rows[0].nombre)
 });
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.json([{
-    id: 1,
-    name: "samsepi0l"
-  }, {
-    id: 2,
-    name: "D0loresH4ze"
-  }]);
+  res.send([{id: 1, name:'Joe'}]);
+  // res.json([{
+  //   id: 1,
+  //   name: rows[0].nombre
+  //   }, {
+  //   id: 2,
+  //   name: "D0loresH4ze"
+  // }]);
 });
 
 
