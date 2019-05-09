@@ -27,6 +27,8 @@ CREATE TABLE instructor (
     clabe VARCHAR(30) NOT NULL
 );
 
+INSERT INTO instructor (nombre, telefono, correo, clabe) VALUES ('Alan Gei', '7-00-00-00', 'alan@mail.com', 'abdhfadhlshfljsah');
+
 CREATE TABLE pago_instructor (
     pago_instructor_id INT NOT NULL  PRIMARY KEY auto_increment,
     instructor_id INT NOT NULL REFERENCES instructor(instructor_id),
