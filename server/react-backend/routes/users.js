@@ -14,21 +14,42 @@ var connection = mysql.createConnection({
   database: 'eaqua'
 })
 
-
 connection.connect();
 
 
-connection.query('SELECT * FROM instructor', function(err, rows, fields) {
-  if(!err)
-    console.log( rows);
-  else
-    console.log('Error while performind Query');
-  
-    console.log(rows[0].nombre)
-});
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send([{id: 1, name:'Joe'}]);
+
+  
+  
+  var instructorArray = [];
+
+  var counter = 1;
+
+  connection.query('SELECT * FROM instructor', function(err, rows, fields) {
+    console.log(counter);
+    counter = counter + 1;
+    if(!err) {      
+      //res.json([{id: 1, name: 'Alan'}]);
+     for (var r of rows) {
+        var instructor = {
+          id: 0,
+          nombre: ""
+        }
+        console.log("r.nombre" + r.nombre);
+        instructor.id = r.instructor_id;
+        instructor.nombre = r.nombre;
+        instructorArray.push(instructor);
+     }
+    }
+    else {
+      console.log('Error while performind Query');
+    }
+    console.log("Array: " + instructorArray[0].nombre);
+    res.json(instructorArray);
+  });
+
   // res.json([{
   //   id: 1,
   //   name: rows[0].nombre
