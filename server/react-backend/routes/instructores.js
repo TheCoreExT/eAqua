@@ -22,13 +22,13 @@ connection.connect();
 router.get('/', function(req, res, next) {
 
   
-  
   var instructorArray = [];
 
   var counter = 1;
 
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
-    console.log(counter);
+    // console.log(rows);
+    console.log("llamada");
     counter = counter + 1;
     if(!err) {      
       //res.json([{id: 1, name: 'Alan'}]);
@@ -37,7 +37,7 @@ router.get('/', function(req, res, next) {
           id: 0,
           nombre: ""
         }
-        console.log("r.nombre" + r.nombre);
+        // console.log("r.nombre" + r.nombre);
         instructor.id = r.instructor_id;
         instructor.nombre = r.nombre;
         instructorArray.push(instructor);
@@ -46,7 +46,7 @@ router.get('/', function(req, res, next) {
     else {
       console.log('Error while performind Query');
     }
-    console.log("Array: " + instructorArray[0].nombre);
+    // console.log("Array: " + instructorArray[0].nombre);
     res.json(instructorArray);
   });
 
