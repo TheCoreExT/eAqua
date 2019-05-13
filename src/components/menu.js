@@ -6,36 +6,28 @@ export default class Menu extends Component {
 
     render() {
         return (
-            <div className="menu">
-                <div className="icons">
+            <div class = "navigation col-lg-1">
+                <nav id="navigation">
                     <Link to={'/clases'}>
-                        <div className="Images">
-                            <img src =  "/img/Clases2.png " alt = "Clases" height="50px"></img> 
-				        </div>
-                        <p className="title-menu">Clases</p>                   
-                    </Link>
-
+                        <img src =  "/img/Clases2.png " alt = "Clases" height="50px"></img>
+                        <p>Clases</p> 
+                    </Link>        
+                   
                     <Link to={'/instructores'}>
-                        <div className="Images">
-                            <img src =  "/img/Instructores2.png " alt = "Instructores" height="50px"></img>
-				        </div>
-                        <p className="title-menu">Instructores</p>                   
+                        <img src =  "/img/Instructores2.png " alt = "Instructores" height="50px"></img>
+                        <p>Instructores</p>        
                     </Link>
 
                     <Link to={'/alumnos'}>
-                        <div className="Images">
-                            <img src =  "/img/Alumnos2.png " alt = "Alumnos" height="50px"></img> 
-				        </div>
-                        <p className="title-menu">Alumnos</p>                   
+                        <img src =  "/img/Alumnos2.png " alt = "Alumnos" height="50px"></img> 
+                        <p>Alumnos</p>         
                     </Link>
 
                     <Link to={'/alumnos'}>
-                        <div className="Images">
-                            <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
-				        </div>
-                        <p className="title-menu">Cerrar Sesión</p>                   
+                        <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
+                        <p>Cerrar sesion</p>          
                     </Link>
-                </div>
+                </nav>
             </div>
         );
     }

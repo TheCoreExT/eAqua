@@ -1,6 +1,7 @@
 
 // Asi se corre el servidor de express
 // PORT=3001 node bin/www
+//set PORT=3001 && node bin/www
 var express = require('express');
 var router = express.Router();
 
@@ -15,7 +16,6 @@ var connection = mysql.createConnection({
 })
 
 connection.connect();
-
 
 
 /* GET users listing. */
