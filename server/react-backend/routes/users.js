@@ -1,6 +1,7 @@
 
 // Asi se corre el servidor de express
 // PORT=3001 node bin/www
+//set PORT=3001 && node bin/www
 var express = require('express');
 var router = express.Router();
 
@@ -24,7 +25,7 @@ connection.query('SELECT * FROM instructor', function(err, rows, fields) {
   else
     console.log('Error while performind Query');
   
-    console.log(rows[0].nombre)
+    //console.log(rows[0].nombre)
 });
 /* GET users listing. */
 router.get('/', function(req, res, next) {
