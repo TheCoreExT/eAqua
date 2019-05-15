@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
     // console.log(rows);
-    console.log("llamada");
+    console.log("llamada instructores");
     counter = counter + 1;
     if(!err) {      
       //res.json([{id: 1, name: 'Alan'}]);
@@ -58,6 +58,7 @@ router.get('/', function(req, res, next) {
   //   name: "D0loresH4ze"
   // }]);
 });
+
 
 
 module.exports = router;

@@ -18,7 +18,6 @@ export default class Instructores extends Component {
           <div className="Instructores">
             <h2>Instructores</h2>
             <div>
-              <h1>Instructores</h1>
               {this.state.instructores.map(instructor => (
                 <div key={instructor.id}>
                   {instructor.nombre} {instructor.id}
