@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './menu.css'
+// import './menu.css'
 
 export default class Menu extends Component {
 
     render() {
         return (
-            <div class = "navigation col-lg-1">
+            <div className = "navigation col-lg-1">
                 <nav id="navigation">
                     <Link to={'/clases'}>
                         <img src =  "/img/Clases2.png " alt = "Clases" height="50px"></img>
