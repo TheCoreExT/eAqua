@@ -22,7 +22,12 @@ export default class Instructores extends Component {
             <div>
               {this.state.instructores.map(instructor => (
                 <div key={instructor.id}>
-                  {instructor.nombre} {instructor.id}
+                  <tr>
+                    <td>{instructor.nombre}</td>
+                    <td>{instructor.telefono}</td>
+                    <td>{instructor.correo}</td>
+                    <td>{instructor.clabe}</td>
+                  </tr>
                 </div>
               ))}
             </div>
