@@ -14,7 +14,7 @@ export default class Alumnos extends Component {
     render() {
         return (
             <div className="Alumnos">
-                <h2>Alumnos</h2>
+                <a href="./addAlumno"><h2>Alumnos</h2></a>
                 {this.state.alumnos.map(alumno => (
                 <div key={alumno.id}>
                   {alumno.nombre} {alumno.id}

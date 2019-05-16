@@ -18,14 +18,8 @@ var connection = mysql.createConnection({
 connection.connect();
 
 
-/* GET users listing. */
-router.post('/', function(req, res, next) {
-  res.locals.connection.query('insert into members(name,email) values(' + req.body.name +','+req.body.email+')', function (error, results, fields) {
-      if(error) throw error;
-      res.send(JSON.stringify(results));
-  });
-});
 
+/* GET users listing. */
 
 router.get('/', function(req, res, next) {
 
@@ -35,7 +29,6 @@ router.get('/', function(req, res, next) {
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
     // console.log(rows);
     console.log("llamada instructores");
-
     if(!err) {      
      for (var r of rows) {
         var instructor = {
