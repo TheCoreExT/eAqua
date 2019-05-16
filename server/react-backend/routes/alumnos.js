@@ -71,11 +71,29 @@ router.get('/', function(req, res, next) {
      for (var r of rows) {
         var alumno = {
           id: 0,
-          nombre: ""
+          nombre : "",
+          password : " ", // Solo cuando haya login habra una contrasena
+          telefono: "",
+          correo: "",
+          estatura: 0,
+          peso: 0,
+          seguro: "",
+          tipo_sangre: "",
+          alergias: "",
+          otro_padecimiento: ""
         }
 
         alumno.id = r.alumno_id;
         alumno.nombre = r.nombre;
+        alumno.password = r.password; // Cambiar cuando se haga el login
+        alumno.telefono = r.telefono;
+        alumno.correo = r.correo;
+        alumno.estatura = r.estatura;
+        alumno.peso = r.peso;
+        alumno.seguro = r.seguro;
+        alumno.tipo_sangre = r.tipo_sangre;
+        alumno.alergias = r.alergias;
+        alumno.otro_padecimiento = r.otro_padecimiento;
         alumnos.push(alumno);
      }
     }
