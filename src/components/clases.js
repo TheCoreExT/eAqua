@@ -20,7 +20,8 @@ export default class Clases extends Component {
           // <div class="col-lg-11">
           //   <div class="col-lg-6">
               <div className="Clases">
-                <a href="./addClases"><h2>Clases</h2></a>
+                <h2>Clases</h2>
+                <Link to="/addClases">Agregar Clase</Link>
                 <table>
                   {this.state.clases.map(clase => (
                     <div key={clase.id}>
@@ -33,8 +34,6 @@ export default class Clases extends Component {
                 </table>
                 
               </div>
-            
-          
           //   </div>
           // </div>
         );
