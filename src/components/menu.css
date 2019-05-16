@@ -19,6 +19,10 @@ html, body{
     width:170px;
 }
 
+a{
+	text-decoration: none;
+}
+
 /*
 .menu{
     position:fixed;

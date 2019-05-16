@@ -10,13 +10,8 @@ import Clases from './clases'
 
 
 export default class Routes extends Component {
-    state = {users: []}
-    componentDidMount() {
-        fetch('/users')
-        //fetch('/index')
-          .then(res => res.json())
-          .then(users => this.setState({ users }));
-    }
+
+
     render() {
         return (
           <BrowserRouter>
@@ -34,11 +29,7 @@ export default class Routes extends Component {
               <Route component={Error} />
             </Switch>
 
-            <div>
-              <h1>Users</h1>
-              
-              
-            </div>
+          
           </BrowserRouter>
         );
     }
