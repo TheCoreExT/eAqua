@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import './instructores.css'
 
 export default class Instructores extends Component {
@@ -17,6 +18,7 @@ export default class Instructores extends Component {
         return (
           <div className="Instructores">
             <h2>Instructores</h2>
+            <Link to="/addInstructor">Agregar Instructor</Link>
             <div>
               {this.state.instructores.map(instructor => (
                 <div key={instructor.id}>
