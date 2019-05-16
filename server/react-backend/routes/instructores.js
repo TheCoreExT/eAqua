@@ -18,11 +18,8 @@ var connection = mysql.createConnection({
 connection.connect();
 
 
-/* GET users listing. */
 
-router.post('/', function(req, res, next) {
-  console.log(req.body);
-})
+/* GET users listing. */
 
 router.get('/', function(req, res, next) {
 
@@ -32,7 +29,6 @@ router.get('/', function(req, res, next) {
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
     // console.log(rows);
     console.log("llamada instructores");
-    counter = counter + 1;
     if(!err) {      
      for (var r of rows) {
         var instructor = {
