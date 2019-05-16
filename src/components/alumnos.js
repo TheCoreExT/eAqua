@@ -15,13 +15,24 @@ export default class Alumnos extends Component {
     render() {
         return (
             <div className="Alumnos">
-                <h2>Alumnos</h2>
-                <Link to="/addAlumno">Agregar Alumno</Link>
-                {this.state.alumnos.map(alumno => (
-                <div key={alumno.id}>
-                  {alumno.nombre} {alumno.id}
-                </div>
+                <a href="./addAlumno"><h2>Alumnos</h2></a>
+                <table>
+                  {this.state.alumnos.map(alumno => (
+                  <div key={alumno.id}>
+                  <tr>
+                    <td>{alumno.nombre}</td>
+                    <td>{alumno.telefono}</td>
+                    <td>{alumno.correo}</td>
+                    <td>{alumno.estatura}</td>
+                    <td>{alumno.peso}</td>
+                    <td>{alumno.seguro}</td>
+                    <td>{alumno.tipo_sangre}</td>
+                    <td>{alumno.otro_padecimiento}</td>
+                  </tr>
+                  </div>
+                
               ))}
+                </table>
             </div>
         );
     }
