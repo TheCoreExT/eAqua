@@ -19,8 +19,8 @@ export default class Alumnos extends Component {
                 <Link to="/addAlumno">Agregar Alumno</Link>
                 <table>
                   {this.state.alumnos.map(alumno => (
-                  <div key={alumno.id}>
-                  <tr>
+
+                  <tr key={alumno.id}>
                     <td>{alumno.nombre}</td>
                     <td>{alumno.telefono}</td>
                     <td>{alumno.correo}</td>
@@ -29,8 +29,16 @@ export default class Alumnos extends Component {
                     <td>{alumno.seguro}</td>
                     <td>{alumno.tipo_sangre}</td>
                     <td>{alumno.otro_padecimiento}</td>
+
+                    <td>
+
+                      <form method="post" action="/eliminarAlumno" name="eliminarAlumno">
+                      <button type="submit" onClick= {console.log("hola")} name="alumno_id"  value={alumno.id}>Eliminar</button>
+                      </form>
+
+                      </td>
                   </tr>
-                  </div>
+
                 
               ))}
                 </table>

@@ -28,6 +28,7 @@ export default class Clases extends Component {
                       <tr>
                         <td>{clase.dia}</td>
                         <td>{clase.hora}</td>
+                        <td>{clase.instructor_nombre}</td>
                       </tr>
                     </div>
                   ))}

@@ -18,6 +18,17 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+router.post('/eliminarAlumno', function(req, res, next){
+
+  var alumno_id = req.body.alumno_id;
+
+  if(alumno_id)
+    console.log("Si hay alumno_id" + alumno_id);
+
+    res.redirect('/alumnos');
+  
+
+});
 
 
 router.post('/', function(req, res, next) {
