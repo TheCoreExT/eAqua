@@ -20,26 +20,24 @@ connection.connect();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
-  
-  
   var instructorArray = [];
 
-  var counter = 1;
-
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
-    console.log(counter);
-    counter = counter + 1;
     if(!err) {      
-      //res.json([{id: 1, name: 'Alan'}]);
      for (var r of rows) {
         var instructor = {
           id: 0,
-          nombre: ""
+          nombre: "",
+          telefono: "",
+          correo: "",
+          clabe: ""
         }
         console.log("r.nombre" + r.nombre);
         instructor.id = r.instructor_id;
         instructor.nombre = r.nombre;
+        instructor.telefono = r.telefono;
+        instructor.correo = r.correo;
+        instructor.clabe = r.clabe;
         instructorArray.push(instructor);
      }
     }
@@ -49,14 +47,6 @@ router.get('/', function(req, res, next) {
     console.log("Array: " + instructorArray[0].nombre);
     res.json(instructorArray);
   });
-
-  // res.json([{
-  //   id: 1,
-  //   name: rows[0].nombre
-  //   }, {
-  //   id: 2,
-  //   name: "D0loresH4ze"
-  // }]);
 });
 
 

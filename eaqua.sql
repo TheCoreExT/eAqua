@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS eaqua;
+CREATE DATABASE eaqua;
+USE eaqua;
+
 CREATE TABLE alumno (
     alumno_id INT NOT NULL auto_increment PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
@@ -28,6 +32,10 @@ CREATE TABLE instructor (
 );
 
 INSERT INTO instructor (nombre, telefono, correo, clabe) VALUES ('Alan Gei', '7-00-00-00', 'alan@mail.com', 'abdhfadhlshfljsah');
+INSERT INTO instructor (nombre, telefono, correo, clabe) VALUES ('Diego Gei', '7-00-00-00', 'diego@mail.com', 'abdhfadhlshfljsah');
+INSERT INTO instructor (nombre, telefono, correo, clabe) VALUES ('Jonathan Gei', '7-00-00-00', 'jonathan@mail.com', 'abdhfadhlshfljsah');
+
+
 
 CREATE TABLE pago_instructor (
     pago_instructor_id INT NOT NULL  PRIMARY KEY auto_increment,

@@ -17,17 +17,6 @@ export default class Routes extends Component {
           .then(res => res.json())
           .then(users => this.setState({ users }));
     }
-
-    state = {users: []}
-
-  componentDidMount() {
-    fetch('/users')
-    //   .then(res => res.json())
-    .then(res => res.json())
-    // .then(users => this.setState({ users }));
-    .then(users => this.setState( {users} ));
-}
-
     render() {
         return (
           <BrowserRouter>
@@ -47,10 +36,8 @@ export default class Routes extends Component {
 
             <div>
               <h1>Users</h1>
-              {this.state.users.map(user => (
-                
-                <div key={user.id}>aaaaaaaaaaaaaa{user.name}</div>
-              ))}
+              
+              
             </div>
           </BrowserRouter>
         );
