@@ -19,21 +19,20 @@ connection.connect();
 
 
 /* GET users listing. */
+
+router.post('/', function(req, res, next) {
+  console.log(req.body);
+})
+
 router.get('/', function(req, res, next) {
-<<<<<<< HEAD:server/react-backend/routes/users.js
-=======
 
   
->>>>>>> 39091e91ce2eada8df3b2d843068fc78250307df:server/react-backend/routes/instructores.js
   var instructorArray = [];
 
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
-<<<<<<< HEAD:server/react-backend/routes/users.js
-=======
     // console.log(rows);
     console.log("llamada instructores");
     counter = counter + 1;
->>>>>>> 39091e91ce2eada8df3b2d843068fc78250307df:server/react-backend/routes/instructores.js
     if(!err) {      
      for (var r of rows) {
         var instructor = {

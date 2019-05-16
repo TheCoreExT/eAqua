@@ -7,6 +7,7 @@ import Alumnos from './alumnos';
 import Error from './error';
 import Menu from './menu'
 import Clases from './clases'
+import AddAlumno from './addAlumno';
 
 
 export default class Routes extends Component {
@@ -26,6 +27,8 @@ export default class Routes extends Component {
               />
               <Route exact path="/alumnos" component={Alumnos} />
               <Route exact path="/clases" component={Clases} />
+              <Route exact path="/addAlumno" component={AddAlumno} />
+
               <Route component={Error} />
             </Switch>
 
