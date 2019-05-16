@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import './alumno.css'
 
 export default class Alumnos extends Component {
@@ -14,7 +15,8 @@ export default class Alumnos extends Component {
     render() {
         return (
             <div className="Alumnos">
-                <a href="./addAlumno"><h2>Alumnos</h2></a>
+                <h2>Alumnos</h2>
+                <Link to="/addAlumno">Agregar Alumno</Link>
                 {this.state.alumnos.map(alumno => (
                 <div key={alumno.id}>
                   {alumno.nombre} {alumno.id}

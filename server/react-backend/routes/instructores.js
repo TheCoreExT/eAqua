@@ -19,7 +19,32 @@ connection.connect();
 
 
 
-/* GET users listing. */
+router.post('/', function(req, res, next){
+  var instructor ={
+    nombre: "",
+    telefono: "",
+    correo: "",
+    clabe: ""
+  }
+
+  instructor.nombre = req.body.nombre;
+  instructor.telefono = req.body.telefono;
+  instructor.correo = req.body.correo;
+  instructor.clabe = req.body.clabe;
+
+  var query = 'insert into instructor(nombre, telefono, correo, clabe) values(';
+
+  query += "'" + instructor.nombre + "', '" + instructor.telefono + "', '" + instructor.correo + "','" + instructor.clabe + "')";
+
+  connection.query(query, function(err){
+    if(err)
+      console.log(err)
+    else
+      console.log('Instructor insertado')
+  });
+
+  res.redirect('/instructores');
+})
 
 router.get('/', function(req, res, next) {
 
