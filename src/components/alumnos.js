@@ -32,7 +32,7 @@ export default class Alumnos extends Component {
 
                     <td>
 
-                      <form method="post" action="/eliminarAlumno" name="eliminarAlumno">
+                      <form method="post" action="/alumnos/eliminarAlumno" name="eliminarAlumno">
                       <button type="submit" onClick= {console.log("hola")} name="alumno_id"  value={alumno.id}>Eliminar</button>
                       </form>
 

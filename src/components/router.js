@@ -28,7 +28,6 @@ export default class Routes extends Component {
               <Route exact path="/addAlumno" component={AddAlumno} />
               <Route exact path="/addInstructor" component={AddInstructor} />
               <Route exact path="/addClases" component={AddClases} />
-
               <Route component={Error} />
             </Switch>
 
