@@ -26,6 +26,7 @@ app.use('/instructores', instructoresRouter);
 app.use('/alumnos', alumnosRouter);
 app.use('/clases', clasesRouter);
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

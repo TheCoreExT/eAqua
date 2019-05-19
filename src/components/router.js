@@ -10,6 +10,7 @@ import Clases from './clases'
 import AddAlumno from './addAlumno';
 import AddInstructor from './addInstructor';
 import AddClases from './addClases';
+import InfoClase from './infoClase';
 
 
 export default class Routes extends Component {
@@ -25,10 +26,18 @@ export default class Routes extends Component {
               <Route exact path="/instructores" component={Instructores} />
               <Route exact path="/alumnos" component={Alumnos} />
               <Route exact path="/clases" component={Clases} />
+              <Route exact path="/clases/:claseId" render={(props) => {
+                let claseId = props.location.pathname.replace('/clases/', '');
+
+                return (
+                  <InfoClase
+                    clase_id ={claseId}
+                  />
+                )
+              }} />
               <Route exact path="/addAlumno" component={AddAlumno} />
               <Route exact path="/addInstructor" component={AddInstructor} />
               <Route exact path="/addClases" component={AddClases} />
-
               <Route component={Error} />
             </Switch>
 
@@ -37,3 +46,5 @@ export default class Routes extends Component {
         );
     }
 }
+
+

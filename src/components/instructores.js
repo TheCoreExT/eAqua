@@ -27,6 +27,14 @@ export default class Instructores extends Component {
                     <td>{instructor.telefono}</td>
                     <td>{instructor.correo}</td>
                     <td>{instructor.clabe}</td>
+
+                    <td>
+
+                      <form method="post" action="/instructores/eliminarInstructor" name="eliminarInstructor">
+                      <button type="submit" name="instructor_id" onClick={() => {alert("Instructor Eliminado")}} value={instructor.id}>Eliminar</button>
+                      </form>
+
+                      </td>
                   </tr>
                 </div>
               ))}
