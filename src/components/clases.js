@@ -29,6 +29,21 @@ export default class Clases extends Component {
                         <td>{clase.dia}</td>
                         <td>{clase.hora}</td>
                         <td>{clase.instructor_nombre}</td>
+
+                        <td>
+
+                      <form method="post" action="/clases/eliminarClase" name="eliminarClase">
+                      <button type="submit" onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}>Eliminar</button>
+                      </form>
+
+
+                      </td>
+                      <td>
+                        <Link to={"/clases/" + clase.id}>
+
+                         <button>Más Información</button>
+                        </Link>
+                      </td>
                       </tr>
                     </div>
                   ))}
@@ -40,3 +55,4 @@ export default class Clases extends Component {
         );
     }
 }
+

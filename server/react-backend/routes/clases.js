@@ -17,6 +17,24 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+router.post('/eliminarClase', function(req, res, next){
+
+  var clase_id = req.body.clase_id;
+
+  var query = "DELETE FROM clase WHERE clase_id=" + clase_id;
+  connection.query(query, function(err) {
+    console.log(query);
+
+    if(err)
+      console.log(err)
+    else
+      console.log("Clase eliminada")
+  });
+    res.redirect('/clases');
+    
+
+});
+
 router.post('/', function(req, res, next){
   var clase ={
     dia: "",
@@ -44,23 +62,20 @@ router.post('/', function(req, res, next){
 
 router.get('/', function(req, res, next) {
 
-  
   var clases = [];
 
-
-  connection.query('SELECT c.dia as dia, c.hora as hora, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id ', function(err, rows, fields) {
-
+  connection.query('SELECT c.clase_id as clase_id, c.dia as dia, c.hora as hora, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id ', function(err, rows, fields) {
     console.log("llamada clase");
-
     if(!err) {      
 
      for (var r of rows) {
         var clase = {
+          id: 0,
           dia: "",
           hora: "",
           instructor_nombre: ""
         }
-
+        clase.id = r.clase_id;
         clase.dia = r.dia;
         clase.hora = r.hora;
         clase.instructor_nombre = r.instructor_nombre;
@@ -74,6 +89,38 @@ router.get('/', function(req, res, next) {
     res.json(clases);
   });
 
+});
+
+router.get('/infoClase:id', function(req, res, nex) {
+  console.log('llamada infoClase');
+  let id =req.path.replace('/infoClase','');
+
+  var query = "SELECT  c.dia as dia, c.hora as hora, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id AND c.clase_id = " + id;
+
+   var data = {
+     dia: "",
+     hora: "",
+     instructor: ""
+   };
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+
+    for (var r of rows) {
+        data.dia = r.dia;
+        data.hora = r.hora;
+       data.instructor= r.instructor_nombre;
+
+     }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(data);
+  });
+  
+  
 });
 
 

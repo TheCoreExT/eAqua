@@ -19,26 +19,20 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.post('/eliminarAlumno', function(req, res, next){
-  console.log("eliminar alumno");
+
   var alumno_id = req.body.alumno_id;
 
-  if(alumno_id)
-  {
-    console.log("Si hay alumno_id" + alumno_id);
-  } else {
-    console.log("No se encontro el alumno_id");
-  }
   var query = "DELETE FROM alumno WHERE alumno_id=" + alumno_id;
   connection.query(query, function(err) {
     console.log(query);
-    console.log("Eliminando alumno...");
+
     if(err)
       console.log(err)
     else
       console.log("Alumno eliminado")
   });
-    //res.redirect('/alumnos');
-    res.send("eliminar alumnos");
+    res.redirect('/alumnos');
+    // res.send("eliminar alumnos");
 });
 
 
@@ -64,14 +58,14 @@ router.post('/', function(req, res, next) {
   alumno.tipo_sangre = req.body.tipo_sangre;
   alumno.otro_padecimiento = req.body.otro_padecimiento;
   //res.send('Alumno creado: "' + req.body.nombre + '".');
-  console.log(alumno.nombre);
+
 
   var query = 'INSERT INTO alumno(nombre, password, telefono, correo, estatura, peso, seguro, tipo_sangre, alergias, otro_padecimiento) VALUES (';
   query += "'" + alumno.nombre + "'," + "' ','" + alumno.telefono + "','" + alumno.correo + "'," + alumno.estatura + "," + alumno.peso + ",'" + alumno.seguro + "','" + alumno.tipo_sangre + "','" + alumno.alergias + "','"+ alumno.otro_padecimiento + "');"
-  console.log("query: " + query);
+
 
   connection.query(query, function(err) {
-    console.log('Insertando nuevo alumno...')
+
     if (err)
       console.log(err)
     else

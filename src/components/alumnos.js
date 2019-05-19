@@ -11,6 +11,9 @@ export default class Alumnos extends Component {
           .then(res => res.json())
           .then(alumnos => this.setState({ alumnos }));
     }
+    alert() {
+        alert("Alumno eliminado");
+    }
 
     render() {
         return (
@@ -33,7 +36,7 @@ export default class Alumnos extends Component {
                     <td>
 
                       <form method="post" action="/alumnos/eliminarAlumno" name="eliminarAlumno">
-                      <button type="submit" onClick= {console.log("hola")} name="alumno_id"  value={alumno.id}>Eliminar</button>
+                      <button type="submit" name="alumno_id" onClick={() => {alert("Alumno Eliminado")}} value={alumno.id}>Eliminar</button>
                       </form>
 
                       </td>
