@@ -9,13 +9,15 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
   },
+  "main": "src/electron-starter.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron ."
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3000",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -32,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "electron": "^5.0.1",
     "react-router-dom": "^5.0.0"
   }
 }
