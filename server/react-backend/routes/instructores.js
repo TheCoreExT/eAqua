@@ -94,5 +94,52 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/infoInstructor:id', function(req, res, nex){
+  console.log('Llamada infoInstructor');
+  let id = req.path.replace('/infoInstructor', '');
+
+  var query = "select * from alumno where alumno_id = "+ id;
+
+  var data = {
+    alumno_id: 0,
+    nombre: "",
+    password: "",
+    telefono: "",
+    correo: "",
+    estatura:  0,
+    peso: 0,
+    seguro: "",
+    tipo_sangre: "",
+    alergias: "",
+    otro_padecimiento: ""
+  }
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+      for (var r of rows) {
+        data.alumno_id = r.alumno_id;
+        data.nombre = r.nombre;
+        data.password= r.password;
+        data.telefono = r.telefono;
+        data.correo = r.correo;
+        data.estatura = r.estatura;
+        data.peso = r.peso;
+        data.seguro = r.seguro;
+        data.tipo_sangre = r.tipo_sangre;
+        data.alergias = r.alergias;
+        data.otro_padecimiento = r.otro_padecimiento;
+      }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(data);
+  });
+  
+});
+
+
+
 
 module.exports = router;
