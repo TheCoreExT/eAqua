@@ -7,7 +7,7 @@
 
 
 .Buscar{
-    width: 30rem;
+    width: 80%;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
@@ -15,18 +15,18 @@
 }
 
 .Buscar input#search{
-    width: 30rem;
+    width: 60%;
     height: 2.6rem;
     border: none;
     font-size: 10pt;
     float: left;
-    padding-left: 3rem;
+    padding-left: 7%;
     border-radius: 1rem;
 }
 
 
 .AddAlumno {    
-    padding-left: 23rem;
+    padding-left: 37%;
     padding-bottom: 2rem;
     display:flex;
     flex-direction: row;
