@@ -41,7 +41,7 @@ export default class Routes extends Component {
 
                 return (
                   <InfoAlumno
-                    clase_id ={alumnoId}
+                    alumno_id ={alumnoId}
                   />
                 )
               }}/>

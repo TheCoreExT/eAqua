@@ -125,8 +125,10 @@ router.get('/', function(req, res, next) {
 router.get('/infoAlumno:id', function(req, res, nex) {
   console.log('llamada infoAlumno');
   let id =req.path.replace('/infoAlumno','');
-
+  console.log("id " + id);
   var query = "SELECT * FROM alumno WHERE alumno_id = " + id;
+
+  console.log(query);
 
    var data = {
      nombre: "",
@@ -144,8 +146,8 @@ router.get('/infoAlumno:id', function(req, res, nex) {
    };
 
   connection.query(query, function(err, rows, fields) {
+    console.log(rows);
     if(!err) {      
-
     for (var r of rows) {
         data.nombre = r.nombre;
         data.nua = r.alumno_id;

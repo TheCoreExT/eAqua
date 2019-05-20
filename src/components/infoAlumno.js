@@ -18,7 +18,6 @@ export default class InfoAlumno extends Component {
     return <div className="infoAlumno">
 
         <h2>{this.state.data.nombre}</h2>
-        <h4></h4>
         <p>Nombre {this.state.data.nombre}</p>
         <p>NUA: {this.state.data.alumno_id}</p>
         <p>Telefono: {this.state.data.telefono}</p>
