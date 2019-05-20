@@ -44,9 +44,9 @@ export default class Instructores extends Component {
                       {/*<td>{instructor.clabe}</td>*/}
 
                       <td>
-                          {/* <Link to={"/alumnos/" + alumno.id}> */}
+                          <Link to={"/instructores/" + instructor.id}>
                           <button>Detalles</button>
-                          {/*</Link>*/}
+                          </Link>
                       </td>
 
                       <td>
