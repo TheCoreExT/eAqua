@@ -1,7 +1,6 @@
 .Clases{
 	font-family: verdana;
     color:#000000;
-    background-color: rgba(226, 240, 255, 0.993);
     padding-left: 180px;
 }
 
@@ -22,6 +21,7 @@
     float: left;
     padding-left: 7%;
     border-radius: 1rem;
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.324);
 }
 
 
