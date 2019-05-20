@@ -24,7 +24,7 @@ export default class Clases extends Component {
 
             <div className="HubClases">
               <input type="search" id="search" placeholder="Buscar" />
-                <Link to="/AddClase">
+                <Link to="/AddClases">
                 <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
                 </Link>
             </div>
