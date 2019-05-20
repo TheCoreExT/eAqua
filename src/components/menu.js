@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-// import './menu.css'
+// Descomente esto para poder editar los css
+import './menu.css'
 
 export default class Menu extends Component {
 
