@@ -21,15 +21,20 @@ export default class Alumnos extends Component {
                 <h2>Alumnos</h2>
 
           
-            <div class="BuscarAlumno">
+            <div class="HubAlumno">
                 <input type="search" id="search" placeholder="Buscar" />
+                <Link to="/addAlumno">
+                    <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
+                </Link>
             </div>
             
-
+            {/*
             <div className="AddAlumno">
-                <Link to="/addAlumno">Agregar Alumno</Link>
+                <Link to="/addAlumno">
+                    <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
+                </Link>
             </div>
-
+            */}
             <table>
                 <tr>
                     <th scope="col" className="Nombre" > Nombre </th>
@@ -63,20 +68,21 @@ export default class Alumnos extends Component {
 
                         <td>
                             <Link to={"/alumnos/" + alumno.id}>
-                            <button>Detalles</button>
+                            <button className="DetallesAlumno"> Detalles </button>
                             </Link>
                         </td>
 
                         <td>
-                            <button type="submit" name="editar_id" value={alumno.id}> Editar </button>
+                            <button type="submit" className="EditarAlumno" name="editar_id" value={alumno.id}>Editar</button>
                         </td>
 
                         <td>
                             <form method="post" action="/alumnos/eliminarAlumno" name="eliminarAlumno">
-                            <button type="submit" name="alumno_id" onClick={() => {alert("Alumno Eliminado")}} value={alumno.id}> Eliminar </button>
+                            <button type="submit" className="EliminarAlumno" name="alumno_id" onClick={() => {alert("Alumno Eliminado")}} value={alumno.id}> X </button>
                             </form>
                         </td>
 
+                        
                     </tr>
                 ))}
                 </table>
