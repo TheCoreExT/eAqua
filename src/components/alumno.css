@@ -6,15 +6,16 @@
 }
 
 
-.BuscarAlumno{
+.HubAlumno{
     width: 80%;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
     padding-bottom: 2rem;
+    
 }
 
-.BuscarAlumno input#search{
+.HubAlumno input#search{
     width: 60%;
     height: 2.6rem;
     border: none;
@@ -24,15 +25,10 @@
     border: rgba(147, 147, 147, 0.276) 0.5px solid;
     border-radius: 1rem;
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.324);
-
 }
 
-.AddAlumno {    
-    padding-left: 37%;
-    padding-bottom: 2rem;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.HubAlumno img {    
+    padding-left: 57%;
 }
 
 .Alumnos table {
@@ -92,7 +88,6 @@
     color: white;
     font-size: 1em;
     font-family: verdana, Helvetica;
-
 }
 
 .Alumnos button{

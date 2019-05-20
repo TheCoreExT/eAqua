@@ -17,12 +17,11 @@ export default class Instructores extends Component {
           <div className="Instructores">
             <h2>Instructores</h2>
 
-            <div class="BuscarInstructor">
+            <div class="HubInstructor">
                 <input type="search" id="search" placeholder="Buscar" />
-            </div>
-            
-            <div className="AddInstructor">
-              <Link to="/addInstructor">Agregar Instructor</Link>
+                <Link to="/addInstructor">
+                  <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
+                </Link>
             </div>
             
             <table>
@@ -45,17 +44,17 @@ export default class Instructores extends Component {
 
                       <td>
                           <Link to={"/instructores/" + instructor.id}>
-                          <button>Detalles</button>
+                          <button className="DetallesInstructor">Detalles</button>
                           </Link>
                       </td>
 
                       <td>
-                          <button type="submit" name="editar_id" value={instructor.id}> Editar </button>
+                          <button type="submit" className="EditarInstructor"name="editar_id" value={instructor.id}> Editar </button>
                       </td>
 
                       <td>
                         <form method="post" action="/instructores/eliminarInstructor" name="eliminarInstructor">
-                        <button type="submit" name="instructor_id" onClick={() => {alert("Instructor Eliminado")}} value={instructor.id}>Eliminar</button>
+                        <button type="submit" className="EliminarInstructor"name="instructor_id" onClick={() => {alert("Instructor Eliminado")}} value={instructor.id}> X </button>
                         </form>
                       </td>
 

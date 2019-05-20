@@ -21,17 +21,20 @@ export default class Alumnos extends Component {
                 <h2>Alumnos</h2>
 
           
-            <div class="BuscarAlumno">
+            <div class="HubAlumno">
                 <input type="search" id="search" placeholder="Buscar" />
+                <Link to="/addAlumno">
+                    <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
+                </Link>
             </div>
             
-
+            {/*
             <div className="AddAlumno">
                 <Link to="/addAlumno">
                     <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
                 </Link>
             </div>
-
+            */}
             <table>
                 <tr>
                     <th scope="col" className="Nombre" > Nombre </th>
