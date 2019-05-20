@@ -21,7 +21,7 @@ export default class Alumnos extends Component {
                 <h2>Alumnos</h2>
 
           
-            <div class="Buscar">
+            <div class="BuscarAlumno">
                 <input type="search" id="search" placeholder="Buscar" />
             </div>
             
@@ -32,10 +32,10 @@ export default class Alumnos extends Component {
 
             <table>
                 <tr>
-                    <th scope="col" class="Nombre" > Nombre </th>
+                    <th scope="col" className="Nombre" > Nombre </th>
                     {/*<th scope="col" class="Clase" > Clase </th> */}
-                    <th scope="col" class="Telefono"> Teléfono </th>
-                    <th scope="col" class="Correo"> Correo </th>
+                    <th scope="col" className="Telefono"> Teléfono </th>
+                    <th scope="col" className="Correo"> Correo </th>
                     {/*
                     <th scope="col" class="Estatura"> Estatura</th>
                     <th scope="col" class="Peso"> Peso</th>
@@ -43,10 +43,11 @@ export default class Alumnos extends Component {
                     <th scope="col" class="Tipo_Sangre"> Tipo Sangre</th>
                     <th scope="col" class="Otros"> Otros</th>
                     */}   
-                    <th scope="col" class="Detalles"> </th>
-                    <th scope="col" class="Editar"> </th>
-                    <th scope="col" class="Eliminar"> </th>
+                    <th scope="col" className="Detalles"> </th>
+                    <th scope="col" className="Editar"> </th>
+                    <th scope="col" className="Eliminar"> </th>
                 </tr>
+
                 {this.state.alumnos.map(alumno => (
                     <tr key={alumno.id}>
                         <td>{alumno.nombre}</td>

@@ -94,5 +94,40 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/infoInstructor:id', function(req, res, nex){
+  console.log('Llamada infoInstructor');
+  let id = req.path.replace('/infoInstructor', '');
+
+  var query = "select * from instructor where instructor_id = "+ id;
+
+  var data = {
+    instructor_id: 0,
+    nombre: "",
+    telefono: "",
+    correo: "",
+    clabe:  ""
+  }
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+      for (var r of rows) {
+        data.instructor_id = r.instructor_id;
+        data.nombre = r.nombre;
+        data.telefono = r.telefono;
+        data.correo = r.correo;
+        data.clabe = r.clabe;
+      }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(data);
+  });
+  
+});
+
+
+
 
 module.exports = router;
