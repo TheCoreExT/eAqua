@@ -20,7 +20,7 @@
     "electron-start": "node src/electron-wait-react",
     "react-start": "react-scripts start"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "eslintConfig": {
     "extends": "react-app"
   },
