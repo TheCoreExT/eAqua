@@ -52,7 +52,7 @@ export default class Alumnos extends Component {
 
                       </td>
                       <td>
-                        <Link to={"/alumnos/" + alumno.id}>
+                        <Link to={"/alumnos/" + alumno.id }>
 
                          <button>Más Información</button>
                         </Link>

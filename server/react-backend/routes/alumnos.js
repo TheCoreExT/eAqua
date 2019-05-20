@@ -120,7 +120,11 @@ router.get('/', function(req, res, next) {
 
     res.json(alumnos);
   });
+});
 
+router.get('/alumnos/:id(\d+)', function(req, res, next){
+  console.log(req.params.id);
+  res.redirect('/alumnos');  
 });
 
 
