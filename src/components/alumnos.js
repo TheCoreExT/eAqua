@@ -25,14 +25,16 @@ export default class Alumnos extends Component {
 
                 <table>
                     <tr>
-                        <th>Nombre </th>
-                        <th>Teléfono </th>
-                        <th>Correo</th>
+                        <th scope="col" class="Nombre" > Nombre </th>
+                        <th scope="col" class="Telefono">Teléfono </th>
+                        <th scope="col" class="Correo">Correo</th>
                         <th>Estatura</th>
                         <th>Peso</th>
                         <th>Seguro</th>
                         <th>tipo_sangre</th>
-                        <th>Otro</th>                        
+                        <th>Otro</th>   
+                        <th> </th>
+                        <th> </th>
                     </tr>
                   {this.state.alumnos.map(alumno => (
 

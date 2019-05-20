@@ -8,20 +8,43 @@
 .AddAlumno {    
     padding-top: 20px;
     padding-bottom: 15px;
-
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 
-.Alumnos table {
-    margin-bottom: 20px;
-    padding-top: 15px;
+table {
+    width: 100%;
+    border: 1px solid #999;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
+    caption-side: top;
 }
 
-.Alumnos table th {
-    padding-right: 20px;
+caption, td, th {
+    padding: 0.3em;
 }
+
+tbody {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+th {
+    border-bottom: blue 1px solid;
+    width: 25%;
+
+}
+
+td {
+    border-bottom: black 1px solid;
+    width: 25%;
+}
+
+
+
+
 
 
