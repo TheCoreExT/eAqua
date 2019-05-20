@@ -19,11 +19,14 @@ export default class Alumnos extends Component {
         return (
             <div className="Alumnos">
                 <h2>Alumnos</h2>
-                <Link to="/addAlumno">Agregar Alumno</Link>
+                <div className="AddAlumno">
+                    <Link to="/addAlumno">Agregar Alumno</Link>
+                </div>
+
                 <table>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Teléfono</th>
+                        <th>Nombre </th>
+                        <th>Teléfono </th>
                         <th>Correo</th>
                         <th>Estatura</th>
                         <th>Peso</th>
@@ -61,6 +64,7 @@ export default class Alumnos extends Component {
                      </tr>
                     ))}
                 </table>
+
             </div>
         );
     }
