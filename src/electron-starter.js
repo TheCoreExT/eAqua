@@ -13,16 +13,15 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
+  mainWindow = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
-  mainWindow.loadFile('http://localhost:3000')
+  const startUrl = process.env.ELECTRON_START_URL || url.format({
+    pathname: path.join(__dirname, '/../public/index.html'),
+    protocol: 'file:',
+    slashes: true
+  });
+  mainWindow.loadFile(startUrl);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
