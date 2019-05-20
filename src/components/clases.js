@@ -40,7 +40,6 @@ export default class Clases extends Component {
                       </td>
                       <td>
                         <Link to={"/clases/" + clase.id}>
-
                          <button>Más Información</button>
                         </Link>
                       </td>

@@ -4,7 +4,7 @@
 //set PORT=3001 && node bin/www
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser');
+
 
 
 var mysql = require('mysql')
