@@ -11,6 +11,7 @@ import AddAlumno from './addAlumno';
 import AddInstructor from './addInstructor';
 import AddClases from './addClases';
 import InfoClase from './infoClase';
+import InfoInstructor from './infoInstructor';
 
 
 export default class Routes extends Component {
@@ -24,6 +25,15 @@ export default class Routes extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/instructores" component={Instructores} />
+              <Route exact path="/instructores/:instructorId" render={(props) => {
+                let instructorId = props.location.pathname.replace('/instructores/', '');
+
+                return (
+                  <InfoInstructor
+                    instructor_id ={instructorId}
+                  />
+                )
+              }} />
               <Route exact path="/alumnos" component={Alumnos} />
               <Route exact path="/clases" component={Clases} />
               <Route exact path="/clases/:claseId" render={(props) => {
