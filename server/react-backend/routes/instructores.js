@@ -128,6 +128,40 @@ router.get('/infoInstructor:id', function(req, res, nex){
 });
 
 
+router.get('/clasesInstructor:id', function(req, res, nex){
+  console.log('Llamada clasesInstructor');
+  let id = req.path.replace('/clasesInstructor', '');
+
+  var query = "select * from clase where instructor_id = "+ id;
+
+  var clases = [];
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+      for (var r of rows) {
+        var dato = {
+          clase_id: 0,
+          dia: "",
+          hora: ""
+        }
+
+        dato.clase_id = r.clase_id;
+        dato.dia = r.dia;
+        dato.hora = r.hora;
+
+        clases.push(dato);
+      }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(clases);
+  });
+  
+});
+
+
 
 
 module.exports = router;

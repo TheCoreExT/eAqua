@@ -125,10 +125,10 @@ router.get('/', function(req, res, next) {
 router.get('/infoAlumno:id', function(req, res, nex) {
   console.log('llamada infoAlumno');
   let id =req.path.replace('/infoAlumno','');
-  console.log("id " + id);
+
   var query = "SELECT * FROM alumno WHERE alumno_id = " + id;
 
-  console.log(query);
+
 
    var data = {
      nombre: "",
@@ -146,7 +146,6 @@ router.get('/infoAlumno:id', function(req, res, nex) {
    };
 
   connection.query(query, function(err, rows, fields) {
-    console.log(rows);
     if(!err) {      
     for (var r of rows) {
         data.nombre = r.nombre;
@@ -171,6 +170,34 @@ router.get('/infoAlumno:id', function(req, res, nex) {
   
   
 });
+
+router.get('/Nalumnos:id', function(req, res, nex) {
+  console.log("Llamada Nalumnos")
+  let id =req.path.replace('/Nalumnos','');
+
+  var query = "SELECT COUNT(alumno_id) as n FROM clase_alumno WHERE clase_id = " + id;
+
+
+
+   var p = "";
+
+  connection.query(query, function(err, rows, fields) {
+
+    if(!err) {      
+    for (var r of rows) {
+        p = r.n;
+     }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(p);
+  });
+  
+  
+});
+
 
 
 module.exports = router;

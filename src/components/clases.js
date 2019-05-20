@@ -27,7 +27,7 @@ export default class Clases extends Component {
             </div>
 
             <div className="AddClase">
-                <Link to="/AddClase">Agregar clase</Link>
+                <Link to="/AddClases">Agregar clase</Link>
             </div>
 
             <table>
