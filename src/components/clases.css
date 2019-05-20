@@ -20,13 +20,14 @@
     font-size: 10pt;
     float: left;
     padding-left: 7%;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
     border-radius: 1rem;
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.324);
 }
 
 
 .AddClase {    
-    padding-left: 42%;
+    padding-left: 40%;
     padding-bottom: 2rem;
     display:flex;
     flex-direction: row;
