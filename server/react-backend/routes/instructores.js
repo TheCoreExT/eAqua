@@ -98,36 +98,24 @@ router.get('/infoInstructor:id', function(req, res, nex){
   console.log('Llamada infoInstructor');
   let id = req.path.replace('/infoInstructor', '');
 
-  var query = "select * from alumno where alumno_id = "+ id;
+  var query = "select * from instructor where instructor_id = "+ id;
 
   var data = {
-    alumno_id: 0,
+    instructor_id: 0,
     nombre: "",
-    password: "",
     telefono: "",
     correo: "",
-    estatura:  0,
-    peso: 0,
-    seguro: "",
-    tipo_sangre: "",
-    alergias: "",
-    otro_padecimiento: ""
+    clabe:  ""
   }
 
   connection.query(query, function(err, rows, fields) {
     if(!err) {      
       for (var r of rows) {
-        data.alumno_id = r.alumno_id;
+        data.instructor_id = r.instructor_id;
         data.nombre = r.nombre;
-        data.password= r.password;
         data.telefono = r.telefono;
         data.correo = r.correo;
-        data.estatura = r.estatura;
-        data.peso = r.peso;
-        data.seguro = r.seguro;
-        data.tipo_sangre = r.tipo_sangre;
-        data.alergias = r.alergias;
-        data.otro_padecimiento = r.otro_padecimiento;
+        data.clabe = r.clabe;
       }
     }
    else {

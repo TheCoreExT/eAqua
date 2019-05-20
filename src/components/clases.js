@@ -13,44 +13,60 @@ export default class Clases extends Component {
           this.setState({ clases })
         );
     }
+    alert() {
+      alert("Clase eliminado");
+    }
 
     render() {
-        
         return (
-          // <div class="col-lg-11">
-          //   <div class="col-lg-6">
-              <div className="Clases">
-                <h2>Clases</h2>
-                <Link to="/addClases">Agregar Clase</Link>
-                <table>
-                  {this.state.clases.map(clase => (
-                    <div key={clase.id}>
-                      <tr>
-                        <td>{clase.dia}</td>
-                        <td>{clase.hora}</td>
-                        <td>{clase.instructor_nombre}</td>
+          <div className="Clases">
+            <h2>Clases</h2>
 
-                        <td>
+            <div className="Buscar_clases">
+              <input type="search" id="search" placeholder="Buscar" />
+            </div>
 
-                      <form method="post" action="/clases/eliminarClase" name="eliminarClase">
-                      <button type="submit" onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}>Eliminar</button>
-                      </form>
+            <div className="AddClase">
+                <Link to="/AddClase">Agregar clase</Link>
+            </div>
 
+            <table>
+              <tr>
+                <th scope="col" className="Instructor" > Instructor </th>
+                <th scope="col" className="Día"> Día </th>
+                <th scope="col" className="Hora"> Hora </th>
+                <th scope="col" className="DetallesClases"> </th>
+                <th scope="col" className="EditarClases"> </th>
+                <th scope="col" className="EliminarClases"> </th>
+              </tr>
+              {this.state.clases.map(clase => (
+                <tr key={clase.id}>
+                  <td>{clase.instructor_nombre}</td>
+                  <td>{clase.dia}</td>
+                  <td>{clase.hora}</td>
 
-                      </td>
-                      <td>
-                        <Link to={"/clases/" + clase.id}>
-                         <button>Más Información</button>
-                        </Link>
-                      </td>
-                      </tr>
-                    </div>
-                  ))}
-                </table>
-                
-              </div>
-          //   </div>
-          // </div>
+                  <td>
+                    <Link to={"/clases/" + clase.id}>
+                      <button>Detalles</button>
+                    </Link>
+                  </td>
+                  
+                  <td>
+                    <button type="submit" name="editar_id" value={clase.id}> Editar </button>
+                  </td>
+
+                  <td>
+                    <form method="post" action="/clases/eliminarClase" name="eliminarClase">
+                    <button type="submit" onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}>Eliminar</button>
+                    </form>
+                  </td>
+
+                        
+                </tr>
+            ))}
+            </table>
+          </div>
+
         );
     }
 }
