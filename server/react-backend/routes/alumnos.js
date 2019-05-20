@@ -122,9 +122,52 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/alumnos/:id(\d+)', function(req, res, next){
-  console.log(req.params.id);
-  res.redirect('/alumnos');  
+router.get('/infoAlumno:id', function(req, res, nex) {
+  console.log('llamada infoAlumno');
+  let id =req.path.replace('/infoAlumno','');
+
+  var query = "SELECT * FROM alumno WHERE alumno_id = " + id;
+
+   var data = {
+     nombre: "",
+     nua: 0,
+     telefono: "",
+     correo: "",
+     edad: 0,
+     estatura: 0,
+     peso: 0,
+     seguro: "",
+     tipo_sangre: "",
+     alergias: "",
+     otro_padecimiento: ""
+
+   };
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+
+    for (var r of rows) {
+        data.nombre = r.nombre;
+        data.nua = r.alumno_id;
+        data.telefono = r.telefono;
+        data.correo = r.correo;
+        data.edad = r.edad;
+        data.estatura = r.estatura;
+        data.peso = r.peso;
+        data.seguro = r.seguro;
+        data.tipo_sangre = r.tipo_sangre;
+        data.alergias = r.alergias;
+        data.otro_padecimiento = r.otro_padecimiento;
+     }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(data);
+  });
+  
+  
 });
 
 
