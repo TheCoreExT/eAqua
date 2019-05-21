@@ -49,12 +49,12 @@ export default class Clases extends Component {
 
                   <td>
                     <Link to={"/clases/" + clase.id}>
-                      <button className="DetallesClases">Detalles</button>
+                      <button className="DetallesClase">Detalles</button>
                     </Link>
                   </td>
                   
                   <td>
-                    <button type="submit" className ="EditarClase"name="editar_id" value={clase.id}> Editar </button>
+                    <button type="submit" className ="EditarClase"name="editar_id" value={clase.id}> </button>
                   </td>
 
                   <td>

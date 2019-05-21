@@ -49,7 +49,7 @@ export default class Instructores extends Component {
                       </td>
 
                       <td>
-                          <button type="submit" className="EditarInstructor"name="editar_id" value={instructor.id}> Editar </button>
+                          <button type="submit" className="EditarInstructor"name="editar_id" value={instructor.id}> </button>
                       </td>
 
                       <td>
