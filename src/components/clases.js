@@ -34,7 +34,8 @@ export default class Clases extends Component {
               <tr>
                 <th scope="col" className="Instructor" > Instructor </th>
                 <th scope="col" className="Día"> Día </th>
-                <th scope="col" className="Hora"> Hora </th>
+                <th scope="col" className="Hora"> Hora Inicial </th>
+                <th scope="col" className="Hora"> Hora Final </th>
                 <th scope="col" className="NoAlumno"> No. Alumnos </th>
                 <th scope="col" className="DetallesClases"> </th>
                 <th scope="col" className="EditarClases"> </th>
