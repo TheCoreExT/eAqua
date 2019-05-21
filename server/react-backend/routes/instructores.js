@@ -25,8 +25,6 @@ router.post('/eliminarInstructor', function(req, res, next){
 
     if(err)
       console.log(err)
-    else
-      console.log("Instructor eliminado")
   });
     res.redirect('/instructores');
     
@@ -53,11 +51,32 @@ router.post('/', function(req, res, next){
   connection.query(query, function(err){
     if(err)
       console.log(err)
-    else
-      console.log('Instructor insertado')
   });
 
   res.redirect('/instructores');
+})
+
+router.post('/addPago:id', function(req, res, next){
+  let id = req.path.replace('/addPago', '');
+
+  var pago ={
+    fecha: "",
+    monto: ""
+  }
+
+  pago.fecha = req.body.fecha;
+  pago.monto = req.body.monto;
+
+  var query = 'insert into pago_instructor(instructor_id, fecha, monto) values(';
+
+  query += id + ", '" + pago.fecha + "', '" + pago.monto + "')";
+
+  connection.query(query, function(err){
+    if(err)
+      console.log(err)
+  });
+
+  res.redirect('/pagosInstructor/'+id);
 })
 
 // GET methods -------
@@ -69,7 +88,6 @@ router.get('/', function(req, res, next) {
 
   connection.query('SELECT * FROM instructor', function(err, rows, fields) {
 
-    console.log("llamada instructores");
     if(!err) {      
      for (var r of rows) {
         var instructor = {
@@ -87,15 +105,12 @@ router.get('/', function(req, res, next) {
         instructorArray.push(instructor);
      }
     }
-    else {
-      console.log('Error while performind Query');
-    }
     res.json(instructorArray);
   });
 });
 
 router.get('/infoInstructor:id', function(req, res, nex){
-  console.log('Llamada infoInstructor');
+
   let id = req.path.replace('/infoInstructor', '');
 
   var query = "select * from instructor where instructor_id = "+ id;
@@ -118,9 +133,6 @@ router.get('/infoInstructor:id', function(req, res, nex){
         data.clabe = r.clabe;
       }
     }
-   else {
-     console.log('Error while performind Query');
-    }
 
     res.json(data);
   });
@@ -128,7 +140,7 @@ router.get('/infoInstructor:id', function(req, res, nex){
 });
 
 router.get('/clasesInstructor:id', function(req, res, nex){
-  console.log('Llamada clasesInstructor');
+
   let id = req.path.replace('/clasesInstructor', '');
 
   var query = "select * from clase where instructor_id = "+ id;
@@ -149,12 +161,9 @@ router.get('/clasesInstructor:id', function(req, res, nex){
         dato.dia = r.dia;
         dato.hora_inicial = r.hora_inicial;
         dato.hora_final = r.hora_final;
-
+ 
         clases.push(dato);
       }
-    }
-   else {
-     console.log('Error while performind Query');
     }
 
     res.json(clases);
@@ -162,7 +171,32 @@ router.get('/clasesInstructor:id', function(req, res, nex){
   
 });
 
+router.get('/pagos:id', function(req, res, nex){
+  let id = req.path.replace('/pagos', '');
 
+  var query = "select * from pago_instructor where instructor_id = "+ id;
+
+  var pagos = [];
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+      for (var r of rows) {
+        var pago = {
+          pago_id: 0,
+          fecha: "",
+          monto: ""
+        }
+
+        pago.pago_id = r.pago_instructor_id;
+        pago.fecha = r.fecha;
+        pago.monto = r.monto;
+        pagos.push(pago);
+      }
+    }
+    res.json(pagos);
+  });
+  
+});
 
 
 module.exports = router;

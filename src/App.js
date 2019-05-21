@@ -13,6 +13,8 @@ import AddClases from './components/addClases';
 import InfoClase from './components/infoClase';
 import InfoInstructor from './components/infoInstructor';
 import InfoAlumno from './components/infoAlumno';
+import Pagos from './components/pagos';
+import AddPago from './components/addPago';
 
 
 
@@ -58,6 +60,49 @@ export default class App extends Component {
               <Route exact path="/addAlumno" component={AddAlumno} />
               <Route exact path="/addInstructor" component={AddInstructor} />
               <Route exact path="/addClases" component={AddClases} />
+              
+              <Route exact path="/pagosAlumno/:alumnoId" render={(props) => {
+                let alumnoId = props.location.pathname.replace('/pagosAlumno/', '');
+
+                return (
+                  <Pagos
+                    alumno_id ={alumnoId}
+                    instructor_id ={0}
+                  />
+                )
+              }}/>
+              <Route exact path="/pagosInstructor/:instructorid" render={(props) => {
+                let instructorId = props.location.pathname.replace('/pagosInstructor/', '');
+
+                return (
+                  <Pagos
+                    alumno_id ={0}
+                    instructor_id ={instructorId}
+                  />
+                )
+              }}/>
+
+              <Route exact path="/addInstructorPago/:instructorid" render={(props) => {
+                let instructorId = props.location.pathname.replace('/addInstructorPago/', '');
+
+                return (
+                  <AddPago
+                    alumno_id ={0}
+                    instructor_id ={instructorId}
+                  />
+                )
+              }}/>
+
+              <Route exact path="/addAlumnoPago/:alumnoId" render={(props) => {
+                let alumnoId = props.location.pathname.replace('/addAlumnoPago/', '');
+
+                return (
+                  <AddPago
+                    instructorId ={0}
+                    alumno_id ={alumnoId}
+                  />
+                )
+              }}/>
               <Route component={Error} />
             </Switch>
 

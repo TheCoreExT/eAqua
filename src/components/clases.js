@@ -63,8 +63,6 @@ export default class Clases extends Component {
                     <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}> X </button>
                     </form>
                   </td>
-
-                        
                 </tr>
             ))}
             </table>

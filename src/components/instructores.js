@@ -31,6 +31,7 @@ export default class Instructores extends Component {
                   <th scope="col" className="Telefono" > Teléfono </th>
                   <th scope="col" className="Correo" > Correo </th>
                   <th scope="col" className="Detalles"> </th>
+                  <th scope="col" className="Detalles"> </th> {/*pagos*/}
                   <th scope="col" className="Editar"> </th>
                   <th scope="col" className="Eliminar"> </th>
                 </tr>
@@ -46,6 +47,12 @@ export default class Instructores extends Component {
                           <Link to={"/instructores/" + instructor.id}>
                           <button className="DetallesInstructor">Detalles</button>
                           </Link>
+                      </td>
+
+                      <td>
+                            <Link to={"/pagosInstructor/" + instructor.id}>
+                            <button className="DetallesInstructor"> Pagos </button>
+                            </Link>
                       </td>
 
                       <td>
