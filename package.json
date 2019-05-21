@@ -40,5 +40,8 @@
     "electron": "^5.0.1",
     "foreman": "^3.0.1",
     "react-router-dom": "^5.0.0"
+  },
+  "directories": {
+    "buildResources": "public"
   }
 }
