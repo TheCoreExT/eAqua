@@ -17,7 +17,7 @@ export default class Alumnos extends Component {
 
     render() {
         return (
-            <div className="Alumnos">
+        <div className="Alumnos">
                 
             <div class="HubAlumno">
                 <h2> Alumnos </h2>
@@ -85,7 +85,8 @@ export default class Alumnos extends Component {
                     </tr>
                 ))}
                 </table>
-            </div>
+
+        </div>
         );
     }
 }

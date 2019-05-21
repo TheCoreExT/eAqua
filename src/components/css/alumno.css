@@ -1,11 +1,10 @@
 .Alumnos{
-	font-family: verdana;
-    color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
     padding-left: 180px;
 }
 
 .Alumnos h2 {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 28pt;
     margin-top: 2%;
@@ -97,7 +96,6 @@
     box-shadow: 2px 2px 2px rgba(248, 41, 41, 0.461);
     color: white;
     font-size: 1em;
-    font-family: verdana, Helvetica;
 }
 
 .Alumnos button.EditarAlumno {
@@ -116,7 +114,6 @@
     border-radius: 2em;
     color: white;
     font-size: 1em;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 
