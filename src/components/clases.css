@@ -4,29 +4,41 @@
     padding-left: 180px;
 }
 
+.Clases h2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 28pt;
+    margin-top: 2%;
+
+}
 
 .HubClases{
-    width: 80%;
+    width: 98%;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .HubClases input#search{
-    width: 60%;
-    height: 2.6rem;
-    border: none;
-    font-size: 10pt;
+    width: 40%;
+    height: 2.3rem;
+    font-size: 12pt;
     float: left;
-    padding-left: 7%;
+    margin-top: 1.8rem;
+    margin-left: 39%;
+    padding-left: 2%;
     border: rgba(147, 147, 147, 0.276) 0.5px solid;
     border-radius: 1rem;
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.324);
 }
 
 .HubClases img {
-    padding-left: 57%;
+    margin-top: 1.5rem;
+    padding-left: 2.8rem;
 }
 
 
@@ -56,15 +68,16 @@ th {
     background-color: rgb(196, 233, 246);
 }
 th.Intructor {
-    width: 45%;
+    width: 40%;
     border-top-left-radius: 10px;
 }
 th.Día {
-    width: 15%;
+    width: 20%;
 }
 th.Hora {
-    width: 100%;
+    width: 20%;
 }
+
 
 th:first-child { 
     border-top-left-radius: 10px; 
