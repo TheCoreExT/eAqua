@@ -18,8 +18,7 @@ export default class Alumnos extends Component {
     render() {
         return (
             <div className="Alumnos">
-                <h2>Alumnos</h2>
-
+                
             <div class="HubAlumno">
                 <h2> Alumnos </h2>
                 <input type="search" id="search" placeholder="Buscar" />
