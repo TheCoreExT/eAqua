@@ -128,6 +128,8 @@ router.get('/infoAlumno:id', function(req, res, nex) {
 
   var query = "SELECT * FROM alumno WHERE alumno_id = " + id;
 
+
+
    var data = {
      nombre: "",
      nua: 0,
@@ -145,7 +147,6 @@ router.get('/infoAlumno:id', function(req, res, nex) {
 
   connection.query(query, function(err, rows, fields) {
     if(!err) {      
-
     for (var r of rows) {
         data.nombre = r.nombre;
         data.nua = r.alumno_id;
@@ -169,6 +170,34 @@ router.get('/infoAlumno:id', function(req, res, nex) {
   
   
 });
+
+router.get('/Nalumnos:id', function(req, res, nex) {
+  console.log("Llamada Nalumnos")
+  let id =req.path.replace('/Nalumnos','');
+
+  var query = "SELECT COUNT(alumno_id) as n FROM clase_alumno WHERE clase_id = " + id;
+
+
+
+   var p = "";
+
+  connection.query(query, function(err, rows, fields) {
+
+    if(!err) {      
+    for (var r of rows) {
+        p = r.n;
+     }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(p);
+  });
+  
+  
+});
+
 
 
 module.exports = router;

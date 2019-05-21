@@ -22,12 +22,11 @@ export default class Clases extends Component {
           <div className="Clases">
             <h2>Clases</h2>
 
-            <div className="Buscar_clases">
+            <div className="HubClases">
               <input type="search" id="search" placeholder="Buscar" />
-            </div>
-
-            <div className="AddClase">
-                <Link to="/AddClase">Agregar clase</Link>
+                <Link to="/AddClases">
+                <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
+                </Link>
             </div>
 
             <table>
@@ -47,17 +46,17 @@ export default class Clases extends Component {
 
                   <td>
                     <Link to={"/clases/" + clase.id}>
-                      <button>Detalles</button>
+                      <button className="DetallesClases">Detalles</button>
                     </Link>
                   </td>
                   
                   <td>
-                    <button type="submit" name="editar_id" value={clase.id}> Editar </button>
+                    <button type="submit" className ="EditarClase"name="editar_id" value={clase.id}> Editar </button>
                   </td>
 
                   <td>
                     <form method="post" action="/clases/eliminarClase" name="eliminarClase">
-                    <button type="submit" onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}>Eliminar</button>
+                    <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}> X </button>
                     </form>
                   </td>
 
