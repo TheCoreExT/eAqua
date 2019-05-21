@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './instructores.css'
+import './css/instructores.css'
 
 export default class Instructores extends Component {
 
