@@ -33,6 +33,8 @@ export default class InfoAlumno extends Component {
             <p>NUA: {this.state.data.nua}</p>
             <p>Telefono: {this.state.data.telefono}</p>
             <p>Correo: {this.state.data.correo}</p>
+            <p>Edad: {this.state.data.edad}</p>
+            <p>Genero: {this.state.data.genero}</p>
         </div>
         
 
@@ -60,7 +62,6 @@ export default class InfoAlumno extends Component {
 
         <div className="Salud">
             <h2>Salud</h2>
-            <p>Edad: {this.state.data.edad}</p>
             <p>Estatura: {this.state.data.estatura}</p>
             <p>Peso: {this.state.data.peso}</p>
             <p>Seguro médico: {this.state.data.seguro}</p>

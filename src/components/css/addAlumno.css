@@ -1,6 +1,6 @@
 .AddAlumno {
     font-family: verdana;
-    /*background-color: rgba(43, 130, 223, 0.993);*/
+    color: rgb(60, 60, 60);
     padding-left: 180px;
 
 }
@@ -25,9 +25,23 @@
     flex-direction: row;
 }
 
-.AddAlumno input#text {
-    padding-left: 3%;
+.AddAlumno input.text {
+    padding-left: 4%;
 }
+
+.AddAlumno select {
+    width: 84%;
+    height: 2.3rem;
+    font-size: 12pt;
+    color: rgb(120, 120, 120);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    background-color: white;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
+    border-radius: 0.6rem;
+}
+
 
 .DatosBasicos {
     width: 45%;
