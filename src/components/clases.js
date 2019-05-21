@@ -34,7 +34,8 @@ export default class Clases extends Component {
               <tr>
                 <th scope="col" className="Instructor" > Instructor </th>
                 <th scope="col" className="Día"> Día </th>
-                <th scope="col" className="Hora"> Hora </th>
+                <th scope="col" className="Hora"> Hora Incial </th>
+                <th scope="col" className="Hora"> Hora Final </th>
                 <th scope="col" className="Hora"> No. Alumnos </th>
                 <th scope="col" className="DetallesClases"> </th>
                 <th scope="col" className="EditarClases"> </th>
@@ -44,9 +45,9 @@ export default class Clases extends Component {
                 <tr key={clase.id}>
                   <td>{clase.instructor_nombre}</td>
                   <td>{clase.dia}</td>
-                  <td>{clase.hora}</td>
+                  <td>{clase.hora_inicial}</td>
+                  <td>{clase.hora_final}</td>
                   <td><Nalumnos clase_id = {clase.id} /></td>
-
                   <td>
                     <Link to={"/clases/" + clase.id}>
                       <button className="DetallesClase">Detalles</button>

@@ -16,7 +16,8 @@ export default class AddClases extends Component {
         return (
           <div className="AddClases">
             <form action="/clases" method="post">
-              <input type="time" placeholder="Hora inicial" name="hora" />
+              <input type="time" placeholder="Hora Inicial" name="hora_inicial" />
+              <input type="time" placeholder="Hora Final" name="hora_final" />
               <input type="text" placeholder="Dia" name="dia"/>
               <select name="instructor_id">
                 {this.state.instructores.map(instructor => (

@@ -33,7 +33,7 @@ export default class InfoClase extends Component {
     return (
     <div className="infoClase">
 
-      <h2>{this.state.data.hora}hrs. Clase</h2>
+      <h2>{this.state.data.hora_inicial}hrs - {this.state.data.hora_final}hrs Clase</h2>
       <form method="post" action="/clases/eliminarClase" name="eliminarClase">
         <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={this.state.data.clase_id}> X </button>
       </form>
@@ -41,12 +41,14 @@ export default class InfoClase extends Component {
       <table>
         <tr>
           <th>Clave</th>
-          <th>Hora</th>
+          <th>Hora Inicial</th>
+          <th>Hora Final</th>
           <th>Instructor</th>
         </tr>
         <tr>
           <td>{this.state.data.clase_id}</td>
-          <td>{this.state.data.hora}</td>
+          <td>{this.state.data.hora_inicial}</td>
+          <td>{this.state.data.hora_final}</td>
           <td>{this.state.data.instructor}</td>
         </tr>
       </table>

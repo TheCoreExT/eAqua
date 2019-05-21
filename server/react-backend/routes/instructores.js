@@ -3,8 +3,6 @@
 //set PORT=3001 && node bin/www
 var express = require('express');
 var router = express.Router();
-
-
 var mysql = require('mysql')
 
 var connection = mysql.createConnection({
@@ -15,6 +13,7 @@ var connection = mysql.createConnection({
 })
 
 connection.connect();
+// POST methods ------
 
 router.post('/eliminarInstructor', function(req, res, next){
 
@@ -61,6 +60,8 @@ router.post('/', function(req, res, next){
   res.redirect('/instructores');
 })
 
+// GET methods -------
+
 router.get('/', function(req, res, next) {
 
   
@@ -92,7 +93,6 @@ router.get('/', function(req, res, next) {
     res.json(instructorArray);
   });
 });
-
 
 router.get('/infoInstructor:id', function(req, res, nex){
   console.log('Llamada infoInstructor');
@@ -127,7 +127,6 @@ router.get('/infoInstructor:id', function(req, res, nex){
   
 });
 
-
 router.get('/clasesInstructor:id', function(req, res, nex){
   console.log('Llamada clasesInstructor');
   let id = req.path.replace('/clasesInstructor', '');
@@ -142,12 +141,14 @@ router.get('/clasesInstructor:id', function(req, res, nex){
         var dato = {
           clase_id: 0,
           dia: "",
-          hora: ""
+          hora_inicial: "",
+          hora_final: ""
         }
 
         dato.clase_id = r.clase_id;
         dato.dia = r.dia;
-        dato.hora = r.hora;
+        dato.hora_inicial = r.hora_inicial;
+        dato.hora_final = r.hora_final;
 
         clases.push(dato);
       }

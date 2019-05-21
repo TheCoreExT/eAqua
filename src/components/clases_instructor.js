@@ -18,14 +18,16 @@ export default class ClasesInstructor extends Component {
                 <table>
                     <tr>
                         <th>Clave</th>
-                        <th>Hora</th>
+                        <th>Hora Inicial</th>
+                        <th>Hora Final</th>
                         <th>Día</th>
                         <th>No. Alumnos</th>
                     </tr>
                     {this.state.clases.map(clase =>(
                         <tr>
                             <td>{clase.clase_id}</td>
-                            <td>{clase.hora}</td>
+                            <td>{clase.hora_inicial}</td>
+                            <td>{clase.hora_final}</td>
                             <td>{clase.dia}</td>
                             <td><Nalumnos clase_id = {clase.clase_id}/></td>
                         </tr>

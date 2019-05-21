@@ -20,7 +20,6 @@ export default class Alumnos extends Component {
             <div className="Alumnos">
                 <h2>Alumnos</h2>
 
-          
             <div class="HubAlumno">
                 <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/addAlumno">
