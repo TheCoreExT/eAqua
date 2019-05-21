@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './clases.css';
+import './css/clases.css';
 import Nalumnos from './nalumnos';
 
 export default class Clases extends Component {
