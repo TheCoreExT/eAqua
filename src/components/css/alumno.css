@@ -1,34 +1,44 @@
 .Alumnos{
 	font-family: verdana;
     color:#000000;
-    /*background-color: rgba(226, 240, 255, 0.993);*/
     padding-left: 180px;
 }
 
+.Alumnos h2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 28pt;
+    margin-top: 2%;
+}
 
 .HubAlumno{
-    width: 80%;
+    width: 98%;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
-    padding-bottom: 2rem;
-    
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .HubAlumno input#search{
-    width: 60%;
-    height: 2.6rem;
-    border: none;
-    font-size: 10pt;
+    width: 40%;
+    height: 2.3rem;
+    font-size: 12pt;
     float: left;
-    padding-left: 7%;
+    margin-top: 1.8rem;
+    margin-left: 35%;
+    padding-left: 2%;
     border: rgba(147, 147, 147, 0.276) 0.5px solid;
     border-radius: 1rem;
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.324);
 }
 
-.HubAlumno img {    
-    padding-left: 57%;
+.HubAlumno img {  
+    margin-top: 1.5rem;  
+    margin-left: 2.8rem;
 }
 
 .Alumnos table {
@@ -106,7 +116,7 @@
     border-radius: 2em;
     color: white;
     font-size: 1em;
-    font-family: verdana, Helvetica;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 

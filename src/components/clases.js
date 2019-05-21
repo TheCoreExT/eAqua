@@ -21,9 +21,9 @@ export default class Clases extends Component {
     render() {
         return (
           <div className="Clases">
-            <h2>Clases</h2>
 
             <div className="HubClases">
+              <h2>Clases</h2>
               <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/AddClases">
                 <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
@@ -34,9 +34,8 @@ export default class Clases extends Component {
               <tr>
                 <th scope="col" className="Instructor" > Instructor </th>
                 <th scope="col" className="Día"> Día </th>
-                <th scope="col" className="Hora"> Hora Incial </th>
-                <th scope="col" className="Hora"> Hora Final </th>
-                <th scope="col" className="Hora"> No. Alumnos </th>
+                <th scope="col" className="Hora"> Hora </th>
+                <th scope="col" className="NoAlumno"> No. Alumnos </th>
                 <th scope="col" className="DetallesClases"> </th>
                 <th scope="col" className="EditarClases"> </th>
                 <th scope="col" className="EliminarClases"> </th>

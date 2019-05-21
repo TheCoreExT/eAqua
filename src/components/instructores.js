@@ -15,9 +15,9 @@ export default class Instructores extends Component {
     render() {
         return (
           <div className="Instructores">
-            <h2>Instructores</h2>
-
+            
             <div class="HubInstructor">
+                <h2>Instructores</h2>
                 <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/addInstructor">
                   <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>

@@ -1,0 +1,67 @@
+.AddAlumno {
+    font-family: verdana;
+    /*background-color: rgba(43, 130, 223, 0.993);*/
+    padding-left: 180px;
+
+}
+
+.AddAlumno h2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 28pt;
+    margin-left: 10%;
+}
+
+.AddAlumno input {
+    width: 80%;
+    height: 2rem;
+    font-size: 12pt;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
+    border-radius: 0.6rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.AddAlumno input#text {
+    padding-left: 3%;
+}
+
+.DatosBasicos {
+    width: 45%;
+    padding-bottom: 2rem;
+    float: left;
+}
+
+.DatosClinicos {
+    width: 45%;
+    padding-bottom: 2rem;
+    padding-right: 4%;
+    float: right;
+}
+
+.Separador {
+    border-left: rgba(147, 147, 147, 0.276) 1.5px solid;
+    height: 24em;
+    margin-top: 4em;
+    margin-left: 48%;
+}
+
+.BotonAceptar {
+    margin-top: 2em;
+    margin-left: 41%;
+}
+
+.BotonAceptar button {
+    background: rgb(58, 199, 112);
+    width: 3.8cm;
+    height: 1.0cm;
+    border-color: rgb(58,199, 122);
+    border-radius: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 12pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}

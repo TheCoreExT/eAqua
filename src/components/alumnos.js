@@ -21,6 +21,7 @@ export default class Alumnos extends Component {
                 <h2>Alumnos</h2>
 
             <div class="HubAlumno">
+                <h2> Alumnos </h2>
                 <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/addAlumno">
                     <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
