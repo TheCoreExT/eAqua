@@ -48,6 +48,7 @@ export default class Alumnos extends Component {
                     <th scope="col" class="Otros"> Otros</th>
                     */}   
                     <th scope="col" className="Detalles"> </th>
+                    <th scope="col" className="Detalles"> </th> {/*Pagos*/ } 
                     <th scope="col" className="Editar"> </th>
                     <th scope="col" className="Eliminar"> </th>
                 </tr>
@@ -64,10 +65,15 @@ export default class Alumnos extends Component {
                         <td>{alumno.tipo_sangre}</td>
                         <td>{alumno.otro_padecimiento}</td>
                         */}
-
                         <td>
                             <Link to={"/alumnos/" + alumno.id}>
                             <button className="DetallesAlumno"> Detalles </button>
+                            </Link>
+                        </td>
+
+                        <td>
+                            <Link to={"/pagosAlumno/" + alumno.id}>
+                            <button className="DetallesAlumno"> Pagos </button>
                             </Link>
                         </td>
 

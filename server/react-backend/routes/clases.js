@@ -33,9 +33,7 @@ router.post('/', function(req, res, next){
 
   connection.query(query, function(err){
     if(err)
-      console.log(err + " " + query)
-    else
-      console.log('Clase insertada')
+      console.log(err)
   });
 
   res.redirect('/clases');
@@ -47,12 +45,8 @@ router.post('/eliminarClase', function(req, res, next){
 
   var query = "DELETE FROM clase WHERE clase_id=" + clase_id;
   connection.query(query, function(err) {
-    console.log(query);
-
     if(err)
       console.log(err)
-    else
-      console.log("Clase eliminada")
   });
     res.redirect('/clases');
     
@@ -76,8 +70,6 @@ router.post('/addAlumnotoClase', function(req, res, next){
   connection.query(query, function(err){
     if(err)
       console.log(err)
-    else
-      console.log('Clase insertada')
   });
 
   res.redirect('/clases');
@@ -89,7 +81,6 @@ router.get('/', function(req, res, next) {
   var clases = [];
 
   connection.query('SELECT c.clase_id as clase_id, c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id ', function(err, rows, fields) {
-    console.log("llamada clase");
     if(!err) {      
 
      for (var r of rows) {
@@ -108,9 +99,6 @@ router.get('/', function(req, res, next) {
         clases.push(clase);
      }
     }
-    else {
-      console.log('Error while performind Query');
-    }
 
     res.json(clases);
   });
@@ -118,12 +106,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/infoClase:id', function(req, res, nex) {
-  console.log('llamada infoClase');
 
   let id =req.path.replace('/infoClase','');
 
   var query = "SELECT  c.clase_id as clase_id, c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final,  i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id AND c.clase_id = " + id;
-  console.log(query);
 
    var data = {
      clase_id: 0,
@@ -145,16 +131,12 @@ router.get('/infoClase:id', function(req, res, nex) {
 
      }
     }
-   else {
-     console.log('Error while performind Query');
-    }
     res.json(data);
   });
 
 });
 
 router.get('/ClasesDeAlumno:id', function(req, res, nex) {
-  console.log('llamada infoClase');
   let id =req.path.replace('/ClasesDeAlumno','');
 
   var query = "SELECT   c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final, i.nombre as instructor_nombre FROM  instructor i,  clase c, clase_alumno ca WHERE  i.instructor_id = c.instructor_id AND c.clase_id = ca.clase_id AND ca.alumno_id = " + id;
@@ -178,9 +160,6 @@ router.get('/ClasesDeAlumno:id', function(req, res, nex) {
       clase.instructor= r.instructor_nombre;
       clases.push(clase);
      }
-    }
-   else {
-     console.log(err);
     }
     res.json(clases);
   });

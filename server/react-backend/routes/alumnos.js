@@ -51,8 +51,6 @@ router.post('/', function(req, res, next) {
 
     if (err)
       console.log(err)
-    else
-      console.log('Alumno insertado')
   });
 
   res.redirect('/alumnos');
@@ -64,57 +62,58 @@ router.post('/eliminarAlumno', function(req, res, next){
 
   var query = "DELETE FROM alumno WHERE alumno_id=" + alumno_id;
   connection.query(query, function(err) {
-    console.log(query);
-
     if(err)
       console.log(err)
-    else
-      console.log("Alumno eliminado")
   });
     res.redirect('/alumnos');
-    // res.send("eliminar alumnos");
 });
 
 router.post('/AddAlumno2Clase:id', function(req, res, next){
-
   var clase_id = req.path.replace('/AddAlumno2Clase', '');
   var alumno_id = req.body.params;
-  console.log("llamada AddAlumno2Clase");
 
   var query = "insert into clase_alumno values(" + clase_id +", " + alumno_id+")";
   connection.query(query, function(err) {
-
     if(err)
       console.log(err)
-    else{
-
-    }
-    
   });
     res.redirect('/clases/' + clase_id);
-    // res.send("eliminar alumnos");
 });
 
 router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
-
   var clase_id = req.path.replace('/eliminarAlumnoFromClase', '');
   var alumno_id = req.body.alumno_id;
 
-  console.log("llamada eliminarAlumnoFromClase");
-
   var query = "delete from clase_alumno where alumno_id = " + alumno_id + " and clase_id =" + clase_id;
   connection.query(query, function(err) {
-    console.log(query);
     if(err)
       console.log(err)
-    else{
-
-    }
-    
   });
     res.redirect('/clases/'+clase_id );
-    // res.send("eliminar alumnos");
 });
+
+router.post('/addPago:id', function(req, res, next){
+  var id =  req.path.replace('/addPago', '');
+
+  var pago ={
+    fecha: "",
+    monto: ""
+  }
+
+  pago.fecha = req.body.fecha;
+  pago.monto = req.body.monto;
+
+  var query = 'insert into pago_alumno(alumno_id, fecha, monto) values(';
+
+  query += id + ", '" + pago.fecha + "', '" + pago.monto + "')";
+
+  connection.query(query, function(err){
+    if(err)
+      console.log(err)
+  });
+
+  res.redirect('/pagosAlumno/'+id);
+})
 
 // Get methods --------------
 
@@ -123,9 +122,6 @@ router.get('/', function(req, res, next) {
   var alumnos = [];
 
   connection.query('SELECT * FROM alumno', function(err, rows, fields) {
-
-    console.log("llamada alumnos");
-
     if(!err) {      
 
      for (var r of rows) {
@@ -169,11 +165,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/infoAlumno:id', function(req, res, nex) {
-  console.log('llamada infoAlumno');
   let id =req.path.replace('/infoAlumno','');
 
   var query = "SELECT * FROM alumno WHERE alumno_id = " + id;
-
 
   var data = {
     nua: 0,
@@ -218,14 +212,11 @@ router.get('/infoAlumno:id', function(req, res, nex) {
 });
 
 router.get('/Nalumnos:id', function(req, res, nex) {
-  console.log("Llamada Nalumnos")
   let id =req.path.replace('/Nalumnos','');
 
-  var query = "SELECT COUNT(alumno_id) as n FROM clase_alumno WHERE clase_id = " + id;
-
-
-
-   var n = "";
+  var query =
+    "SELECT COUNT(alumno_id) as n FROM clase_alumno WHERE clase_id = " + id;
+  var n = "";
 
   connection.query(query, function(err, rows, fields) {
 
@@ -234,10 +225,6 @@ router.get('/Nalumnos:id', function(req, res, nex) {
         n = r.n;
      }
     }
-   else {
-     console.log('Error while performind Query');
-    }
-
     res.json(n);
   });
   
@@ -245,7 +232,7 @@ router.get('/Nalumnos:id', function(req, res, nex) {
 });
 
 router.get('/AlumnosClase:id', function(req, res, nex) {
-  console.log("Llamada AlumnosClase")
+
   let id =req.path.replace('/AlumnosClase','');
 
   var query = "SELECT a.alumno_id as alumno_id, a.nombre as nombre, a.correo as correo, a.telefono as telefono FROM clase_alumno c, alumno a WHERE a.alumno_id = c.alumno_id and clase_id = " + id;
@@ -270,13 +257,37 @@ router.get('/AlumnosClase:id', function(req, res, nex) {
         alumnos_clase.push(alumno);
      }
     }
-   else {
-     console.log('Error while performind Query');
-    }
-
     res.json(alumnos_clase);
   });
   
+  
+});
+
+router.get('/pagos:id', function(req, res, nex){
+  let id = req.path.replace('/pagos', '');
+
+  var query = "select * from pago_alumno where alumno_id = "+ id;
+
+  var pagos = [];
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+      for (var r of rows) {
+        
+        var pago = {
+          pago_id: 0,
+          fecha: "",
+          monto: ""
+        }
+
+        pago.pago_id = r.pago_alumno_id;
+        pago.fecha = r.fecha;
+        pago.monto = r.monto;
+        pagos.push(pago);
+      }
+    }
+    res.json(pagos);
+  });
   
 });
 
