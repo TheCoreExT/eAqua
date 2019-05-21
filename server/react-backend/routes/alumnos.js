@@ -179,25 +179,103 @@ router.get('/Nalumnos:id', function(req, res, nex) {
 
 
 
-   var p = "";
+   var n = "";
 
   connection.query(query, function(err, rows, fields) {
 
     if(!err) {      
     for (var r of rows) {
-        p = r.n;
+        n = r.n;
      }
     }
    else {
      console.log('Error while performind Query');
     }
 
-    res.json(p);
+    res.json(n);
+  });
+  
+  
+});
+
+router.get('/AlumnosClase:id', function(req, res, nex) {
+  console.log("Llamada AlumnosClase")
+  let id =req.path.replace('/AlumnosClase','');
+
+  var query = "SELECT a.alumno_id as alumno_id, a.nombre as nombre, a.correo as correo, a.telefono as telefono FROM clase_alumno c, alumno a WHERE a.alumno_id = c.alumno_id and clase_id = " + id;
+
+
+
+  var alumnos_clase = [];
+
+  connection.query(query, function(err, rows, fields) {
+
+    if(!err) {      
+    for (var r of rows) {
+      var alumno = {
+        alumno_id: "",
+        nombre: "",
+        correo: "",
+        telefono:""
+       };
+
+        alumno.alumno_id = r.alumno_id;
+        alumno.nombre = r.nombre;
+        alumno.correo = r.correo;
+        alumno.telefono = r.telefono;
+        alumnos_clase.push(alumno);
+     }
+    }
+   else {
+     console.log('Error while performind Query');
+    }
+
+    res.json(alumnos_clase);
   });
   
   
 });
 
 
+router.post('/AddAlumno2Clase:id', function(req, res, next){
+
+  var clase_id = req.path.replace('/AddAlumno2Clase', '');
+  var alumno_id = req.body.params;
+  console.log("llamada AddAlumno2Clase");
+
+  var query = "insert into clase_alumno values(" + clase_id +", " + alumno_id+")";
+  connection.query(query, function(err) {
+
+    if(err)
+      console.log(err)
+    else{
+
+    }
+    
+  });
+    res.redirect('/clases/' + clase_id);
+    // res.send("eliminar alumnos");
+});
+
+router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
+
+  var clase_id = req.path.replace('/eliminarAlumnoFromClase', '');
+  var alumno_id = req.body.alumno_id;
+
+  console.log("llamada eliminarAlumnoFromClase");
+
+  var query = "delete from clase_alumno where alumno_id = " + alumno_id + " and clase_id =" + clase_id;
+  connection.query(query, function(err) {
+    console.log(query);
+    if(err)
+      console.log(err)
+    else{
+
+    }
+    
+  });
+    res.redirect('/clases/'+clase_id );
+    // res.send("eliminar alumnos");
+});
 
 module.exports = router;

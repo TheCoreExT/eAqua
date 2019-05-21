@@ -14,7 +14,7 @@ export default class Nalumnos extends Component {
 
     render() {
         return (
-            <p> {this.state.p}</p>
+            <span> {this.state.p}</span>
         );
     }
 }

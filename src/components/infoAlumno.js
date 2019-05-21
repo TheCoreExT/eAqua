@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 
 export default class InfoAlumno extends Component {
 
-    state ={data : "" }
+    state ={data : "",
+            clases: []}
 
     componentDidMount() {
     var url =
@@ -11,6 +12,13 @@ export default class InfoAlumno extends Component {
     .then(res => res.json())
     .then(data =>
         this.setState({ data })
+    );
+
+    var  url2 = "/clases/ClasesDeAlumno" + this.props.alumno_id;
+    fetch(url2)
+    .then(res => res.json())
+    .then(clases =>
+        this.setState({ clases })
     );
     }
 
@@ -24,7 +32,22 @@ export default class InfoAlumno extends Component {
         <p>Correo: {this.state.data.correo}</p>
 
         <h2>Clases</h2>
+        <table>
+            <tr>
+                <th>Hora</th>
+                <th>Día</th>
+                <th>Instructor</th>
+            </tr>
 
+            {this.state.clases.map(clase => (
+                <tr>
+                    <td>{clase.hora}</td>
+                    <td>{clase.dia}</td>
+                    <td>{clase.instructor}</td>
+                </tr>
+
+            ))}
+        </table>
         <h2>Salud</h2>
         <p>Edad: {this.state.data.edad}</p>
         <p>Estatura: {this.state.data.estatura}</p>

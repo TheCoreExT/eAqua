@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './clases.css'
+import './clases.css';
+import Nalumnos from './nalumnos';
 
 export default class Clases extends Component {
 
@@ -34,6 +35,7 @@ export default class Clases extends Component {
                 <th scope="col" className="Instructor" > Instructor </th>
                 <th scope="col" className="Día"> Día </th>
                 <th scope="col" className="Hora"> Hora </th>
+                <th scope="col" className="Hora"> No. Alumnos </th>
                 <th scope="col" className="DetallesClases"> </th>
                 <th scope="col" className="EditarClases"> </th>
                 <th scope="col" className="EliminarClases"> </th>
@@ -43,6 +45,7 @@ export default class Clases extends Component {
                   <td>{clase.instructor_nombre}</td>
                   <td>{clase.dia}</td>
                   <td>{clase.hora}</td>
+                  <td><Nalumnos clase_id = {clase.id} /></td>
 
                   <td>
                     <Link to={"/clases/" + clase.id}>
