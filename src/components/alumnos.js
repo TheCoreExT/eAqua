@@ -48,7 +48,7 @@ export default class Alumnos extends Component {
                     <th scope="col" class="Otros"> Otros</th>
                     */}   
                     <th scope="col" className="Detalles"> </th>
-                    <th scope="col" className="Detalles"> </th> {/*Pagos*/ } 
+                    <th scope="col" className="Pagos"> </th> {/*Pagos*/ } 
                     <th scope="col" className="Editar"> </th>
                     <th scope="col" className="Eliminar"> </th>
                 </tr>

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Nalumnos from './nalumnos';
-
+import './css/infoClase.css'
 
 export default class InfoClase extends Component {
 
@@ -33,57 +33,68 @@ export default class InfoClase extends Component {
     return (
     <div className="infoClase">
 
-      <h2>{this.state.data.hora_inicial}hrs - {this.state.data.hora_final}hrs Clase</h2>
-      <form method="post" action="/clases/eliminarClase" name="eliminarClase">
-        <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={this.state.data.clase_id}> X </button>
-      </form>
-      <h3>Información</h3>
-      <table>
-        <tr>
-          <th>Clave</th>
-          <th>Hora Inicial</th>
-          <th>Hora Final</th>
-          <th>Instructor</th>
-        </tr>
-        <tr>
-          <td>{this.state.data.clase_id}</td>
-          <td>{this.state.data.hora_inicial}</td>
-          <td>{this.state.data.hora_final}</td>
-          <td>{this.state.data.instructor}</td>
-        </tr>
-      </table>
+      <div className="HubClase">
+        <h2>{this.state.data.hora_inicial}hrs - {this.state.data.hora_final}hrs Clase</h2>
+        <button type="submit" className="EditarClase" name="editar_id" value={this.state.data.clase_id}></button>
+        <form method="post" action="/clases/eliminarClase" name="eliminarClase">
+          <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={this.state.data.clase_id}> X </button>
+        </form>
+      </div>
 
-      <h3>Alumnos: <Nalumnos clase_id={this.props.clase_id} /></h3>
-      <form action={"/alumnos/AddAlumno2Clase"+this.props.clase_id} method="post">
-              <select name="params">
-                {this.state.alumnos.map(alumno => (
-                  <option value={alumno.id}  >{alumno.nombre}</option>
-                ))}
-              </select>
+      <p className="Subtitulo">Información</p>
+      
+      <div className="InformacionDeClase">
+        <table>
+          <tr>
+            <th scope="col" className="Clave">Clave</th>
+            <th scope="col" className="HoraInicio">Hora Inicio</th>
+            <th scope="col" className="HoraFinal">Hora Final</th>
+            <th scope="col" className="Instructor">Instructor</th>
+          </tr>
+          <tr>
+            <td>{this.state.data.clase_id}</td>
+            <td>{this.state.data.hora_inicial}</td>
+            <td>{this.state.data.hora_final}</td>
+            <td>{this.state.data.instructor}</td>
+          </tr>
+        </table>
+      </div>
 
-              <input type="submit" value="submit"/>
-      </form>
-      <table>
-        <tr>
-          <th>Nombre</th>
-          <th>Correo</th>
-          <th>Teléfono</th>
-          <th></th>
-        </tr>
-        {this.state.alumnos_clase.map(alumno => (
-          <tr key = {alumno.alumno_id}>
+      <p className="Subtitulo">Núm. de alumnos: <Nalumnos clase_id={this.props.clase_id} /></p>
+      
+      <div className="AlumnosInscritos">
+        <div className="AgregarAlumnos">
+        <form action={"/alumnos/AddAlumno2Clase"+this.props.clase_id} method="post">
+          <select name="params">
+            {this.state.alumnos.map(alumno => (
+              <option value={alumno.id}  >{alumno.nombre}</option>
+            ))}
+          </select>
+          <input type="submit" className="AgregarAlumno"value=""/>
+        </form>
+        </div>
+
+        <table>
+          <tr>
+            <th scope="col" className="Nombre">Nombre</th>
+            <th scope="col" className="Correo">Correo</th>
+            <th scope="col" className="Telefono">Teléfono</th>
+            <th scope="col" className="Eliminar"></th>
+          </tr>
+          {this.state.alumnos_clase.map(alumno => (
+            <tr key = {alumno.alumno_id}>
               <td>{alumno.nombre}</td>
               <td>{alumno.correo}</td>
               <td>{alumno.telefono}</td>
               <td>
                 <form method="post" action={"/alumnos/eliminarAlumnoFromClase"+ this.props.clase_id} >
-                <button type="submit" className="EliminarAlumno" name="alumno_id" onClick={() => {alert("Alumno Eliminado de la Clase")}} value={alumno.alumno_id}> X </button>
+                  <button type="submit" className="EliminarAlumno" name="alumno_id" onClick={() => {alert("Alumno Eliminado de la Clase")}} value={alumno.alumno_id}> X </button>
                 </form>
               </td>
-          </tr>
+            </tr>
         ))}
-      </table>
-      
+        </table>
+      </div>
 
       
       </div>

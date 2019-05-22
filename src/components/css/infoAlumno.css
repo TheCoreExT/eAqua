@@ -18,18 +18,18 @@
 .PersonaAlumno{
     display: flex;
     flex-direction: row;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .HorarioAlumno {
     width: 80%;
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
 }
 
 .SaludAlumno {
     display: flex;
     flex-direction: row;
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
 }
 
 .EtiquetasAlumno {
