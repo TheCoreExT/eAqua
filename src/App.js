@@ -15,6 +15,10 @@ import InfoInstructor from './components/infoInstructor';
 import InfoAlumno from './components/infoAlumno';
 import Pagos from './components/pagos';
 import AddPago from './components/addPago';
+import MenuPagos from './components/menuPagos';
+import EditAlumno from './components/editAlumno';
+import EditInstructor from './components/editInstructor';
+import EditClase from './components/editClase';
 
 
 
@@ -103,7 +107,36 @@ export default class App extends Component {
                   />
                 )
               }}/>
+              <Route exact path="/editAlumno/:alumnoId" render={(props) => {
+                let alumnoId = props.location.pathname.replace('/editAlumno/', '');
+
+                return (
+                  <EditAlumno
+                    alumno_id ={alumnoId}
+                  />
+                )
+              }}/>
+              <Route exact path="/editInstructor/:instructorId" render={(props) => {
+                let instructorId = props.location.pathname.replace('/editInstructor/', '');
+
+                return (
+                  <EditInstructor
+                    instructor_id ={instructorId}
+                  />
+                )
+              }}/>
+              <Route exact path="/editClase/:claseId" render={(props) => {
+                let claseId = props.location.pathname.replace('/editClase/', '');
+
+                return (
+                  <EditClase
+                    clase_id ={claseId}
+                  />
+                )
+              }}/>
+              <Route exact path="/pagos" component={MenuPagos} />
               <Route component={Error} />
+
             </Switch>
 
           

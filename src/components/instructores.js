@@ -56,7 +56,9 @@ export default class Instructores extends Component {
                       </td>
 
                       <td>
+                          <Link to={"/editInstructor/"+instructor.id}>
                           <button type="submit" className="EditarInstructor"name="editar_id" value={instructor.id}> </button>
+                          </Link>
                       </td>
 
                       <td>
@@ -66,11 +68,9 @@ export default class Instructores extends Component {
                       </td>
 
                     </tr>
-
-
               ))}
 
-          </table>
+            </table>
           
           </div>
         );

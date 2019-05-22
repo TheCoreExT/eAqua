@@ -55,7 +55,9 @@ export default class Clases extends Component {
                   </td>
                   
                   <td>
+                    <Link to={"/editClase/"+clase.id}>
                     <button type="submit" className ="EditarClase"name="editar_id" value={clase.id}> </button>
+                    </Link>
                   </td>
 
                   <td>

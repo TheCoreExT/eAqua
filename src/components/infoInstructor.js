@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
 import ClasesInstructor from './clases_instructor';
+import {Link} from 'react-router-dom';
 import './css/infoInstructor.css';
 
 export default class InfoInstructor extends Component {
-    
+     
     state = {data : ""}
 
     componentDidMount(){
@@ -11,6 +12,8 @@ export default class InfoInstructor extends Component {
         fetch(url)
         .then(res => res.json())
         .then(data => this.setState({ data }));
+
+        
     }
 
     render() {
@@ -18,6 +21,9 @@ export default class InfoInstructor extends Component {
             <div className="infoInstructor">
 
                 <h2> {this.state.data.nombre}</h2>
+                <Link to={"/editInstructor/"+this.props.instructor_id}>
+                <button type="submit" className="EditarInstructor"name="editar_id" value={this.props.instructor_id}>Editar</button>
+                </Link>
                 <p className="Subtitulo"> Datos Personales </p>
                 
                 <div className="PersonaInstructor">

@@ -70,6 +70,31 @@ router.post('/', function(req, res, next){
   res.redirect('/instructores');
 })
 
+router.post('/editInstructor:id', function(req, res, next){
+  let id = req.path.replace('/editInstructor', '');
+
+  var instructor ={
+    nombre: "",
+    telefono: "",
+    correo: "",
+    clabe: ""
+  }
+
+  instructor.nombre = req.body.nombre;
+  instructor.telefono = req.body.telefono;
+  instructor.correo = req.body.correo;
+  instructor.clabe = req.body.clabe;
+
+  var query = "update instructor set nombre='"+instructor.nombre+"',telefono='"+instructor.telefono+"',correo='"+instructor.correo+"',clabe='"+instructor.clabe+"' where instructor_id = "+id;
+
+  connection.query(query, function(err){
+    if(err)
+      console.log(err)
+  });
+
+  res.redirect('/instructores');
+})
+
 router.post('/addPago:id', function(req, res, next){
   let id = req.path.replace('/addPago', '');
 

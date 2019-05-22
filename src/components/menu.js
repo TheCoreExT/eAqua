@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 // Descomente esto para poder editar los css
-import './css/menu.css'
+// import './css/menu.css'
 
 export default class Menu extends Component {
 
@@ -22,6 +22,11 @@ export default class Menu extends Component {
                     <Link to={'/alumnos'}>
                         <img src =  "/img/Alumnos2.png " alt = "Alumnos" height="50px"></img> 
                         <p>Alumnos</p>         
+                    </Link>
+
+                    <Link to={'/pagos'}>
+                        <img src =  "/img/pagos2.png " alt = "Pagos" height="50px"></img> 
+                        <p>Pagos</p>         
                     </Link>
 
                     <Link to={'/alumnos'}>

@@ -53,6 +53,30 @@ router.post('/eliminarClase', function(req, res, next){
 
 });
 
+router.post('/editClase:id', function(req, res, next){
+  var id = req.path.replace('/editClase','');
+
+  var clase ={
+    dia: "",
+    hora_inicial: "",
+    hora_final: "",
+    instructor_id: ""
+  }
+  clase.dia = req.body.dia;
+  clase.hora_inicial = req.body.hora_inicial;
+  clase.hora_final = req.body.hora_final;
+  clase.instructor_id = req.body.instructor_id;
+
+  var query = "update clase set dia='"+clase.dia+"', hora_inicial='"+clase.hora_inicial+"', hora_final='"+clase.hora_final+"',instructor_id="+clase.instructor_id+" where clase_id = "+ id;
+
+  connection.query(query, function(err){
+    if(err)
+      console.log(err)
+  });
+
+  res.redirect('/clases');
+})
+
 router.post('/addAlumnotoClase', function(req, res, next){
   var clase ={
     dia: "",
@@ -110,8 +134,6 @@ router.get('/infoClase:id', function(req, res, nex) {
   let id =req.path.replace('/infoClase','');
 
   var query = "SELECT  c.clase_id as clase_id, c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final,  i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id AND c.clase_id = " + id;
-
-  var query2 = "SELECT a.alumno_id as alumno_id, a.nombre as alumno_nombre, a.correo as alumno_correo, a.telefono as alumno_telefono  FROM  alumno a, clase_alumno c where a.alumno_id = c.alumno_id and c.clase_id = " + id;
 
    var data = {
      clase_id: 0,
