@@ -31,7 +31,7 @@ export default class AddClases extends Component {
               </div>
               
               <div className="SubmitClase">
-                <input type="submit" value="Aceptar"/>
+                <input type="submit" value="Aceptar" onClick={() => {alert("Clase Creada")}}/>
               </div>
 
 

@@ -45,7 +45,7 @@ export default class EditInstructor extends Component {
                     {/* <div className="SeparadorInstructor"></div> */}
                     
                     <div className="AceptarInstructor">
-                        <input type="submit" value="Aceptar"/>
+                        <input type="submit" value="Aceptar" onClick={() => {alert("Cambios  Realizados")}}/>
                     </div>
 
                 </form>

@@ -38,7 +38,7 @@ export default class AddInstructor extends Component {
                     <div className="SeparadorInstructor"></div>
                     
                     <div className="AceptarInstructor">
-                        <input type="submit" value="Aceptar"/>
+                        <input type="submit" value="Aceptar" onClick={() => {alert("Instructor Creado")}}/>
                     </div>
 
                 </form>

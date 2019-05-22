@@ -41,7 +41,7 @@ export default class EditAlumno extends Component {
                 <div className="SeparadorAlumno"></div>
 
                 <div className="AceptarAlumno">
-                  <button type="submit" value="Submit">Aceptar</button>
+                  <button type="submit" value="Submit" onClick={() => {alert("Cambios Realizados")}}>Aceptar</button>
                 </div>
 
               </form>

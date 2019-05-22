@@ -36,7 +36,7 @@ export default class EditClase extends Component {
               </div>
               
               <div className="SubmitClase">
-                <input type="submit" value="Aceptar"/>
+                <input type="submit" value="Aceptar" onClick={() => {alert("Cambios Realizados")}}/>
               </div>
 
 

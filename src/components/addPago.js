@@ -8,14 +8,14 @@ export default class AddPago extends Component {
             form = <form action={"/alumnos/addPago" + this.props.alumno_id} method="post">
                 <input type="date" name="fecha" ></input>
                 <input type="text" id="text" name="monto" placeholder="Monto"></input>
-                <button type="submit" value="Submit">Aceptar</button>
+                <button type="submit" value="Submit" onClick={() => {alert("Pago Registrado")}}>Aceptar</button>
             </form>
         }
         else{
             form = <form action={"/instructores/addPago" + this.props.instructor_id} method="post">
                 <input type="date" name="fecha" ></input>
                 <input type="text" id="text" name="monto" placeholder="Monto"></input>
-                <button type="submit" value="Submit">Aceptar</button>
+                <button type="submit" value="Submit" onClick={() => {alert("Pago Registrado")}}>Aceptar</button>
             </form>
         }
         return (
