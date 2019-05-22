@@ -20,7 +20,7 @@ export default class AddInstructor extends Component {
                     </div>
 
                     <div className="FichaMedica">
-                        <h2>Datos Clinicos</h2>
+                        <h2>Datos Clínicos</h2>
                         <select name="genero">
                             <option value="Masculino"> Masculino </option>
                             <option value="Femenino"> Femenino </option>

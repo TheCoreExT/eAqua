@@ -27,10 +27,10 @@ export default class InfoAlumno extends Component {
     return <div className="infoAlumno">
 
         <h2>{this.state.data.nombre}</h2>
-        <p id="Subtitulo"> Datos Personales </p>
+        <p className="Subtitulo"> Datos Personales </p>
         
-        <div className="DatosPersonales">
-            <div className="Etiquetas">
+        <div className="PersonaAlumno">
+            <div className="EtiquetasAlumno">
                 <p>Nombre</p>
                 <p>NUA: </p>
                 <p>Telefono: </p>
@@ -38,7 +38,7 @@ export default class InfoAlumno extends Component {
                 <p>Edad: </p>
                 <p>Género: </p>
             </div>
-            <div className="Informacion">
+            <div className="InformacionAlumno">
                 <p>{this.state.data.nombre}</p>
                 <p>{this.state.data.nua}</p>
                 <p>{this.state.data.telefono}</p>
@@ -48,9 +48,9 @@ export default class InfoAlumno extends Component {
             </div>
         </div>
 
-        <h2>Clases</h2>
-        
-        <div className="Horario">
+        <p className="Subtitulo">Clases</p>
+
+        <div className="HorarioAlumno">
             <table>
                 <tr>
                     <th>Hora Inicial</th>
@@ -69,25 +69,27 @@ export default class InfoAlumno extends Component {
                 ))}
             </table>
         </div>
-        <h2>Salud</h2>
-        <div className="Salud">
 
-            <div className="Etiquetas"> 
+        <p className="Subtitulo">Salud</p>
+        
+        <div className="SaludAlumno">
+
+            <div className="EtiquetasAlumno"> 
                 <p>Estatura: </p>
                 <p>Peso: </p>
-                <p>Seguro médico: </p>
-                <p>Tipo sanguíneo </p>
+                <p>Seguro Médico: </p>
+                <p>Tipo Sanguíneo </p>
                 <p>Alergias: </p>
-                <p>Otros padecimientos: </p>
+                <p>Otros Padecimientos: </p>
             </div>
             
-            <div className="Informacion">
-            <p>{this.state.data.estatura}</p>
-            <p>{this.state.data.peso}</p>
-            <p>{this.state.data.seguro}</p>
-            <p>{this.state.data.tipo_sangre}</p>
-            <p>{this.state.data.alergias}</p>
-            <p>{this.state.data.otro_padecimiento}</p>
+            <div className="InformacionAlumno">
+                <p>{this.state.data.estatura}</p>
+                <p>{this.state.data.peso}</p>
+                <p>{this.state.data.seguro}</p>
+                <p>{this.state.data.tipo_sangre}</p>
+                <p>{this.state.data.alergias}</p>
+                <p>{this.state.data.otro_padecimiento}</p>
             </div>
 
         </div>
