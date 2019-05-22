@@ -26,21 +26,31 @@ export default class InfoAlumno extends Component {
     render() {
     return <div className="infoAlumno">
 
-        <div className="DatosPersonales">
-            <h2>{this.state.data.nombre}</h2>
-            <p id="Subtitulo"> Datos Personales </p>
-            <p>Nombre {this.state.data.nombre}</p>
-            <p>NUA: {this.state.data.nua}</p>
-            <p>Telefono: {this.state.data.telefono}</p>
-            <p>Correo: {this.state.data.correo}</p>
-            <p>Edad: {this.state.data.edad}</p>
-            <p>Genero: {this.state.data.genero}</p>
-        </div>
+        <h2>{this.state.data.nombre}</h2>
+        <p id="Subtitulo"> Datos Personales </p>
         
+        <div className="DatosPersonales">
+            <div className="Etiquetas">
+                <p>Nombre</p>
+                <p>NUA: </p>
+                <p>Telefono: </p>
+                <p>Correo: </p>
+                <p>Edad: </p>
+                <p>Género: </p>
+            </div>
+            <div className="Informacion">
+                <p>{this.state.data.nombre}</p>
+                <p>{this.state.data.nua}</p>
+                <p>{this.state.data.telefono}</p>
+                <p>{this.state.data.correo}</p>
+                <p>{this.state.data.edad}</p>
+                <p>{this.state.data.genero}</p>
+            </div>
+        </div>
 
-
+        <h2>Clases</h2>
+        
         <div className="Horario">
-            <h2>Clases</h2>
             <table>
                 <tr>
                     <th>Hora Inicial</th>
@@ -59,16 +69,29 @@ export default class InfoAlumno extends Component {
                 ))}
             </table>
         </div>
-
+        <h2>Salud</h2>
         <div className="Salud">
-            <h2>Salud</h2>
-            <p>Estatura: {this.state.data.estatura}</p>
-            <p>Peso: {this.state.data.peso}</p>
-            <p>Seguro médico: {this.state.data.seguro}</p>
-            <p>Tipo sanguíneo: {this.state.data.tipo_sangre}</p>
-            <p>Alergias: {this.state.data.alergias}</p>
-            <p>Otros padecimientos: {this.state.data.otro_padecimiento}</p>
+
+            <div className="Etiquetas"> 
+                <p>Estatura: </p>
+                <p>Peso: </p>
+                <p>Seguro médico: </p>
+                <p>Tipo sanguíneo </p>
+                <p>Alergias: </p>
+                <p>Otros padecimientos: </p>
+            </div>
+            
+            <div className="Informacion">
+            <p>{this.state.data.estatura}</p>
+            <p>{this.state.data.peso}</p>
+            <p>{this.state.data.seguro}</p>
+            <p>{this.state.data.tipo_sangre}</p>
+            <p>{this.state.data.alergias}</p>
+            <p>{this.state.data.otro_padecimiento}</p>
+            </div>
+
         </div>
+
     </div>;
     }
 }

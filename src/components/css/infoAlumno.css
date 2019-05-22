@@ -16,8 +16,26 @@
 
 }
 
+.DatosPersonales {
+    display: flex;
+    flex-direction: row;
+}
 
 .Horario {
-    margin-left: 0rem;
+    margin-left: 0%;
 }
+
+.Salud {
+    display: flex;
+    flex-direction: row;
+}
+
+.Etiquetas {
+    font-weight: bold;
+}
+.Informacion {
+    padding-left: 2%;
+}
+
+
 
