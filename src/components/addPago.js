@@ -13,7 +13,7 @@ export default class AddPago extends Component {
                 <br></br>
                 <input type="text" className="InputText" id="text" name="monto" placeholder="Monto"></input>
                 <br></br>
-                <button type="submit" className="EnviarPago" value="Submit" onClick={() => {alert("Alumno Eliminado")}}>Aceptar</button>
+                <button type="submit" className="EnviarPago" value="Submit" onClick={() => {alert("Pago Registrado")}}>Aceptar</button>
             </form>
         }
         else{
@@ -24,7 +24,7 @@ export default class AddPago extends Component {
                 <br></br>
                 <input type="text" className="InputText" id="text" name="monto" placeholder="Monto"></input>
                 <br></br>
-                <button type="submit" className="EnviarPago" value="Submit" onClick={() => {alert("Alumno Eliminado")}}>Aceptar</button>
+                <button type="submit" className="EnviarPago" value="Submit" onClick={() => {alert("Pago Registrado")}}>Aceptar</button>
             </form>
         }
         return (

@@ -15,7 +15,7 @@ export default class EditInstructor extends Component {
             
             <div className="AddInstructores">
                 <form action={"/instructores/editInstructor"+this.props.instructor_id} method="post">
-                <h2>Nuevo Instructor</h2>
+                <h2>Editar Instructor</h2>
                     <div className="HubIn">
                         <input type="text" className="text" name="nombre" placeholder="Nombre" defaultValue={this.state.data.nombre}/>
                         <input type="text" className="text" name="telefono" placeholder="Telefono"defaultValue={this.state.data.telefono}/>
