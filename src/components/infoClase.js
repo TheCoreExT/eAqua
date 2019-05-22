@@ -61,32 +61,6 @@ export default class InfoClase extends Component {
                 ))}
               </select>
 
-<<<<<<< HEAD
-      <h2>Clase de las {this.state.data.hora}hrs.</h2>
-      <table>
-        <tr>
-          <th>Clave inicio</th>
-          <th>Hora inicio</th>
-          <th>Hora fin</th>
-          <th>Alumnos</th>
-          <th>Instructor</th>
-        </tr>
-        <tr>
-          <td>{this.state.data.clase_id}</td>
-          
-        </tr>
-      </table>
-      <h2>Alumnos</h2>
-      <table>
-        <tr>
-          <th>Nombre</th>
-        </tr>
-        <tr>
-          <td></td>
-        </tr>
-      </table>
-      </div>;
-=======
               <input type="submit" value="submit"/>
       </form>
       <table>
@@ -114,6 +88,5 @@ export default class InfoClase extends Component {
       
       </div>
     );
->>>>>>> ca8a45a10f9baba02cb5593ffc053b1b356eb8f2
   }
 }
