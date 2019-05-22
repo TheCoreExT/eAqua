@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
+import './css/infoAlumno.css'
 
 export default class InfoAlumno extends Component {
 
-    state ={data : "" }
+    state ={data : "",
+            clases: []}
 
     componentDidMount() {
     var url =
@@ -12,27 +14,84 @@ export default class InfoAlumno extends Component {
     .then(data =>
         this.setState({ data })
     );
+
+    var  url2 = "/clases/ClasesDeAlumno" + this.props.alumno_id;
+    fetch(url2)
+    .then(res => res.json())
+    .then(clases =>
+        this.setState({ clases })
+    );
     }
 
     render() {
     return <div className="infoAlumno">
 
         <h2>{this.state.data.nombre}</h2>
-        <p>Nombre {this.state.data.nombre}</p>
-        <p>NUA: {this.state.data.alumno_id}</p>
-        <p>Telefono: {this.state.data.telefono}</p>
-        <p>Correo: {this.state.data.correo}</p>
+        <p id="Subtitulo"> Datos Personales </p>
+        
+        <div className="DatosPersonales">
+            <div className="Etiquetas">
+                <p>Nombre</p>
+                <p>NUA: </p>
+                <p>Telefono: </p>
+                <p>Correo: </p>
+                <p>Edad: </p>
+                <p>Género: </p>
+            </div>
+            <div className="Informacion">
+                <p>{this.state.data.nombre}</p>
+                <p>{this.state.data.nua}</p>
+                <p>{this.state.data.telefono}</p>
+                <p>{this.state.data.correo}</p>
+                <p>{this.state.data.edad}</p>
+                <p>{this.state.data.genero}</p>
+            </div>
+        </div>
 
         <h2>Clases</h2>
+        
+        <div className="Horario">
+            <table>
+                <tr>
+                    <th>Hora Inicial</th>
+                    <th>Hora Final</th>
+                    <th>Día</th>
+                    <th>Instructor</th>
+                </tr>
 
+                {this.state.clases.map(clase => (
+                    <tr>
+                        <td>{clase.hora_inicial}</td>
+                        <td>{clase.hora_final}</td>
+                        <td>{clase.dia}</td>
+                        <td>{clase.instructor}</td>
+                    </tr>
+                ))}
+            </table>
+        </div>
         <h2>Salud</h2>
-        <p>Edad: {this.state.data.edad}</p>
-        <p>Estatura: {this.state.data.estatura}</p>
-        <p>Peso: {this.state.data.peso}</p>
-        <p>Seguro médico: {this.state.data.seguro}</p>
-        <p>Tipo sanguíneo: {this.state.data.tipo_sangre}</p>
-        <p>Alergias: {this.state.data.alergias}</p>
-        <p>Otros padecimientos: {this.state.data.otros_padecimientos}</p>
+        <div className="Salud">
+
+            <div className="Etiquetas"> 
+                <p>Estatura: </p>
+                <p>Peso: </p>
+                <p>Seguro médico: </p>
+                <p>Tipo sanguíneo </p>
+                <p>Alergias: </p>
+                <p>Otros padecimientos: </p>
+            </div>
+            
+            <div className="Informacion">
+            <p>{this.state.data.estatura}</p>
+            <p>{this.state.data.peso}</p>
+            <p>{this.state.data.seguro}</p>
+            <p>{this.state.data.tipo_sangre}</p>
+            <p>{this.state.data.alergias}</p>
+            <p>{this.state.data.otro_padecimiento}</p>
+            </div>
+
+        </div>
+
     </div>;
     }
 }

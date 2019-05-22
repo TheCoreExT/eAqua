@@ -4,8 +4,6 @@
 //set PORT=3001 && node bin/www
 var express = require('express');
 var router = express.Router();
-
-
 var mysql = require('mysql')
 
 var connection = mysql.createConnection({
@@ -17,25 +15,45 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+// POST methods -----
+router.post('/', function(req, res, next){
+  var clase ={
+    dia: "",
+    hora_inicial: "",
+    hora_final: "",
+    instructor_id: ""
+  }
+  clase.dia = req.body.dia;
+  clase.hora_inicial = req.body.hora_inicial;
+  clase.hora_final = req.body.hora_final;
+  clase.instructor_id = req.body.instructor_id;
+
+  var query = 'insert into clase(dia, hora_inicial, hora_final, instructor_id) values(';
+  query += "'"+clase.dia+"','"+clase.hora_inicial+"','"+clase.hora_final +"'," + clase.instructor_id  + ")";
+
+  connection.query(query, function(err){
+    if(err)
+      console.log(err)
+  });
+
+  res.redirect('/clases');
+})
+
 router.post('/eliminarClase', function(req, res, next){
 
   var clase_id = req.body.clase_id;
 
   var query = "DELETE FROM clase WHERE clase_id=" + clase_id;
   connection.query(query, function(err) {
-    console.log(query);
-
     if(err)
       console.log(err)
-    else
-      console.log("Clase eliminada")
   });
     res.redirect('/clases');
     
 
 });
 
-router.post('/', function(req, res, next){
+router.post('/addAlumnotoClase', function(req, res, next){
   var clase ={
     dia: "",
     hora: "",
@@ -52,38 +70,34 @@ router.post('/', function(req, res, next){
   connection.query(query, function(err){
     if(err)
       console.log(err)
-    else
-      console.log('Clase insertada')
   });
 
   res.redirect('/clases');
-})
+});
 
-
+// GET methods ------------
 router.get('/', function(req, res, next) {
 
   var clases = [];
 
-  connection.query('SELECT c.clase_id as clase_id, c.dia as dia, c.hora as hora, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id ', function(err, rows, fields) {
-    console.log("llamada clase");
+  connection.query('SELECT c.clase_id as clase_id, c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id ', function(err, rows, fields) {
     if(!err) {      
 
      for (var r of rows) {
         var clase = {
           id: 0,
           dia: "",
-          hora: "",
+          hora_final: "",
+          hora_inicial: "",
           instructor_nombre: ""
         }
         clase.id = r.clase_id;
         clase.dia = r.dia;
-        clase.hora = r.hora;
+        clase.hora_inicial = r.hora_inicial;
+        clase.hora_final = r.hora_final;
         clase.instructor_nombre = r.instructor_nombre;
         clases.push(clase);
      }
-    }
-    else {
-      console.log('Error while performind Query');
     }
 
     res.json(clases);
@@ -92,54 +106,66 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/infoClase:id', function(req, res, nex) {
-  console.log('llamada infoClase');
+
   let id =req.path.replace('/infoClase','');
 
-  var query = "SELECT  c.dia as dia, c.hora as hora, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id AND c.clase_id = " + id;
+  var query = "SELECT  c.clase_id as clase_id, c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final,  i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id AND c.clase_id = " + id;
 
   var query2 = "SELECT a.alumno_id as alumno_id, a.nombre as alumno_nombre, a.correo as alumno_correo, a.telefono as alumno_telefono  FROM  alumno a, clase_alumno c where a.alumno_id = c.alumno_id and c.clase_id = " + id;
 
    var data = {
-     clave: 0,
+     clase_id: 0,
      dia: "",
-     hora: "",
-     instructor: "",
-     alumnos: []
+     hora_inicial: "",
+     hora_final: "",
+     instructor: ""
    };
 
   connection.query(query, function(err, rows, fields) {
     if(!err) {      
-      for (var r of rows) {
-        data.clave = id;
+
+    for (var r of rows) {
+      data.clase_id = r.clase_id;
         data.dia = r.dia;
-        data.hora = r.hora;
-        data.instructor= r.instructor_nombre;
-      }
+        data.hora_inicial = r.hora_inicial;
+        data.hora_final = r.hora_final;
+       data.instructor= r.instructor_nombre;
+
+     }
     }
-    else {
-     console.log('Error while performind Query');
-    }
+    res.json(data);
   });
 
-
-
-  connection.query(query2, function(err, rows, fields) {
-    var alumno_nombre = "";
-
-    if(!err) {
-      for(var r of rows)
-        alumno_nombre = r.alumno_nombre;
-        data.alumnos.push(alumno_nombre);
-      }else{
-        console.log(err);
-        console.log("error en query 2");
-      }
-      console.log(data.alumnos);
-    });
-
-  res.json(data);
-  
 });
 
+router.get('/ClasesDeAlumno:id', function(req, res, nex) {
+  let id =req.path.replace('/ClasesDeAlumno','');
+
+  var query = "SELECT   c.dia as dia, c.hora_inicial as hora_inicial, c.hora_final as hora_final, i.nombre as instructor_nombre FROM  instructor i,  clase c, clase_alumno ca WHERE  i.instructor_id = c.instructor_id AND c.clase_id = ca.clase_id AND ca.alumno_id = " + id;
+
+   var clases = [];
+
+  connection.query(query, function(err, rows, fields) {
+    if(!err) {      
+
+    
+    for (var r of rows) {
+      var clase = {
+        dia: 0,
+        hora_final: "",
+        hora_inicial: "",
+        instructor: ""
+      };
+      clase.dia = r.dia;
+      clase.hora_inicial = r.hora_inicial;
+      clase.hora_final = r.hora_final;
+      clase.instructor= r.instructor_nombre;
+      clases.push(clase);
+     }
+    }
+    res.json(clases);
+  });
+
+});
 
 module.exports = router;

@@ -9,9 +9,7 @@ export default class AddInstructor extends Component {
             <input type="text" placeholder="Telefono" name="telefono"/>
             <input type="text" placeholder="Email" name="correo"/>
             <input type="text" placeholder="Clabe" name="clabe"/>
-
             <input type="submit" value="submit"/>
-
             </form>
         );
     }

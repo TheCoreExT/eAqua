@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './alumno.css'
+import './css/alumno.css'
 
 export default class Alumnos extends Component {
 
@@ -17,11 +17,10 @@ export default class Alumnos extends Component {
 
     render() {
         return (
-            <div className="Alumnos">
-                <h2>Alumnos</h2>
-
-          
+        <div className="Alumnos">
+                
             <div class="HubAlumno">
+                <h2> Alumnos </h2>
                 <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/addAlumno">
                     <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
@@ -49,6 +48,7 @@ export default class Alumnos extends Component {
                     <th scope="col" class="Otros"> Otros</th>
                     */}   
                     <th scope="col" className="Detalles"> </th>
+                    <th scope="col" className="Detalles"> </th> {/*Pagos*/ } 
                     <th scope="col" className="Editar"> </th>
                     <th scope="col" className="Eliminar"> </th>
                 </tr>
@@ -65,7 +65,6 @@ export default class Alumnos extends Component {
                         <td>{alumno.tipo_sangre}</td>
                         <td>{alumno.otro_padecimiento}</td>
                         */}
-
                         <td>
                             <Link to={"/alumnos/" + alumno.id}>
                             <button className="DetallesAlumno"> Detalles </button>
@@ -73,7 +72,13 @@ export default class Alumnos extends Component {
                         </td>
 
                         <td>
-                            <button type="submit" className="EditarAlumno" name="editar_id" value={alumno.id}>Editar</button>
+                            <Link to={"/pagosAlumno/" + alumno.id}>
+                            <button className="DetallesAlumno"> Pagos </button>
+                            </Link>
+                        </td>
+
+                        <td>
+                            <button type="submit" className="EditarAlumno" name="editar_id" value={alumno.id}> </button>
                         </td>
 
                         <td>
@@ -86,7 +91,8 @@ export default class Alumnos extends Component {
                     </tr>
                 ))}
                 </table>
-            </div>
+
+        </div>
         );
     }
 }
