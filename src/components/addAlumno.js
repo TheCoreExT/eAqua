@@ -8,7 +8,7 @@ export default class AddAlumno extends Component {
           <div className="AddAlumno">
               
               <form action="/alumnos" method="post">
-              
+          
                 <div className="DatosBasicos">
                   <h2> Nuevo Alumno </h2>
                   <input type="text" className="text" name="nombre" placeholder="Nombre"></input>
@@ -26,16 +26,16 @@ export default class AddAlumno extends Component {
                   <h2> Datos Clínicos</h2>
                   <input type="text" className="text" name="estatura" placeholder="Estatura"></input>
                   <input type="text" className="text" name="peso" placeholder="Peso"></input>
-                  <input type="text" className="text" name="tipo_sangre" placeholder="Tipo de Sangre"></input>
+                  <input type="text" className="text" name="tipo_sangre" placeholder="Tipo Sanguíneo"></input>
                   <input type="text" className="text" name="seguro" placeholder="Seguro Médico"></input>
                   <input type="text" className="text" name="alergias" placeholder="Alergias"></input>
-                  <input type="text" className="text" name="otro_padecimiento" placeholder="Otros"></input>
+                  <input type="text" className="text" name="otro_padecimiento" placeholder="Otro Padecimiento"></input>
                 </div>
                 <br></br>
 
-                <div class="Separador"></div>
+                <div className="SeparadorAlumno"></div>
 
-                <div className="BotonAceptar">
+                <div className="AceptarAlumno">
                   <button type="submit" value="Submit">Aceptar</button>
                 </div>
 
