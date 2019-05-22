@@ -20,12 +20,10 @@
     margin-bottom: 3%;
     border: rgba(147, 147, 147, 0.276) 0.5px solid;
     border-radius: 0.6rem;
-    display: flex;
-    flex-direction: row;
 }
 
 .AddAlumno input.text {
-    padding-left: 4%;
+    padding-left: 3%;
 }
 
 .AddAlumno select {

@@ -19,9 +19,9 @@ export default class AddClases extends Component {
             <form action="/clases" method="post">
             <h2> Nueva clase </h2>
               <div className="Hub">
-                <input type="time" placeholder="Hora Inicial" name="hora_inicial" />
-                <input type="time" placeholder="Hora Final" name="hora_final" />
-                <input type="text" placeholder="Dia" name="dia"/>
+                <input type="time" className="inputclass" placeholder="Hora Inicial" name="hora_inicial" />
+                <input type="time" className="inputclass"placeholder="Hora Final" name="hora_final" />
+                <input type="text" className="inputclass"placeholder="Dia" name="dia"/>
                 <br></br>
                 <select name="instructor_id">
                   {this.state.instructores.map(instructor => (
@@ -31,7 +31,7 @@ export default class AddClases extends Component {
               </div>
               
               <div className="SubmitClase">
-                <input type="submit" value="submit"/>
+                <input type="submit" value="Aceptar"/>
               </div>
 
 
