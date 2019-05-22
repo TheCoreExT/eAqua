@@ -97,29 +97,47 @@ router.get('/infoClase:id', function(req, res, nex) {
 
   var query = "SELECT  c.dia as dia, c.hora as hora, i.nombre as instructor_nombre FROM  instructor i,  clase c WHERE  i.instructor_id = c.instructor_id AND c.clase_id = " + id;
 
+  var query2 = "SELECT a.alumno_id as alumno_id, a.nombre as alumno_nombre, a.correo as alumno_correo, a.telefono as alumno_telefono  FROM  alumno a, clase_alumno c where a.alumno_id = c.alumno_id and c.clase_id = " + id;
+
    var data = {
+     clave: 0,
      dia: "",
      hora: "",
-     instructor: ""
+     instructor: "",
+     alumnos: []
    };
 
   connection.query(query, function(err, rows, fields) {
     if(!err) {      
-
-    for (var r of rows) {
+      for (var r of rows) {
+        data.clave = id;
         data.dia = r.dia;
         data.hora = r.hora;
-       data.instructor= r.instructor_nombre;
-
-     }
+        data.instructor= r.instructor_nombre;
+      }
     }
-   else {
+    else {
      console.log('Error while performind Query');
     }
-
-    res.json(data);
   });
-  
+
+
+
+  connection.query(query2, function(err, rows, fields) {
+    var alumno_nombre = "";
+
+    if(!err) {
+      for(var r of rows)
+        alumno_nombre = r.alumno_nombre;
+        data.alumnos.push(alumno_nombre);
+      }else{
+        console.log(err);
+        console.log("error en query 2");
+      }
+      console.log(data.alumnos);
+    });
+
+  res.json(data);
   
 });
 

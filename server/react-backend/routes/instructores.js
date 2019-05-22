@@ -16,6 +16,22 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+router.post('/editarInstructor', function(req, res, next){
+
+  var instructor_id = req.body.instructor_id;
+
+  var query = "DELETE FROM instructor WHERE instructor_id=" + instructor_id;
+  connection.query(query, function(err) {
+    console.log(query);
+
+    if(err)
+      console.log(err)
+    else
+      console.log("Instructor eliminado")
+  });
+    res.redirect('/instructores');
+});
+
 router.post('/eliminarInstructor', function(req, res, next){
 
   var instructor_id = req.body.instructor_id;
@@ -30,8 +46,6 @@ router.post('/eliminarInstructor', function(req, res, next){
       console.log("Instructor eliminado")
   });
     res.redirect('/instructores');
-    
-
 });
 
 router.post('/', function(req, res, next){
