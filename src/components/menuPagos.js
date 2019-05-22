@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import './css/menuPagos.css'
 export default class MenuPagos extends Component {
 
     state = { 
@@ -15,12 +15,13 @@ export default class MenuPagos extends Component {
         return (
             <div className="menuPagos">
                 <h2>Pagos</h2>
+            <div className="TablaPagos">
                 <table>
                     <tr>
-                        <th>Pago ID</th>
-                        <th>Alumno</th>
-                        <th>Fecha</th>
-                        <th>Monto</th>
+                        <th className="PagoID">Pago ID</th>
+                        <th className="Alumno">Alumno</th>
+                        <th className="Fecha">Fecha</th>
+                        <th className="Monto">Monto</th>
                     </tr>
                     {this.state.pagos.map(pago => (
                         <tr>
@@ -31,6 +32,7 @@ export default class MenuPagos extends Component {
                         </tr>
                     ))}
                 </table>
+            </div>
             </div>
         );
     }
