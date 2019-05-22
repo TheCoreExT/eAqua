@@ -1,66 +1,40 @@
-.AddInstructor {
+.AddInstructores {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: rgb(60, 60, 60);
-    padding-left: 180px;
-
+    width: 100%;
 }
 
-.AddInstructor h2 {
+.AddInstructores h2 {
     font-weight: normal;
     font-size: 28pt;
-    margin-left: 10%;
+    margin-left: 38.5%;
 }
 
-.AddInstructor input {
-    width: 80%;
+.HubIn {
+    width: 26rem;
+    height: 12.3rem;
+    margin-left: 36%;
+    margin-right: 30%;
+}
+
+.HubIn input {
+    width: 20rem;
     height: 2rem;
     font-size: 12pt;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 3%;
+    margin-left: 2rem;
+    margin-top: 3%;
     border: rgba(147, 147, 147, 0.276) 0.5px solid;
     border-radius: 0.6rem;
+    display: flex;
+    flex-direction: row;
 }
-.AddInstructor input.text {
+.HubIn input.text {
     padding-left: 3%;
 }
 
-.AddInstructor select {
-    width: 84%;
-    height: 2.3rem;
-    font-size: 12pt;
-    color: rgb(120, 120, 120);
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 3%;
-    background-color: white;
-    border: rgba(147, 147, 147, 0.276) 0.5px solid;
-    border-radius: 0.6rem;
-}
-
-.DatosPersona {
-    width: 45%;
-    padding-bottom: 2rem;
-    float: left;
-}
-
-.FichaMedica {
-    width: 45%;
-    padding-bottom: 2rem;
-    padding-right: 4%;
-    float: right;
-}
-
-.SeparadorInstructor {
-    border-left: rgba(147, 147, 147, 0.276) 1.5px solid;
-    height: 27.5rem;
-    margin-top: 5.5rem;
-    margin-left: 48%;
-}
-
 .AceptarInstructor {
-    margin-top: 1em;
-    margin-left: 35%;
+    margin-top: 2em;
+    margin-left: 46.5%;
 }
 
 .AceptarInstructor input {
@@ -68,7 +42,7 @@
     width: 3.8cm;
     height: 1.0cm;
     border-color: rgb(58, 199, 112);
-    border-radius: 2em;
+    border-radius: 2rem;
     color: rgb(255, 255, 255);
     font-size: 12pt;
 }

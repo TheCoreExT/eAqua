@@ -20,10 +20,15 @@ export default class InfoInstructor extends Component {
         return (
             <div className="infoInstructor">
 
-                <h2> {this.state.data.nombre}</h2>
-                <Link to={"/editInstructor/"+this.props.instructor_id}>
-                <button type="submit" className="EditarInstructor"name="editar_id" value={this.props.instructor_id}>Editar</button>
-                </Link>
+                <div className="HubDeInstructor">
+                    <h2> {this.state.data.nombre}</h2>
+                    <p className="Cargo"> Instructor </p>
+                    <Link to={"/editInstructor/"+this.props.instructor_id}>
+                        <button type="submit" className="EditarInstructor" name="editar_id" value={this.props.instructor_id}></button>
+                    </Link>
+                </div>
+                
+
                 <p className="Subtitulo"> Datos Personales </p>
                 
                 <div className="PersonaInstructor">
@@ -47,33 +52,6 @@ export default class InfoInstructor extends Component {
 
                 <div className="HorarioInstructor">
                     <ClasesInstructor instructor_id = {this.props.instructor_id}/>
-                </div>
-
-                <p className= "Subtitulo"> Salud </p>
-
-                <div className="SaludInstructor">
-                    <div className="EtiquetasInstructor">
-                        <p>Edad: </p>
-                        <p>Género: </p>
-                        <p>Estatura: </p>
-                        <p>Peso: </p>
-                        <p>Seguro Médico: </p>
-                        <p>Tipo Sanguíneo: </p>
-                        <p>Alergias: </p>
-                        <p>Otros Padecimientos: </p>
-                    </div>
-                    {/*
-                    <div className="InformacionInstructor">
-                        <p>{this.state.data.edad}</p>
-                        <p>{this.state.data.genero}</p>
-                        <p>{this.state.data.estatura}</p>
-                        <p>{this.state.data.peso}</p>
-                        <p>{this.state.data.seguro}</p>
-                        <p>{this.state.data.tipo_sangre}</p>
-                        <p>{this.state.data.alergias}</p>
-                        <p>{this.state.data.alergias}</p>
-                    </div>
-                    */}
                 </div>
 
             </div>

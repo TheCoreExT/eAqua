@@ -1,0 +1,43 @@
+.pagos {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+    margin-left: 180px;
+}
+
+.pagos h2 {
+    font-weight: normal;
+    font-size: 28pt;
+}
+
+.HubPagos {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.BotonPagos {
+    width: 3.1rem;
+    height: 3.1rem;
+    margin-top: 2rem;
+    padding-left: 80%;
+}
+
+.TablaPagos {
+    width: 80%;
+}
+
+.TablaPagos th.PagoID {
+    width: 20%;
+}
+
+.TablaPagos th.Fecha {
+    width: 20%;
+}
+
+.TablaPagos th.Monto {
+    width: 40%;
+
+}
+
+
+

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
+import './css/pagos.css'
 
 export default class Pagos extends Component {
     state ={pagos: []}
@@ -35,26 +36,30 @@ export default class Pagos extends Component {
         return (
             <div className="pagos">
                 
-                <div class="HubPagos">
-                    <h2> Pagos </h2>
-
-                    {addPago}
+                <div className="HubPagos">
+                    <div className="TituloPagos">
+                        <h2> Pagos </h2>
+                    </div>
+                    <div className="BotonPagos">
+                        {addPago}
+                    </div>
                 </div>
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Fecha</th>
-                        <th>Monto</th>
-                    </tr>
-                    {this.state.pagos.map(pago => (
+                <div className="TablaPagos">
+                    <table>
+                        <tr>
+                            <th className="PagoID">Pago ID</th>
+                            <th className="Fecha">Fecha</th>
+                            <th className="Monto">Monto</th>
+                        </tr>
+                        {this.state.pagos.map(pago => (
                         <tr>
                             <td>{pago.pago_id}</td>
                             <td>{pago.fecha}</td>
                             <td>${pago.monto}</td>
                         </tr>
-                    ))}
-                </table>
-
+                        ))}
+                    </table>
+                </div>
                 
             </div>
         );

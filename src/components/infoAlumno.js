@@ -26,11 +26,15 @@ export default class InfoAlumno extends Component {
 
     render() {
     return <div className="infoAlumno">
-
-        <h2>{this.state.data.nombre}</h2>
-        <Link to={"/editAlumno/" + this.props.alumno_id}>
-        <button type="submit" className="EditarAlumno" name="editar_id" value={this.props.alumno_id}>Editar</button>
-        </Link>
+        
+        <div className="HubDeAlumno">
+            <h2>{this.state.data.nombre}</h2>
+            <p className="Cargo"> Alumno </p>
+            <Link to={"/editAlumno/" + this.props.alumno_id}>
+                <button type="submit" className="EditarAlumno" name="editar_id" value={this.props.alumno_id}></button>
+            </Link>
+        </div>
+        
         <p className="Subtitulo"> Datos Personales </p>
         
         <div className="PersonaAlumno">

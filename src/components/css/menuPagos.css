@@ -1,0 +1,32 @@
+.menuPagos {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+    margin-left: 180px;
+}
+
+.menuPagos h2 {
+    font-weight: bold;
+    font-size: 28pt;
+    margin-top: 2.1rem;
+}
+
+.TablaPagos {
+    width: 80%;
+    margin-top: 3rem;
+}
+
+.TablaPagos th.PagoID{
+    width: 15%;
+}
+
+.TablaPagos th.Alumno {
+    width: 35%;
+}
+
+.TablaPagos th.Fecha {
+    width: 30%;
+}
+
+.TablaPagos th.Monto {
+    width: 20%;
+}
