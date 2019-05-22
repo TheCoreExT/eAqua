@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './clases.css'
+import './css/clases.css';
+import Nalumnos from './nalumnos';
 
 export default class Clases extends Component {
 
@@ -20,9 +21,9 @@ export default class Clases extends Component {
     render() {
         return (
           <div className="Clases">
-            <h2>Clases</h2>
 
             <div className="HubClases">
+              <h2>Clases</h2>
               <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/AddClases">
                 <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
@@ -33,7 +34,9 @@ export default class Clases extends Component {
               <tr>
                 <th scope="col" className="Instructor" > Instructor </th>
                 <th scope="col" className="Día"> Día </th>
-                <th scope="col" className="Hora"> Hora </th>
+                <th scope="col" className="Hora"> Hora Inicial </th>
+                <th scope="col" className="Hora"> Hora Final </th>
+                <th scope="col" className="NoAlumno"> No. Alumnos </th>
                 <th scope="col" className="DetallesClases"> </th>
                 <th scope="col" className="EditarClases"> </th>
                 <th scope="col" className="EliminarClases"> </th>
@@ -42,16 +45,17 @@ export default class Clases extends Component {
                 <tr key={clase.id}>
                   <td>{clase.instructor_nombre}</td>
                   <td>{clase.dia}</td>
-                  <td>{clase.hora}</td>
-
+                  <td>{clase.hora_inicial}</td>
+                  <td>{clase.hora_final}</td>
+                  <td><Nalumnos clase_id = {clase.id} /></td>
                   <td>
                     <Link to={"/clases/" + clase.id}>
-                      <button className="DetallesClases">Detalles</button>
+                      <button className="DetallesClase">Detalles</button>
                     </Link>
                   </td>
                   
                   <td>
-                    <button type="submit" className ="EditarClase"name="editar_id" value={clase.id}> Editar </button>
+                    <button type="submit" className ="EditarClase"name="editar_id" value={clase.id}> </button>
                   </td>
 
                   <td>
@@ -59,8 +63,6 @@ export default class Clases extends Component {
                     <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={clase.id}> X </button>
                     </form>
                   </td>
-
-                        
                 </tr>
             ))}
             </table>

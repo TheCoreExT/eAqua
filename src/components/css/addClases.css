@@ -1,0 +1,56 @@
+.AddClases {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+    width: 100%;
+}
+
+.AddClases h2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 28pt;
+    margin-left: 40%;
+}
+
+.Hub {
+    width: 28rem;
+    height: 12.5rem;
+    margin-left:36%;
+    margin-right:30%;
+}
+
+.Hub input {
+    width: 20rem;
+    height: 2rem;
+    font-size: 12pt;
+    margin-left: 3em;
+    margin-top: 3%;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
+    border-radius: 0.6rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.Hub input.inputclass{   
+    padding-left: 3%;
+}
+
+.Hub select {
+    width: 21rem;
+    height: 2rem;
+    font-size: 12pt;
+    margin-left: 3em;
+}
+
+.SubmitClase {
+    margin-top: 2%;
+    margin-left: 47%;
+}
+.SubmitClase input {
+    background: rgb(58, 199, 112);
+    width: 3.8cm;
+    height: 1.0cm;
+    border-color: rgb(58, 199, 112);
+    border-radius: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 12pt;
+}

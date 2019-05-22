@@ -1,0 +1,41 @@
+.infoInstructor {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+    padding-left: 180px;
+}
+
+.infoInstructor h2{
+    font-weight: normal;
+    font-size: 28pt;
+    margin-top: 2%;
+}
+
+.infoInstructor p.Subtitulo {
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.PersonaInstructor {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+
+.HorarioInstructor {
+    width: 80%;
+    margin-bottom: 3em;
+}
+
+.SaludInstructor {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3em;
+}
+
+.EtiquetasInstructor {
+    font-weight: bold;
+}
+
+.InformacionInstructor {
+    padding-left: 2%;
+}

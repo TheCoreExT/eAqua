@@ -1,0 +1,131 @@
+.infoClase {
+    font-family: Verdana, Arial, Helvetica sans-serif;
+    color: rgb(60, 60, 60);
+    padding-left: 180px;
+}
+
+.infoClase h2 {
+    font-weight: normal;
+    font-size: 28pt;
+    margin-top: 2%;
+}
+
+.infoClase p.Subtitulo {
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.HubClase {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.HubClase button.EditarClase {
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: transparent;
+    background-image: url(/img/Edit.png);
+    background-size: 2.4rem 2.4rem;
+    border-color: transparent;
+    margin-top: 2rem;
+    margin-left: 33%;
+    
+}
+
+.infoClase button.EliminarClase {
+    background: rgb(248, 51, 51);
+    width: 2.3rem;
+    height: 2.3rem;
+    border-color: rgb(248, 51, 51);
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px rgba(248, 41, 41, 0.461);
+    color: white;
+    font-size: 1em;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+.InformacionDeClase {
+    width: 80%;
+    margin-bottom: 3rem;
+}
+
+.infoClase table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
+    caption-side: top;
+} 
+
+.infoClase th.Clave{
+    width: 15%;
+}
+.infoClase th.HoraInicio {
+    width: 25%;
+}
+.infoClase th.HoraFinal {
+    width: 25%;
+}
+.infoClase th.Instructor {
+    width: 35%;
+}
+
+.AlumnosInscritos {
+    width: 80%;
+    margin-bottom: 3rem;
+}
+.AgregarAlumnos {
+    width: 90%;
+    height: 2.8rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    flex-direction: row;
+}
+.AgregarAlumnos select {
+    width: 18rem;
+    height: 2.3rem;
+    font-size: 12pt;
+    color: rgb(120, 120, 120); 
+    background-color: white;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
+    border-radius: 0.6rem;  
+    margin-right: 1rem;
+}
+
+.AgregarAlumnos input.AgregarAlumno {
+    width: 2.3rem;
+    height: 2.3rem;
+    background-image: url(/img/Add.png);
+    background-size: 2.3rem 2.3rem;
+    background-color: transparent;
+    border-color: transparent;
+    padding-bottom: 3%;
+}
+
+.infoClase th.Nombre {
+    width: 35%;
+}
+.infoClase th.Correo {
+    width: 35%;
+}
+.infoClase th.Telefono {
+    width:23%;
+}
+.infoClase th.EliminarAlumno {
+    width: 7%;
+}
+
+.infoClase button.EliminarAlumno {
+    background: rgb(248, 51, 51);
+    width: 2.3rem;
+    height: 2.3rem;
+    border-color: rgb(248, 51, 51);
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px rgba(248, 41, 41, 0.461);
+    color: white;
+    font-size: 1rem;
+}
+
+

@@ -1,0 +1,74 @@
+.AddAlumno {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+    padding-left: 180px;
+}
+
+.AddAlumno h2 {
+    font-weight: normal;
+    font-size: 28pt;
+    margin-left: 10%;
+}
+
+.AddAlumno input {
+    width: 80%;
+    height: 2rem;
+    font-size: 12pt;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
+    border-radius: 0.6rem;
+}
+
+.AddAlumno input.text {
+    padding-left: 3%;
+}
+
+.AddAlumno select {
+    width: 84%;
+    height: 2.3rem;
+    font-size: 12pt;
+    color: rgb(120, 120, 120);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    background-color: white;
+    border: rgba(147, 147, 147, 0.276) 0.5px solid;
+    border-radius: 0.6rem;
+}
+
+.DatosBasicos {
+    width: 45%;
+    padding-bottom: 2rem;
+    float: left;
+}
+
+.DatosClinicos {
+    width: 45%;
+    padding-bottom: 2rem;
+    padding-right: 4%;
+    float: right;
+}
+
+.SeparadorAlumno {
+    border-left: rgba(147, 147, 147, 0.276) 1.5px solid;
+    height: 21.8rem;
+    margin-top: 4rem;
+    margin-left: 48%;
+}
+
+.AceptarAlumno {
+    margin-top: 2em;
+    margin-left: 41%;
+}
+
+.AceptarAlumno button {
+    background: rgb(58, 199, 112);
+    width: 3.8cm;
+    height: 1.0cm;
+    border-color: rgb(58,199, 122);
+    border-radius: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 12pt;
+}

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-import './instructores.css'
+import './css/instructores.css'
 
 export default class Instructores extends Component {
 
@@ -15,9 +15,9 @@ export default class Instructores extends Component {
     render() {
         return (
           <div className="Instructores">
-            <h2>Instructores</h2>
-
+            
             <div class="HubInstructor">
+                <h2>Instructores</h2>
                 <input type="search" id="search" placeholder="Buscar" />
                 <Link to="/addInstructor">
                   <img src =  "/img/Add.png " alt = "Clases" height="50px"></img>
@@ -31,6 +31,7 @@ export default class Instructores extends Component {
                   <th scope="col" className="Telefono" > Teléfono </th>
                   <th scope="col" className="Correo" > Correo </th>
                   <th scope="col" className="Detalles"> </th>
+                  <th scope="col" className="Detalles"> </th> {/*pagos*/}
                   <th scope="col" className="Editar"> </th>
                   <th scope="col" className="Eliminar"> </th>
                 </tr>
@@ -49,7 +50,13 @@ export default class Instructores extends Component {
                       </td>
 
                       <td>
-                          <button type="submit" className="EditarInstructor"name="editar_id" value={instructor.id}> Editar </button>
+                            <Link to={"/pagosInstructor/" + instructor.id}>
+                            <button className="DetallesInstructor"> Pagos </button>
+                            </Link>
+                      </td>
+
+                      <td>
+                          <button type="submit" className="EditarInstructor"name="editar_id" value={instructor.id}> </button>
                       </td>
 
                       <td>

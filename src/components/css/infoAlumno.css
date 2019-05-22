@@ -1,0 +1,43 @@
+.infoAlumno{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+    padding-left: 180px;
+}
+
+.infoAlumno h2{
+    font-weight: normal;
+    font-size: 28pt;
+    margin-top: 2%;
+}
+
+.infoAlumno p.Subtitulo {
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.PersonaAlumno{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.HorarioAlumno {
+    width: 80%;
+    margin-bottom: 3rem;
+}
+
+.SaludAlumno {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3rem;
+}
+
+.EtiquetasAlumno {
+    font-weight: bold;
+}
+.InformacionAlumno {
+    padding-left: 2%;
+}
+
+
+
