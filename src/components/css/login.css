@@ -65,6 +65,10 @@
     text-align: left;
 }
 
+.form input.text{
+    padding-left: 1rem;
+}
+
 .form button{
     text-align: center;
     background-color: #45B8E2;
