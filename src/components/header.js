@@ -11,8 +11,9 @@ export default class Header extends Component {
 
             <div className="header">
                 <Link to={'/'}>
-                    <img src =  "/img/logo.png " alt = "Home" height="50px"></img>
+                    <img src =  "/img/logo.png " alt = "Home" height="70px"></img>
                 </Link>
+                <h1>eAqua</h1>
                 
             </div>
         );

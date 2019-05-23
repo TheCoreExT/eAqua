@@ -9,47 +9,34 @@ export default class Menu extends Component {
         return (
             <div className = "navigation col-lg-1">
                 <nav id="navigation">
-                    <div className="contendor-logo">
 
                     <Link to={'/clases'}>
                         <img src =  "/img/Clases2.png " alt = "Clases" height="50px"></img>
                         <p>Clases</p> 
-                    </Link>        
-                    </div>
-                    <div className="contendor-logo">
-
+                    </Link>  
+                          
+                   
                     <Link to={'/instructores'}>
                         <img src =  "/img/Instructores2.png " alt = "Instructores" height="50px"></img>
                         <p>Instructores</p>        
                     </Link>
-                    </div>
-                    <div className="contendor-logo">
+
                     <Link to={'/alumnos'}>
                         <img src =  "/img/Alumnos2.png " alt = "Alumnos" height="50px"></img> 
                         <p>Alumnos</p>         
                     </Link>
 
-                    </div>
-                    <div className="contendor-logo">
                     <Link to={'/pagos'}>
                         <img src =  "/img/pagos2.png " alt = "Pagos" height="50px"></img> 
                         <p>Pagos</p>         
                     </Link>
 
-                    </div>
-                    <div className="contendor-logo">
-                    <form action="/login/logout" method="POST">
+                    <form action="/login/logout" method="POST" >
                         <button type ="submit">
                             <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
-                            <p>Log Out</p>          
+                            <p>Salir</p>  
                         </button>
                     </form>
-
-                    </div>
-                   
-
-
-
 
                 </nav>
             </div>
