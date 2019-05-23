@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Nalumnos from './nalumnos';
-import './css/infoClase.css'
+import {Link} from 'react-router-dom';
+import './css/infoClase.css';
 
 export default class InfoClase extends Component {
 
@@ -33,9 +34,11 @@ export default class InfoClase extends Component {
     return (
     <div className="infoClase">
 
-      <div className="HubClase">
+      <div className="HubDeClase">
         <h2>{this.state.data.hora_inicial}hrs - {this.state.data.hora_final}hrs Clase</h2>
-        <button type="submit" className="EditarClase" name="editar_id" value={this.state.data.clase_id}></button>
+        <Link to={"/editClase/"+this.state.data.clase_id}>
+          <button type="submit" className="EditarClase" name="editar_id" value={this.state.data.clase_id}></button>
+        </Link>
         <form method="post" action="/clases/eliminarClase" name="eliminarClase">
           <button type="submit" className="EliminarClase"onClick={() => {alert("Clase Eliminada")}} name="clase_id"  value={this.state.data.clase_id}> X </button>
         </form>

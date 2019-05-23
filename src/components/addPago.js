@@ -1,21 +1,30 @@
 import React,{Component} from 'react';
+import './css/addPago.css'
 
 export default class AddPago extends Component {
     
     render() {
+
         let form;
         if(this.props.alumno_id){
             form = <form action={"/alumnos/addPago" + this.props.alumno_id} method="post">
-                <input type="date" name="fecha" ></input>
-                <input type="text" id="text" name="monto" placeholder="Monto"></input>
-                <button type="submit" value="Submit">Aceptar</button>
+                <h2 className="NuevoPago">Nuevo Pago</h2>
+                <input type="date" className="InputText" name="fecha" ></input>
+                <br></br>
+                <input type="text" className="InputText" id="text" name="monto" placeholder="Monto"></input>
+                <br></br>
+                <button type="submit" className="EnviarPago" value="Submit" onClick={() => {alert("Pago Registrado")}}>Aceptar</button>
             </form>
         }
         else{
             form = <form action={"/instructores/addPago" + this.props.instructor_id} method="post">
-                <input type="date" name="fecha" ></input>
-                <input type="text" id="text" name="monto" placeholder="Monto"></input>
-                <button type="submit" value="Submit">Aceptar</button>
+                <h2 className="NuevoPago">Nuevo Pago</h2>
+                <br></br>
+                <input type="date" className="InputText" name="fecha" ></input>
+                <br></br>
+                <input type="text" className="InputText" id="text" name="monto" placeholder="Monto"></input>
+                <br></br>
+                <button type="submit" className="EnviarPago" value="Submit" onClick={() => {alert("Pago Registrado")}}>Aceptar</button>
             </form>
         }
         return (
@@ -23,5 +32,7 @@ export default class AddPago extends Component {
                 {form}
             </div>
         );
+        
+
     }
 }

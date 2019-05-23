@@ -7,7 +7,7 @@
 .infoAlumno h2{
     font-weight: normal;
     font-size: 28pt;
-    margin-top: 2%;
+    margin-top: 1.4rem;
 }
 
 .infoAlumno p.Subtitulo {
@@ -15,7 +15,32 @@
     font-size: 16pt;
 }
 
+.HubDeAlumno {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.HubDeAlumno p.Cargo {
+    font-weight: bold;
+    color: rgba(60, 60, 60, 0.5);
+    margin-top: 2.4rem;
+    margin-left: 1rem;
+}
+
+.HubDeAlumno button.EditarAlumno {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: transparent;
+    background-image: url(/img/Edit.png);
+    background-size: 2.4rem 2.4rem;
+    border-color: transparent;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
 .PersonaAlumno{
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin-bottom: 2rem;
@@ -27,6 +52,7 @@
 }
 
 .SaludAlumno {
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin-bottom: 3rem;
@@ -36,7 +62,7 @@
     font-weight: bold;
 }
 .InformacionAlumno {
-    padding-left: 2%;
+    padding-left: 1.8rem;
 }
 
 

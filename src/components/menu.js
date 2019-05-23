@@ -24,6 +24,11 @@ export default class Menu extends Component {
                         <p>Alumnos</p>         
                     </Link>
 
+                    <Link to={'/pagos'}>
+                        <img src =  "/img/pagos2.png " alt = "Pagos" height="50px"></img> 
+                        <p>Pagos</p>         
+                    </Link>
+
                     <Link to={'/alumnos'}>
                         <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
                         <p>Cerrar sesion</p>          

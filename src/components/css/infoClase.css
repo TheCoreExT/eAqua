@@ -15,22 +15,21 @@
     font-size: 16pt;
 }
 
-.HubClase {
+.HubDeClase {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-.HubClase button.EditarClase {
-    height: 2.4rem;
+.HubDeClase button.EditarClase {
     width: 2.4rem;
+    height: 2.4rem;
     background-color: transparent;
     background-image: url(/img/Edit.png);
     background-size: 2.4rem 2.4rem;
     border-color: transparent;
     margin-top: 2rem;
-    margin-left: 33%;
-    
+    margin-left: 9.8rem;
 }
 
 .infoClase button.EliminarClase {
@@ -41,9 +40,10 @@
     border-radius: 2rem;
     box-shadow: 2px 2px 2px rgba(248, 41, 41, 0.461);
     color: white;
-    font-size: 1em;
-    margin-top: 2em;
-    margin-left: 1em;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
 }
 
 .InformacionDeClase {

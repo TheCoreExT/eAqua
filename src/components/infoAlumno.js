@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from  'react-router-dom';
 import './css/infoAlumno.css'
 
 export default class InfoAlumno extends Component {
@@ -25,8 +26,15 @@ export default class InfoAlumno extends Component {
 
     render() {
     return <div className="infoAlumno">
-
-        <h2>{this.state.data.nombre}</h2>
+        
+        <div className="HubDeAlumno">
+            <h2>{this.state.data.nombre}</h2>
+            <p className="Cargo"> Alumno </p>
+            <Link to={"/editAlumno/" + this.props.alumno_id}>
+                <button type="submit" className="EditarAlumno" name="editar_id" value={this.props.alumno_id}></button>
+            </Link>
+        </div>
+        
         <p className="Subtitulo"> Datos Personales </p>
         
         <div className="PersonaAlumno">
@@ -84,8 +92,8 @@ export default class InfoAlumno extends Component {
             </div>
             
             <div className="InformacionAlumno">
-                <p>{this.state.data.estatura}</p>
-                <p>{this.state.data.peso}</p>
+                <p>{this.state.data.estatura} m</p>
+                <p>{this.state.data.peso} kg</p>
                 <p>{this.state.data.seguro}</p>
                 <p>{this.state.data.tipo_sangre}</p>
                 <p>{this.state.data.alergias}</p>

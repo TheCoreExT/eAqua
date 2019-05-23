@@ -5,10 +5,13 @@
 }
 
 .AddClases h2 {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 28pt;
     margin-left: 40%;
+}
+
+.AddClases p{
+    margin-left: 11%;
 }
 
 .Hub {
@@ -42,7 +45,7 @@
 }
 
 .SubmitClase {
-    margin-top: 2%;
+    margin-top: 5rem;
     margin-left: 47%;
 }
 .SubmitClase input {

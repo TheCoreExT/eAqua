@@ -19,7 +19,9 @@ export default class AddClases extends Component {
             <form action="/clases" method="post">
             <h2> Nueva clase </h2>
               <div className="Hub">
+                <p>Hora Inicial</p>
                 <input type="time" className="inputclass" placeholder="Hora Inicial" name="hora_inicial" />
+                <p>Hora Final</p>
                 <input type="time" className="inputclass"placeholder="Hora Final" name="hora_final" />
                 <input type="text" className="inputclass"placeholder="Dia" name="dia"/>
                 <br></br>
@@ -31,7 +33,7 @@ export default class AddClases extends Component {
               </div>
               
               <div className="SubmitClase">
-                <input type="submit" value="Aceptar"/>
+                <input type="submit" value="Aceptar" onClick={() => {alert("Clase Creada")}}/>
               </div>
 
 

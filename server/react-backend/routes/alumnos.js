@@ -68,6 +68,46 @@ router.post('/eliminarAlumno', function(req, res, next){
     res.redirect('/alumnos');
 });
 
+router.post('/editAlumno:id', function(req, res, next) {
+  var alumno_id = req.path.replace('/editAlumno', '');
+  var alumno = {
+    nombre : "",
+    edad : " ", // Solo cuando haya login habra una contrasena
+    telefono: "",
+    genero: "",
+    correo: "",
+    estatura: 0,
+    peso: 0,
+    seguro: "",
+    tipo_sangre: "",
+    alergias: "",
+    otro_padecimiento: ""
+  }
+  alumno.nombre = req.body.nombre;
+  alumno.edad = req.body.edad;
+  alumno.telefono = req.body.telefono;
+  alumno.genero = req.body.genero;
+  alumno.correo = req.body.correo;
+  alumno.estatura = req.body.estatura;
+  alumno.peso = req.body.peso;
+  alumno.seguro = req.body.seguro;
+  alumno.tipo_sangre = req.body.tipo_sangre;
+  alumno.alergias = req.body.alergias;
+  alumno.otro_padecimiento = req.body.otro_padecimiento;
+  //res.send('Alumno creado: "' + req.body.nombre + '".');
+
+
+  var query = "update alumno set nombre='"+alumno.nombre+"',edad="+alumno.edad+",telefono='"+alumno.telefono+"', genero='"+alumno.genero+"',correo='"+alumno.correo+"',estatura="+alumno.estatura+",peso="+alumno.peso+",seguro='"+alumno.seguro+"',tipo_sangre='"+alumno.tipo_sangre+"',alergias='"+alumno.alergias+"',otro_padecimiento='"+alumno.otro_padecimiento+"' where alumno_id="+alumno_id;
+
+  connection.query(query, function(err) {
+
+    if (err)
+      console.log(err)
+  });
+
+  res.redirect('/alumnos');
+});
+
 router.post('/AddAlumno2Clase:id', function(req, res, next){
   var clase_id = req.path.replace('/AddAlumno2Clase', '');
   var alumno_id = req.body.params;
@@ -266,7 +306,7 @@ router.get('/AlumnosClase:id', function(req, res, nex) {
 router.get('/pagos:id', function(req, res, nex){
   let id = req.path.replace('/pagos', '');
 
-  var query = "select * from pago_alumno where alumno_id = "+ id;
+  var query = "select pago_alumno_id, DATE_FORMAT(fecha, \"%W %d-%M-%Y\") as fecha, monto  from pago_alumno where alumno_id = "+ id +" ORDER BY fecha DESC";
 
   var pagos = [];
 
