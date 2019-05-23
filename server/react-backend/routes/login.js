@@ -44,6 +44,15 @@ router.post('/', function(request, response) {
 	}
 });
 
+router.post('/logout', function(request, response) {
+	
+	request.session.loggedin = false;
+	request.session.username = "";
+	response.redirect('/');
+			
+});
+
+
 router.get('/', function(request, response) {
     var loggedin = false;
 	if (request.session.loggedin) {

@@ -29,10 +29,13 @@ export default class Menu extends Component {
                         <p>Pagos</p>         
                     </Link>
 
-                    <Link to={'/alumnos'}>
-                        <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
-                        <p>Cerrar sesion</p>          
-                    </Link>
+                    <form action="/login/logout" method="POST">
+                        <button type ="submit">
+                            <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
+                            <p>Cerrar sesion</p>          
+                        </button>
+                    </form>
+
                 </nav>
             </div>
         );
