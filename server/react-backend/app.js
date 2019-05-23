@@ -3,12 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var path = require('path');
 
 var indexRouter = require('./routes/index');
 var instructoresRouter = require('./routes/instructores');
 var alumnosRouter = require('./routes/alumnos');
 var clasesRouter = require('./routes/clases');
 var pagosRouter = require('./routes/pagos');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -27,6 +31,7 @@ app.use('/instructores', instructoresRouter);
 app.use('/alumnos', alumnosRouter);
 app.use('/clases', clasesRouter);
 app.use('/pagos', pagosRouter);
+app.use('/login', loginRouter);
 
 
 // catch 404 and forward to error handler
@@ -44,5 +49,34 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+// ---------- LogIn
+
+// app.use(session({
+// 	secret: 'secret',
+// 	resave: true,
+// 	saveUninitialized: true
+// }));
+// app.use(bodyParser.urlencoded({extended : true}));
+// app.use(bodyParser.json());
+
+// app.post('/auth', function(request, response) {
+// 	var username = request.body.username;
+// 	var password = request.body.password;
+// 	if (username && password) {
+// 		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+// 			if (results.length > 0) {
+// 				request.session.loggedin = true;
+// 				request.session.username = username;
+// 				response.redirect('/home');
+// 			} else {
+// 				response.send('Incorrect Username and/or Password!');
+// 			}			
+// 			response.end();
+// 		});
+// 	} else {
+// 		response.send('Please enter Username and Password!');
+// 		response.end();
+// 	}
+// });
 
 module.exports = app;

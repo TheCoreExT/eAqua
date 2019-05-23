@@ -1,0 +1,92 @@
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5) ),url('/img/login.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+    height: 100vh;
+}
+
+.logo{
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.logo img{
+    padding-right: 2rem;
+}
+
+.logo h1{
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4rem;
+}
+.fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 1rem;
+    border-radius: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fields h2{
+    color: white;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form input{
+    width: 25rem;
+    border: none;
+    height: 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.form button{
+    text-align: center;
+    background-color: #45B8E2;
+    border: none;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    
+}
+
+button:hover{
+    cursor: pointer;
+}
+ .fields p{
+    margin: 2rem;
+    align-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:white;
+
+}

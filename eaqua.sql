@@ -59,3 +59,9 @@ CREATE TABLE clase_alumno (
     alumno_id INT NOT NULL REFERENCES alumno(alumno_id) on delete cascade,
     PRIMARY KEY (clase_id, alumno_id)
 );
+
+CREATE TABLE admin (
+    admin_id INT NOT NULL auto_increment PRIMARY KEY,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL
+);
