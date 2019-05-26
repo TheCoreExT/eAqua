@@ -9,10 +9,12 @@ export default class Menu extends Component {
         return (
             <div className = "navigation col-lg-1">
                 <nav id="navigation">
+
                     <Link to={'/clases'}>
                         <img src =  "/img/Clases2.png " alt = "Clases" height="50px"></img>
                         <p>Clases</p> 
-                    </Link>        
+                    </Link>  
+                          
                    
                     <Link to={'/instructores'}>
                         <img src =  "/img/Instructores2.png " alt = "Instructores" height="50px"></img>
@@ -29,10 +31,13 @@ export default class Menu extends Component {
                         <p>Pagos</p>         
                     </Link>
 
-                    <Link to={'/alumnos'}>
-                        <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
-                        <p>Cerrar sesion</p>          
-                    </Link>
+                    <form action="/login/logout" method="POST" >
+                        <button type ="submit">
+                            <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
+                            <p>Salir</p>  
+                        </button>
+                    </form>
+
                 </nav>
             </div>
         );

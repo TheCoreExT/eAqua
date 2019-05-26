@@ -65,3 +65,5 @@ CREATE TABLE admin (
     username VARCHAR(30) NOT NULL,
     password VARCHAR(30) NOT NULL
 );
+
+INSERT INTO admin (username, password) VALUES ('Abel', '390517' );

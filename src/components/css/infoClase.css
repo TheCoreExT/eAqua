@@ -98,7 +98,10 @@
     width: 2.3rem;
     height: 2.3rem;
     background-image: url(/img/Add.png);
-    background-size: 2.3rem 2.3rem;
+    background-size: 2.29rem 2.29rem;
+    background-position-x: -1px;
+    background-position-y: -1px;
+
     background-color: transparent;
     border-color: transparent;
     padding-bottom: 3%;

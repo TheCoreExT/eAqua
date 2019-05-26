@@ -21,9 +21,6 @@ import EditInstructor from './components/editInstructor';
 import EditClase from './components/editClase';
 import Login from './components/login';
 
-
-
-
 export default class App extends Component {
     state =  {loggedin: false}
 
@@ -142,6 +139,8 @@ export default class App extends Component {
         var pagos = <Route exact path="/pagos" component={MenuPagos} />;
 
 
+
+
       }
       else{
           var login = <Route exact path="/" component={Login}/>;
@@ -171,6 +170,7 @@ export default class App extends Component {
             {editInstructor}
             {editClase}
             {pagos}
+
             <Route component={Error} />
           </Switch>
         </BrowserRouter>
