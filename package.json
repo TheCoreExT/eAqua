@@ -1,19 +1,21 @@
 {
   "name": "electronic-aqua-web",
   "version": "0.1.0",
+  "author": "Jolans",
   "private": true,
   "devDependencies": {
     "electron": "^5.0.1",
-    "foreman": "^3.0.1",
-    "react-router-dom": "^5.0.0",
-    "typescript": "^3.4.5"
+    "electron-packager": "^13.1.1",
+    "foreman": "^3.0.1"
   },
   "dependencies": {
     "express-generator": "^4.16.1",
     "mysql": "^2.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0",    
+    "typescript": "^3.4.5"
   },
   "homepage": "./",
   "main": "src/electron-starter.js",
@@ -24,7 +26,8 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
-    "react-start": "react-scripts start"
+    "react-start": "react-scripts start",
+    "electron-packager": "electron-packager . eAqua"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
