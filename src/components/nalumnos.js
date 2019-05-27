@@ -5,7 +5,7 @@ export default class Nalumnos extends Component {
     state = {p: ""}
 
     componentDidMount() {
-        var url = "/alumnos/Nalumnos" + this.props.clase_id;
+        var url = "http://157.230.165.99:3001/alumnos/Nalumnos" + this.props.clase_id;
 
         fetch(url)
           .then(res => res.json())

@@ -26,7 +26,7 @@ router.post('/editarInstructor', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/instructores');
+    res.redirect('https://eaqua.netlify.com/instructores');
 });
 
 router.post('/eliminarInstructor', function(req, res, next){
@@ -42,7 +42,7 @@ router.post('/eliminarInstructor', function(req, res, next){
     else
       console.log("Instructor eliminado")
   });
-    res.redirect('/instructores');
+    res.redirect('https://eaqua.netlify.com/instructores');
 });
 
 router.post('/', function(req, res, next){
@@ -67,7 +67,7 @@ router.post('/', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/instructores');
+  res.redirect('https://eaqua.netlify.com/instructores');
 })
 
 router.post('/editInstructor:id', function(req, res, next){
@@ -92,7 +92,7 @@ router.post('/editInstructor:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/instructores');
+  res.redirect('https://eaqua.netlify.com/instructores');
 })
 
 router.post('/addPago:id', function(req, res, next){
@@ -115,7 +115,7 @@ router.post('/addPago:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/pagosInstructor/'+id);
+  res.redirect('https://eaqua.netlify.com/pagosInstructor/'+id);
 })
 
 // GET methods -------

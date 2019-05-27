@@ -6,7 +6,7 @@ export default class MenuPagos extends Component {
         pagos: []
     }
     componentDidMount() {
-        fetch('/pagos')
+        fetch('http://157.230.165.99:3001/pagos')
           .then(res => res.json())
           .then(pagos => this.setState({ pagos }));
     }

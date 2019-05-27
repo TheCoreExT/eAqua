@@ -9,14 +9,14 @@ export default class InfoAlumno extends Component {
 
     componentDidMount() {
     var url =
-        "/alumnos/infoAlumno" + this.props.alumno_id;
+        "http://157.230.165.99:3001/alumnos/infoAlumno" + this.props.alumno_id;
     fetch(url)
     .then(res => res.json())
     .then(data =>
         this.setState({ data })
     );
 
-    var  url2 = "/clases/ClasesDeAlumno" + this.props.alumno_id;
+    var  url2 = "http://157.230.165.99:3001/clases/ClasesDeAlumno" + this.props.alumno_id;
     fetch(url2)
     .then(res => res.json())
     .then(clases =>

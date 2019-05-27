@@ -7,7 +7,7 @@ export default class AddPago extends Component {
 
         let form;
         if(this.props.alumno_id){
-            form = <form action={"/alumnos/addPago" + this.props.alumno_id} method="post">
+            form = <form action={"http://157.230.165.99:3001/alumnos/addPago" + this.props.alumno_id} method="post">
                 <h2 className="NuevoPago">Nuevo Pago</h2>
                 <input type="date" className="InputText" name="fecha" ></input>
                 <br></br>

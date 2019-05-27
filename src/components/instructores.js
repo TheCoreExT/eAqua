@@ -7,7 +7,7 @@ export default class Instructores extends Component {
     state = {instructores: []}
 
     componentDidMount() {
-        fetch('/instructores')
+        fetch('http://157.230.165.99:3001/instructores')
           .then(res => res.json())
           .then(instructores => this.setState({ instructores }));
     }

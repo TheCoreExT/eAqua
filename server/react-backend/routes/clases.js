@@ -36,7 +36,7 @@ router.post('/', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/clases');
+  res.redirect('https://eaqua.netlify.com/clases');
 })
 
 router.post('/eliminarClase', function(req, res, next){
@@ -48,7 +48,7 @@ router.post('/eliminarClase', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/clases');
+    res.redirect('https://eaqua.netlify.com/clases');
     
 
 });
@@ -74,7 +74,7 @@ router.post('/editClase:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/clases');
+  res.redirect('https://eaqua.netlify.com/clases');
 })
 
 router.post('/addAlumnotoClase', function(req, res, next){
@@ -96,7 +96,7 @@ router.post('/addAlumnotoClase', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/clases');
+  res.redirect('https://eaqua.netlify.com/clases');
 });
 
 // GET methods ------------
