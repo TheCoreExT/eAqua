@@ -6,8 +6,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var connection = mysql.createConnection({
-  host: '157.230.165.99',
-  port: 3001,
+  host: 'localhost',
   user: 'jolans',
   password: '1234',
   database: 'eaqua'
@@ -36,6 +35,7 @@ router.post('/', function(request, response) {
 				request.session.username = username;
 				response.redirect('/');
 			} else {
+				response.send();
 				response.redirect('/');
 			}			
 			response.end();
