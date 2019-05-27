@@ -32,10 +32,10 @@ router.post('/', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('/');
+				response.redirect('https://eaqua.netlify.com/');
 			} else {
                 response.send();
-				response.redirect('/');
+				response.redirect('https://eaqua.netlify.com/');
 			}			
 			response.end();
 		});
@@ -48,7 +48,7 @@ router.post('/logout', function(request, response) {
 	
 	request.session.loggedin = false;
 	request.session.username = "";
-	response.redirect('/');
+	response.redirect('https://eaqua.netlify.com/');
 			
 });
 
