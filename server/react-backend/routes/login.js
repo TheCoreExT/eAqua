@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'http://157.230.165.99',
   user: 'jolans',
   password: '1234',
   database: 'eaqua'
