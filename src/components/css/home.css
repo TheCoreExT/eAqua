@@ -1,11 +1,42 @@
 .Home{
-	font-family: verdana;
-    color:#000000;
-    background-color:#fffffffb;
-    padding-left: 200px;
-    
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5) ),url('/img/home.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+    height: 100vh;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+.Titles {
+    margin-top: -3rem;
+}
+
+.Titles h1 {
+    font-size: 60pt;
+    color: white;
+}
+
+.Titles h2 {
+    margin-left: 0.3rem;
+    margin-top: -3rem;
+    font-size: 18pt;
+    color: white;
+}
+
+.HubPrincipal {
+}
+
+.HubSecundario {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.HubSecundario p {
+    color: white;
+    margin-left: 1rem;
+    margin-top: 2.1rem;
+}
