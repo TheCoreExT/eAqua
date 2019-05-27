@@ -18,7 +18,7 @@ export default class Login extends Component {
                 <div className="fields">
                     <h2>LOG IN</h2>
 
-                    <form action="/login" method="POST" className="form">
+                    <form action="/login/login" method="POST" className="form">
                         <input className="text" type="text" name="username" placeholder="Username" required/>
                         <input className="text" type="password" name="password" placeholder="Password" required/>
                         <button type="submit">Ingresar</button>

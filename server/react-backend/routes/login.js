@@ -24,7 +24,7 @@ router.use(bodyParser.urlencoded({extended : true}));
 router.use(bodyParser.json());
 
 
-router.post('/', function(request, response) {
+router.post('/login', function(request, response) {
 	var username = request.body.username;
     var password = request.body.password;
     
