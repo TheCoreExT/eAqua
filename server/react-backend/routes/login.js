@@ -20,6 +20,7 @@ router.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
+
 router.use(bodyParser.urlencoded({extended : true}));
 router.use(bodyParser.json());
 
@@ -35,7 +36,6 @@ router.post('/', function(request, response) {
 				request.session.username = username;
 				response.redirect('/');
 			} else {
-                response.send();
 				response.redirect('/');
 			}			
 			response.end();
