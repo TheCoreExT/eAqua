@@ -29,6 +29,9 @@ router.post('/', function(request, response) {
   var username = request.body.username;
   var password = request.body.password;
 
+  request.session.username = '';
+  request.session.password = '';
+
   connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
     if(error){
       console.log(error);
