@@ -22,13 +22,14 @@ import EditClase from './components/editClase';
 import Login from './components/login';
 
 export default class App extends Component {
-    state =  {loggedin: false}
+    state =  {loggedin: true}
 
-    componentDidMount() {
-      fetch('/login')
-        .then(res => res.json())
-        .then(loggedin => this.setState({ loggedin }));
-    }
+    // componentDidMount() {
+    //   fetch('https://157.230.165.99:3001/login')
+    //   .then(res => res.json())
+    //   .then(loggedin => this.setState({ loggedin }));
+
+    // }
 
     render() {
 
