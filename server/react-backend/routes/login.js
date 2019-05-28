@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql')
-// var session = require('express-session');
-// var bodyParser = require('body-parser');
-// var path = require('path');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var path = require('path');
 
 var connection = mysql.createConnection({
   host: 'localhost',
