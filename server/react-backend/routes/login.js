@@ -27,6 +27,8 @@ router.post('/', function(request, response) {
     }
     else{
 		if (results.length > 0){
+			request.session.username = username;
+			request.session.password = password;
 			for (var r of results){
 				if(r.username && r.password)
 				  response.redirect('http://165.22.140.214:3000/home');
@@ -40,6 +42,8 @@ router.post('/', function(request, response) {
   });
 
   router.post('/logout', function(request, response) {
+		delete request.session.username;
+		delete request.session.password;
 
     	response.redirect('http://165.22.140.214:3000/');
           
