@@ -62,15 +62,11 @@ export default class App extends Component {
               />
               
               <Route exact path="/alumnos" component={Alumnos} />
+              
               <Route
                 exact
                 path="/alumnos/:alumnoId"
-                render={props => {
-                  let alumnoId = props.location.pathname.replace(
-                    "/alumnos/",
-                    ""
-                    );
-                    
+                render={props => { let alumnoId = props.location.pathname.replace( "/alumnos/", "");
                     return <InfoAlumno alumno_id={alumnoId} />;
                   }}
               />
