@@ -61,7 +61,7 @@ router.get('/', function(request, response) {
 		response.json(log);
 		
 	} else {
-		loggedin = true;
+		log.loggedin = true;
 		response.json(log);
 	}
 	//response.end();
