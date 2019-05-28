@@ -16,15 +16,16 @@ var pagosRouter = require('./routes/pagos');
 
 var app = express();
 
+var router = express.Router();
 
-app.use(session({
+router.use(session({
   secret: 'secret',
   resave: true,
   saveUninitialized: true
 }));
 
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended : true}));
+router.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +42,7 @@ app.use('/instructores', instructoresRouter);
 app.use('/alumnos', alumnosRouter);
 app.use('/clases', clasesRouter);
 app.use('/pagos', pagosRouter);
-// app.use('/login', loginRouter);
+app.use('/login', router);
 
 
 // catch 404 and forward to error handler
@@ -61,7 +62,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.post('/login', function(request, response) {
+router.post('/login', function(request, response) {
   
   var username = request.body.username;
   var password = request.body.password;
