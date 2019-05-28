@@ -6,9 +6,7 @@ export default class Login extends Component {
     
 
     render() {
-        if(this.props.loggedin_succesfuly === false){
-
-        }
+        
         return (
             <div className="login">
                 <div className="logo">

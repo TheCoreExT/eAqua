@@ -60,6 +60,7 @@ router.get('/', function(request, response) {
         loggedin = true;
 		response.json(loggedin);
 	} else {
+		loggedin = true;
 		response.json(loggedin);
 	}
 	response.end();
