@@ -28,6 +28,7 @@ export default class App extends Component {
       console.log(this.state.valor);
       fetch('http://157.230.165.99:3001/login')
       .then(res => res.json())
+      .then(res => console.log(res.json()))
       .then(loggedin => this.setState({ loggedin }));
       console.log(this.state.loggedin);
     }
