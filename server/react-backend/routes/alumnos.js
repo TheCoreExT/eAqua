@@ -117,11 +117,7 @@ router.post('/AddAlumno2Clase:id', function(req, res, next){
     if(err)
       console.log(err)
   });
-<<<<<<< HEAD
-    res.redirect('https://eaqua.netlify.com/clases/' + clase_id);
-=======
     res.redirect('http://165.22.140.214:3000/clases/' + clase_id);
->>>>>>> 1d78013a63fb2714b74cb842a74f32b7de200645
 });
 
 router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
