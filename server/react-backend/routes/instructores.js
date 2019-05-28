@@ -26,7 +26,7 @@ router.post('/editarInstructor', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/instructores');
+    res.redirect('http://165.22.140.214:3000/instructores');
 });
 
 router.post('/eliminarInstructor', function(req, res, next){
@@ -42,7 +42,7 @@ router.post('/eliminarInstructor', function(req, res, next){
     else
       console.log("Instructor eliminado")
   });
-    res.redirect('/instructores');
+    res.redirect('http://165.22.140.214:3000/instructores');
 });
 
 router.post('/', function(req, res, next){
@@ -67,7 +67,7 @@ router.post('/', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/instructores');
+  res.redirect('http://165.22.140.214:3000/instructores');
 })
 
 router.post('/editInstructor:id', function(req, res, next){
@@ -92,7 +92,7 @@ router.post('/editInstructor:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/instructores');
+  res.redirect('http://165.22.140.214:3000/instructores');
 })
 
 router.post('/addPago:id', function(req, res, next){
@@ -115,7 +115,7 @@ router.post('/addPago:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/pagosInstructor/'+id);
+  res.redirect('http://165.22.140.214:3000/pagosInstructor/'+id);
 })
 
 // GET methods -------

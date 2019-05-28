@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql')
-// var session = require('express-session');
-// var bodyParser = require('body-parser');
-// var path = require('path');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var path = require('path');
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -73,10 +73,10 @@ router.post('/', function(request, response) {
 // 			if (results.length > 0) {
 // 				request.session.loggedin = true;
 // 				request.session.username = username;
-// 				response.redirect('https://eaqua.netlify.com/');
+// 				response.redirect('http://165.22.140.214:3000/');
 // 			} else {
 // 				response.send();
-// 				response.redirect('https://eaqua.netlify.com/');
+// 				response.redirect('http://165.22.140.214:3000/');
 // 			}			
 // 			response.end();
 // 		});
@@ -89,20 +89,24 @@ router.post('/', function(request, response) {
 	
 // 	request.session.loggedin = false;
 // 	request.session.username = "";
-// 	response.redirect('https://eaqua.netlify.com/');
+// 	response.redirect('http://165.22.140.214:3000/');
 			
 // });
 
 
 // router.get('/', function(request, response) {
-//     var loggedin = false;
-// 	if (request.session.loggedin) {
-//         loggedin = true;
-// 		response.json(loggedin);
+//     var log = {loggedin: false};
+// 	if (request.session.loggedin === true) {
+//         log.loggedin = true;
+// 		response.json(log);
+// 		response.redirect('/');
+		
 // 	} else {
-// 		response.json(loggedin);
+// 		// log.loggedin = true;
+// 		// response.json(log);
+// 		response.redirect('/login');
 // 	}
-// 	response.end();
+// 	//response.end();
 // });
 
 module.exports = router;

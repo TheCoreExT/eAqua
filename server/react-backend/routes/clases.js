@@ -36,7 +36,7 @@ router.post('/', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/clases');
+  res.redirect('http://165.22.140.214:3000/clases');
 })
 
 router.post('/eliminarClase', function(req, res, next){
@@ -48,7 +48,7 @@ router.post('/eliminarClase', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/clases');
+    res.redirect('http://165.22.140.214:3000/clases');
     
 
 });
@@ -74,7 +74,7 @@ router.post('/editClase:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/clases');
+  res.redirect('http://165.22.140.214:3000/clases');
 })
 
 router.post('/addAlumnotoClase', function(req, res, next){
@@ -96,7 +96,7 @@ router.post('/addAlumnotoClase', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/clases');
+  res.redirect('http://165.22.140.214:3000/clases');
 });
 
 // GET methods ------------

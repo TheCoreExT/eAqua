@@ -27,7 +27,7 @@ export default class Menu extends Component {
                     </Link>
 
                     <Link to={'/pagos'}>
-                        <img src =  "/img/pagos2.png " alt = "Pagos" height="50px"></img> 
+                        <img src =  "/img/Pagos2.png " alt = "Pagos" height="50px"></img> 
                         <p>Pagos</p>         
                     </Link>
 

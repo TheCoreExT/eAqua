@@ -53,7 +53,7 @@ router.post('/', function(req, res, next) {
       console.log(err)
   });
 
-  res.redirect('https://eaqua.netlify.com/alumnos');
+  res.redirect('/alumnos');
 });
 
 router.post('/eliminarAlumno', function(req, res, next){
@@ -65,7 +65,7 @@ router.post('/eliminarAlumno', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('https://eaqua.netlify.com/alumnos');
+    res.redirect('http://165.22.140.214:3000/alumnos');
 });
 
 router.post('/editAlumno:id', function(req, res, next) {
@@ -105,7 +105,7 @@ router.post('/editAlumno:id', function(req, res, next) {
       console.log(err)
   });
 
-  res.redirect('https://eaqua.netlify.com/alumnos');
+  res.redirect('http://165.22.140.214:3000/alumnos');
 });
 
 router.post('/AddAlumno2Clase:id', function(req, res, next){
@@ -117,7 +117,11 @@ router.post('/AddAlumno2Clase:id', function(req, res, next){
     if(err)
       console.log(err)
   });
+<<<<<<< HEAD
     res.redirect('https://eaqua.netlify.com/clases/' + clase_id);
+=======
+    res.redirect('http://165.22.140.214:3000/clases/' + clase_id);
+>>>>>>> 1d78013a63fb2714b74cb842a74f32b7de200645
 });
 
 router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
@@ -129,7 +133,7 @@ router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('https://eaqua.netlify.com/clases/'+clase_id );
+    res.redirect('http://165.22.140.214:3000/clases/'+clase_id );
 });
 
 router.post('/addPago:id', function(req, res, next){
@@ -152,7 +156,7 @@ router.post('/addPago:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('https://eaqua.netlify.com/pagosAlumno/'+id);
+  res.redirect('http://165.22.140.214:3000/pagosAlumno/'+id);
 })
 
 // Get methods --------------
