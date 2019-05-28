@@ -3,7 +3,13 @@ import './css/login.css'
 
 export default class Login extends Component {
 
-    
+    state =  {loggedin: false}
+  
+    componentDidMount() {
+        fetch('https://157.230.165.99:3001/login')
+        .then(res => res.json())
+        .then(loggedin => this.setState({ loggedin }))
+    }
 
     render() {
         
