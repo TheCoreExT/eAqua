@@ -23,11 +23,9 @@ import Login from './components/login';
 
 export default class App extends Component {
   state =  {loggedin: false}
-  constructor(props){
-    super(props);
-        this.componentDidMount()
-    }
-    componentDidMount() {
+  
+
+    componentWillMount() {
       fetch('https://157.230.165.99:3001/login')
       .then(res => res.json())
       .then(loggedin => this.setState({ loggedin }));
@@ -36,7 +34,7 @@ export default class App extends Component {
 
     render() {
 
-      if(this.state.loggedin === true){
+      if(this.state.loggedin === 'true'){
         var header = <Header />;
         var menu = <Menu />; 
         var home = <Route exact path="/" component={Home} />;
