@@ -1,18 +1,18 @@
-// var express = require('express');
-// var router = express.Router();
-// var mysql = require('mysql')
+var express = require('express');
+var router = express.Router();
+var mysql = require('mysql')
 // var session = require('express-session');
 // var bodyParser = require('body-parser');
 // var path = require('path');
 
-// var connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'jolans',
-//   password: '1234',
-//   database: 'eaqua'
-// })
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'jolans',
+  password: '1234',
+  database: 'eaqua'
+})
 
-// connection.connect();
+connection.connect();
 
 // router.use(session({
 // 	secret: 'secret',
@@ -65,4 +65,4 @@
 // 	response.end();
 // });
 
-// module.exports = router;
+module.exports = router;
