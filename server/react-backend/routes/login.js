@@ -58,9 +58,9 @@ router.get('/', function(request, response) {
     var loggedin = false;
 	if (request.session.loggedin) {
         loggedin = true;
-		response.json(loggedin);
+		response.send(loggedin);
 	} else {
-		response.json(loggedin);
+		response.send(loggedin);
 	}
 	response.end();
 });
