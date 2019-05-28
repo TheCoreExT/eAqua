@@ -65,7 +65,7 @@ router.post('/eliminarAlumno', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/alumnos');
+    res.redirect('http://165.22.140.214:3000/alumnos');
 });
 
 router.post('/editAlumno:id', function(req, res, next) {
@@ -105,7 +105,7 @@ router.post('/editAlumno:id', function(req, res, next) {
       console.log(err)
   });
 
-  res.redirect('/alumnos');
+  res.redirect('http://165.22.140.214:3000/alumnos');
 });
 
 router.post('/AddAlumno2Clase:id', function(req, res, next){
@@ -117,7 +117,7 @@ router.post('/AddAlumno2Clase:id', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/clases/' + clase_id);
+    res.redirect('http://165.22.140.214:3000/clases/' + clase_id);
 });
 
 router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
@@ -129,7 +129,7 @@ router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/clases/'+clase_id );
+    res.redirect('http://165.22.140.214:3000/clases/'+clase_id );
 });
 
 router.post('/addPago:id', function(req, res, next){
@@ -152,7 +152,7 @@ router.post('/addPago:id', function(req, res, next){
       console.log(err)
   });
 
-  res.redirect('/pagosAlumno/'+id);
+  res.redirect('http://165.22.140.214:3000/pagosAlumno/'+id);
 })
 
 // Get methods --------------
