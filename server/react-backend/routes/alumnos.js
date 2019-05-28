@@ -15,6 +15,14 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+function checkAuth(req, res, next) {
+  if (!req.session.username) {
+    res.redirect('http://165.22.140.214:3000/');
+  } else {
+    next();
+  }
+}
+
 // Post methods --------------
 
 router.post('/', function(req, res, next) {
@@ -157,7 +165,7 @@ router.post('/addPago:id', function(req, res, next){
 
 // Get methods --------------
 
-router.get('/', function(req, res, next) {
+router.get('/', checkAuth, function(req, res, next) {
 
   var alumnos = [];
 
@@ -204,7 +212,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/infoAlumno:id', function(req, res, nex) {
+router.get('/infoAlumno:id', checkAuth, function(req, res, nex) {
   let id =req.path.replace('/infoAlumno','');
 
   var query = "SELECT * FROM alumno WHERE alumno_id = " + id;
@@ -251,7 +259,7 @@ router.get('/infoAlumno:id', function(req, res, nex) {
   
 });
 
-router.get('/Nalumnos:id', function(req, res, nex) {
+router.get('/Nalumnos:id', checkAuth, function(req, res, nex) {
   let id =req.path.replace('/Nalumnos','');
 
   var query =
@@ -271,7 +279,7 @@ router.get('/Nalumnos:id', function(req, res, nex) {
   
 });
 
-router.get('/AlumnosClase:id', function(req, res, nex) {
+router.get('/AlumnosClase:id', checkAuth, function(req, res, nex) {
 
   let id =req.path.replace('/AlumnosClase','');
 
@@ -303,7 +311,7 @@ router.get('/AlumnosClase:id', function(req, res, nex) {
   
 });
 
-router.get('/pagos:id', function(req, res, nex){
+router.get('/pagos:id', checkAuth, function(req, res, nex){
   let id = req.path.replace('/pagos', '');
 
   var query = "select pago_alumno_id, DATE_FORMAT(fecha, \"%W %d-%M-%Y\") as fecha, monto  from pago_alumno where alumno_id = "+ id +" ORDER BY fecha DESC";
