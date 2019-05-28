@@ -38,7 +38,7 @@ router.post('/', function(request, response) {
 
   router.post('/logout', function(request, response) {
 
-    	response.redirect('https://eaqua.netlify.com/');
+    	response.redirect('http://165.22.140.214:3000/');
           
     });
 
