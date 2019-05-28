@@ -14,44 +14,44 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-router.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true
-}));
+// router.use(session({
+//   secret: 'secret',
+//   resave: true,
+//   saveUninitialized: true
+// }));
 
-router.use(bodyParser.urlencoded({extended : true}));
-router.use(bodyParser.json());
+// router.use(bodyParser.urlencoded({extended : true}));
+// router.use(bodyParser.json());
   
 
-router.post('/', function(request, response) {
+// router.post('/', function(request, response) {
   
-  var username = request.body.username;
-  var password = request.body.password;
+//   var username = request.body.username;
+//   var password = request.body.password;
 
-  request.session.username = '';
-  request.session.password = '';
+//   request.session.username = '';
+//   request.session.password = '';
 
-  connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-    if(error){
-      console.log(error);
-    }
-    else{
-		if (results.length > 0){
-			for (var r of results){
-				request.session.username = r.username;
-				request.session.password = r.password;
-				if(r.username && r.password)
-				  response.redirect('http://165.22.140.214:3000/home');
-		}
-		}else{
+//   connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+//     if(error){
+//       console.log(error);
+//     }
+//     else{
+// 		if (results.length > 0){
+// 			for (var r of results){
+// 				request.session.username = r.username;
+// 				request.session.password = r.password;
+// 				if(r.username && r.password)
+// 				  response.redirect('http://165.22.140.214:3000/home');
+// 		}
+// 		}else{
 
-			response.redirect('http://165.22.140.214:3000/');  
-		}
-		console.log("login de routes:" + request.session.username);
-    }
-  });
-  });
+// 			response.redirect('http://165.22.140.214:3000/');  
+// 		}
+// 		console.log("login de routes:" + request.session.username);
+//     }
+//   });
+//   });
 
   router.post('/logout', function(request, response) {
 		delete request.session.username;
