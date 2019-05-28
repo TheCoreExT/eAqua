@@ -14,55 +14,55 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-// router.use(session({
-// 	secret: 'secret',
-// 	resave: true,
-// 	saveUninitialized: true
-// }));
+router.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
-// router.use(bodyParser.urlencoded({extended : true}));
-// router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended : true}));
+router.use(bodyParser.json());
 
 
-// router.post('/', function(request, response) {
-// 	var username = request.body.username;
-//     var password = request.body.password;
+router.post('/', function(request, response) {
+	var username = request.body.username;
+    var password = request.body.password;
     
-// 	if (username && password) {
-// 		connection.query('SELECT * FROM admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-// 			if (results.length > 0) {
-// 				request.session.loggedin = true;
-// 				request.session.username = username;
-// 				response.redirect('https://eaqua.netlify.com/');
-// 			} else {
-// 				response.send();
-// 				response.redirect('https://eaqua.netlify.com/');
-// 			}			
-// 			response.end();
-// 		});
-// 	} else {
-// 		response.end();
-// 	}
-// });
+	if (username && password) {
+		connection.query('SELECT * FROM admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.username = username;
+				response.redirect('/');
+			} else {
+				response.send();
+				response.redirect('/');
+			}			
+			response.end();
+		});
+	} else {
+		response.end();
+	}
+});
 
-// router.post('/logout', function(request, response) {
+router.post('/logout', function(request, response) {
 	
-// 	request.session.loggedin = false;
-// 	request.session.username = "";
-// 	response.redirect('https://eaqua.netlify.com/');
+	request.session.loggedin = false;
+	request.session.username = "";
+	response.redirect('/');
 			
-// });
+});
 
 
-// router.get('/', function(request, response) {
-//     var loggedin = false;
-// 	if (request.session.loggedin) {
-//         loggedin = true;
-// 		response.json(loggedin);
-// 	} else {
-// 		response.json(loggedin);
-// 	}
-// 	response.end();
-// });
+router.get('/', function(request, response) {
+    var loggedin = false;
+	if (request.session.loggedin) {
+        loggedin = true;
+		response.json(loggedin);
+	} else {
+		response.json(loggedin);
+	}
+	response.end();
+});
 
 module.exports = router;
