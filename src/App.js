@@ -27,7 +27,7 @@ export default class App extends Component {
   componentDidMount() {
     fetch('https://157.230.165.99:3001/login')
     .then(res => res.json())
-    .then(this.setState({ loggedin }))
+    .then(loggedin => this.setState({ loggedin }))
   }
     
 
