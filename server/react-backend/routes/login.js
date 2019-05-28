@@ -26,12 +26,15 @@ router.post('/', function(request, response) {
       console.log(error);
     }
     else{
-      for (var r of results){
-        if(r.username && r.password)
-          response.redirect('http://165.22.140.214:3000/home');
-        else
-          response.redirect('http://165.22.140.214:3000/');
-      }
+		if (results.length > 0){
+			for (var r of results){
+				if(r.username && r.password)
+				  response.redirect('http://165.22.140.214:3000/home');
+		}
+		}else{
+
+			response.redirect('http://165.22.140.214:3000/');  
+		}
     }
   });
   });
