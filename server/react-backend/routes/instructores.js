@@ -35,7 +35,7 @@ router.post('/eliminarInstructor', function(req, res, next){
 
   var query = "DELETE FROM instructor WHERE instructor_id=" + instructor_id;
   connection.query(query, function(err) {
-    console.log(query);
+
 
     if(err)
       console.log(err)

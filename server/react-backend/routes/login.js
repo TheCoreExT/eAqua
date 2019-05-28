@@ -14,6 +14,46 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+
+
+router.post('/', function(request, response) {
+  
+  var username = request.body.username;
+  var password = request.body.password;
+
+  connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+    if(error){
+      console.log(error);
+    }
+    else{
+      for (var r of results){
+        if(r.username && r.password)
+          response.redirect('http://165.22.140.214:3000/home');
+        else
+          response.redirect('http://165.22.140.214:3000/');
+      }
+    }
+  });
+  });
+
+  router.post('/logout', function(request, response) {
+
+    	response.redirect('https://eaqua.netlify.com/');
+          
+    });
+
+  
+// router.get('/', function(request, response) {
+//     var query = "select logged from admin where 
+//   	if (request.session.loggedin) {
+//           loggedin = true;
+//   		response.json(loggedin);
+//   	} else {
+//   		response.json(loggedin);
+//   	}
+//   	response.end();
+//   });
+
 // router.use(session({
 // 	secret: 'secret',
 // 	resave: true,

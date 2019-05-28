@@ -31,12 +31,12 @@ export default class Menu extends Component {
                         <p>Pagos</p>         
                     </Link>
 
-                    {/* <form action="/login/logout" method="POST" >
+                    <form action="http://157.230.165.99:3001/login/logout" method="POST" >
                         <button type ="submit">
                             <img src =  "/img/Exit2.png " alt = "Exit" height="50px"></img>
                             <p>Salir</p>  
                         </button>
-                    </form> */}
+                    </form>
 
                 </nav>
             </div>

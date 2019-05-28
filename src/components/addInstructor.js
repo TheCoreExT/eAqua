@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-// import  './css/addInstructor.css';
+import  './css/addInstructor.css';
 
 export default class AddInstructor extends Component {
     

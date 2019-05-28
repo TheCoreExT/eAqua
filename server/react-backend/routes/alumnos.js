@@ -117,7 +117,7 @@ router.post('/AddAlumno2Clase:id', function(req, res, next){
     if(err)
       console.log(err)
   });
-    res.redirect('/clases/' + clase_id);
+    res.redirect('https://eaqua.netlify.com/clases/' + clase_id);
 });
 
 router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
