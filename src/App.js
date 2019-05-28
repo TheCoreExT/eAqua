@@ -30,13 +30,7 @@ export default class App extends Component {
     .then(this.setState({ loggedin: true }));
 
   }
-    componentDidUpdate() {
-      this.setState({loggedin: true});
-      fetch('https://157.230.165.99:3001/login')
-      .then(res => res.json())
-      .then(loggedin => this.setState({ loggedin }));
-
-    }
+    
 
     render() {
 
