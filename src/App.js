@@ -24,8 +24,9 @@ import Login from './components/login';
 export default class App extends Component {
     state =  {loggedin: false}
 
-    componentDidMount() {
-      fetch('http://157.230.165.99:3001/login')
+
+    componentWillMount() {
+      fetch('/login')
         .then(res => res.json())
         .then(loggedin => this.setState({ loggedin }));
     }

@@ -30,13 +30,12 @@ router.post('/', function(request, response) {
     
 	if (username && password) {
 		connection.query('SELECT * FROM admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			console.log(results);
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('');
+				response.redirect('https://eaqua.netlify.com/');
 			} else {
-				response.send('https://eaqua.netlify.com/');
+				response.send();
 				response.redirect('https://eaqua.netlify.com/');
 			}			
 			response.end();
