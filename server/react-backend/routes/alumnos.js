@@ -260,7 +260,7 @@ router.get('/infoAlumno:id',  function(req, res, nex) {
   
 });
 
-router.get('/Nalumnos:id', checkAuth, function(req, res, nex) {
+router.get('/Nalumnos:id', function(req, res, nex) {
   let id =req.path.replace('/Nalumnos','');
 
   var query =
@@ -280,7 +280,7 @@ router.get('/Nalumnos:id', checkAuth, function(req, res, nex) {
   
 });
 
-router.get('/AlumnosClase:id', checkAuth, function(req, res, nex) {
+router.get('/AlumnosClase:id', function(req, res, nex) {
 
   let id =req.path.replace('/AlumnosClase','');
 
@@ -312,7 +312,7 @@ router.get('/AlumnosClase:id', checkAuth, function(req, res, nex) {
   
 });
 
-router.get('/pagos:id', checkAuth, function(req, res, nex){
+router.get('/pagos:id',  function(req, res, nex){
   let id = req.path.replace('/pagos', '');
 
   var query = "select pago_alumno_id, DATE_FORMAT(fecha, \"%W %d-%M-%Y\") as fecha, monto  from pago_alumno where alumno_id = "+ id +" ORDER BY fecha DESC";
