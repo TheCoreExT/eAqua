@@ -15,14 +15,14 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-function checkAuth(req, res, next) {
-  console.log(req.session.username);
-  if (req.session.username == '') {
-    res.redirect('http://165.22.140.214:3000/');
-  } else {
-    next();
-  }
-}
+// function checkAuth(req, res, next) {
+//   console.log(req.session.username);
+//   if (req.session.username == '') {
+//     res.redirect('http://165.22.140.214:3000/');
+//   } else {
+//     next();
+//   }
+// }
 
 // Post methods --------------
 
@@ -213,7 +213,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/infoAlumno:id', checkAuth, function(req, res, nex) {
+router.get('/infoAlumno:id',  function(req, res, nex) {
   let id =req.path.replace('/infoAlumno','');
 
   var query = "SELECT * FROM alumno WHERE alumno_id = " + id;

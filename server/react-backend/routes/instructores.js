@@ -121,7 +121,7 @@ router.post('/addPago:id', function(req, res, next){
 // GET methods -------
 
 router.get('/', function(req, res, next) {
-
+  console.log("req de instructores" + req.session.username);
   
   var instructorArray = [];
 
