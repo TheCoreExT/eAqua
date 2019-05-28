@@ -55,12 +55,12 @@ router.post('/logout', function(request, response) {
 
 
 router.get('/', function(request, response) {
-    var loggedin = false;
+    var loggedin = {valor: false}
 	if (request.session.loggedin) {
-        loggedin = true;
-		response.send(loggedin);
+        loggedin.valor = true;
+		response.json(loggedin);
 	} else {
-		response.send(loggedin);
+		response.json(loggedin);
 	}
 	response.end();
 });
