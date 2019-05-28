@@ -63,7 +63,7 @@ router.get('/', function(request, response) {
 		loggedin = true;
 		response.json(loggedin);
 	}
-	response.end();
+	//response.end();
 });
 
 module.exports = router;
