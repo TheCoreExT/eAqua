@@ -56,13 +56,15 @@ router.post('/logout', function(request, response) {
 
 router.get('/', function(request, response) {
     var log = {loggedin: false};
-	if (request.session.loggedin) {
+	if (request.session.loggedin === true) {
         log.loggedin = true;
 		response.json(log);
+		response.redirect('/');
 		
 	} else {
-		log.loggedin = true;
-		response.json(log);
+		// log.loggedin = true;
+		// response.json(log);
+		response.redirect('/login');
 	}
 	//response.end();
 });
