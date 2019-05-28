@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql')
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var path = require('path');
+// var session = require('express-session');
+// var bodyParser = require('body-parser');
+// var path = require('path');
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -14,14 +14,14 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-router.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true
-}));
+// router.use(session({
+//   secret: 'secret',
+//   resave: true,
+//   saveUninitialized: true
+// }));
 
-router.use(bodyParser.urlencoded({extended : true}));
-router.use(bodyParser.json());
+// router.use(bodyParser.urlencoded({extended : true}));
+// router.use(bodyParser.json());
   
 
 router.post('/', function(request, response) {
@@ -39,8 +39,8 @@ router.post('/', function(request, response) {
     else{
 		if (results.length > 0){
 			for (var r of results){
-				request.session.username = r.username;
-				request.session.password = r.password;
+				request.session.username = "jolans";
+				request.session.password = "1234";
 				if(r.username && r.password)
 				  response.redirect('http://165.22.140.214:3000/home');
 		}

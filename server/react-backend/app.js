@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+var cookieSession = require('cookie-session');
 
 var indexRouter = require('./routes/index');
 var instructoresRouter = require('./routes/instructores');
@@ -34,8 +35,18 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('trust proxy', 1);
+app.use(cookieSession ({
+  cookieName: 'session',
+  secret: 'hola',
+  httpOnly: true,
+  maxAge: 30 * 60 * 1000,
+  secure: false,
+  overwrite: false
+}));
+app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/instructores', instructoresRouter);
