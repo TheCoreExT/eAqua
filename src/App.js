@@ -33,7 +33,7 @@ export default class App extends Component {
 
     render() {
 
-      if(this.state.loggedin.loggedin === true){
+      if(this.state.loggedin === true){
         var header = <Header />;
         var menu = <Menu />; 
         var home = <Route exact path="/" component={Home} />;
