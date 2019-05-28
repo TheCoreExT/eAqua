@@ -45,6 +45,7 @@ router.post('/', function(request, response) {
 
 			response.redirect('http://165.22.140.214:3000/');  
 		}
+		console.log("login de routes:" + request.session.username);
     }
   });
   });

@@ -166,7 +166,7 @@ router.post('/addPago:id', function(req, res, next){
 
 // Get methods --------------
 
-router.get('/', checkAuth, function(req, res, next) {
+router.get('/', function(req, res, next) {
   console.log(req.session.username);
   var alumnos = [];
 
