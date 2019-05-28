@@ -24,11 +24,12 @@ import Login from './components/login';
 export default class App extends Component {
     state =  {loggedin: false}
 
-
-    componentWillMount() {
-      fetch('/login')
-        .then(res => res.json())
-        .then(loggedin => this.setState({ loggedin }));
+    componentDidMount() {
+      console.log(this.state.loggedin + " Inicial");
+      fetch('http://157.230.165.99:3001/login')
+      .then(res => res.json())
+      .then(loggedin => this.setState({ loggedin }));
+      console.log(this.state.loggedin + "Final");
     }
 
     render() {
