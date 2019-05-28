@@ -11,19 +11,19 @@ export default class InfoClase extends Component {
   }
 
   componentDidMount() {
-    var url = "http://157.230.165.99:3001/clases/infoClase" + this.props.clase_id;
+    var url = "/clases/infoClase" + this.props.clase_id;
     fetch(url)
     .then(res => res.json())
     .then(data =>
       this.setState({ data })
       )
 
-    var url2 = "http://157.230.165.99:3001/alumnos/AlumnosClase" + this.props.clase_id;
+    var url2 = "/alumnos/AlumnosClase" + this.props.clase_id;
     fetch(url2)
     .then(res => res.json() )
     .then( alumnos_clase => this.setState({alumnos_clase}))
     
-    fetch("http://157.230.165.99:3001/alumnos")
+    fetch("/alumnos")
     .then(res => res.json() )
     .then(alumnos => this.setState({alumnos}))
   }

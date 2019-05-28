@@ -7,7 +7,7 @@ export default class AddAlumno extends Component {
         return (
           <div className="AddAlumno">
               
-              <form action="http://157.230.165.99:3001/alumnos" method="post">
+              <form action="/alumnos" method="post">
           
                 <div className="DatosBasicos">
                   <h2> Nuevo Alumno </h2>

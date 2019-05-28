@@ -8,7 +8,7 @@ export default class Clases extends Component {
     state = {clases: []}
 
     componentDidMount() {
-      fetch("http://157.230.165.99:3001/clases")
+      fetch("/clases")
         .then(res => res.json())
         .then(clases =>
           this.setState({ clases })
