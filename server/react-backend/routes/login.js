@@ -14,7 +14,15 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+router.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}));
 
+router.use(bodyParser.urlencoded({extended : true}));
+router.use(bodyParser.json());
+  
 
 router.post('/', function(request, response) {
   
@@ -67,8 +75,6 @@ router.post('/', function(request, response) {
 // 	saveUninitialized: true
 // }));
 
-// router.use(bodyParser.urlencoded({extended : true}));
-// router.use(bodyParser.json());
 
 
 // router.post('/', function(request, response) {
