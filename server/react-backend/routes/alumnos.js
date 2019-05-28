@@ -16,6 +16,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 function checkAuth(req, res, next) {
+  console.log(req.session.username);
   if (!req.session.username) {
     res.redirect('http://165.22.140.214:3000/');
   } else {
