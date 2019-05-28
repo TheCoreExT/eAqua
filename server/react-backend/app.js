@@ -12,20 +12,20 @@ var instructoresRouter = require('./routes/instructores');
 var alumnosRouter = require('./routes/alumnos');
 var clasesRouter = require('./routes/clases');
 var pagosRouter = require('./routes/pagos');
-// var loginRouter = require('./routes/login');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
-var router = express.Router();
+// var router = express.Router();
 
-router.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true
-}));
+// router.use(session({
+//   secret: 'secret',
+//   resave: true,
+//   saveUninitialized: true
+// }));
 
-router.use(bodyParser.urlencoded({extended : true}));
-router.use(bodyParser.json());
+// router.use(bodyParser.urlencoded({extended : true}));
+// router.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,7 +42,7 @@ app.use('/instructores', instructoresRouter);
 app.use('/alumnos', alumnosRouter);
 app.use('/clases', clasesRouter);
 app.use('/pagos', pagosRouter);
-app.use('/login', router);
+app.use('/login', loginRouter);
 
 
 // catch 404 and forward to error handler
@@ -62,34 +62,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-router.post('/login', function(request, response) {
-  
-  var username = request.body.username;
-  var password = request.body.password;
-
-  request.session.username = '';
-  request.session.password = '';
-
-  connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-    if(error){
-      console.log(error);
-    }
-    else{
-		if (results.length > 0){
-			for (var r of results){
-				request.session.username = r.username;
-				request.session.password = r.password;
-				if(r.username && r.password)
-				  response.redirect('http://165.22.140.214:3000/home');
-		}
-		}else{
-
-			response.redirect('http://165.22.140.214:3000/');  
-		}
-		console.log("login de routes:" + request.session.username);
-    }
-  });
-  });
 // ---------- LogIn
 
 // app.use(session({
