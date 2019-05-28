@@ -64,13 +64,20 @@ app.use(function(err, req, res, next) {
 
 // ---------- LogIn
 
-// app.use(session({
-// 	secret: 'secret',
-// 	resave: true,
-// 	saveUninitialized: true
-// }));
-// app.use(bodyParser.urlencoded({extended : true}));
-// app.use(bodyParser.json());
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+app.use('/auth', function(req, res, next){
+  req.auth = {
+    username: 'jolans'
+  }
+  next();
+}, alumnosRouter);
 
 // app.post('/auth', function(request, response) {
 // 	var username = request.body.username;
