@@ -7,7 +7,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-// var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index');
 var instructoresRouter = require('./routes/instructores');
 var alumnosRouter = require('./routes/alumnos');
 var clasesRouter = require('./routes/clases');
@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use('/instructores', instructoresRouter);
 app.use('/alumnos', alumnosRouter);
 app.use('/clases', clasesRouter);
@@ -48,12 +48,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.get('/', function(req, res, next) {
-  req.cookie('username', 'hola');
-  console.log("Cookies :  ", req.cookies);
-  res.render('index', { title: 'Express' });
 });
 // ---------- LogIn
 

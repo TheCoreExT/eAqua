@@ -7,7 +7,7 @@ export default class Alumnos extends Component {
     state = {alumnos: []}
 
     componentDidMount() {
-        fetch('/alumnos')
+        fetch('login/alumnos')
           .then(res => res.json())
           .then(alumnos => this.setState({ alumnos }));
     }
