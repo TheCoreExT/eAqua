@@ -57,7 +57,7 @@ router.post('/logout', function(request, response) {
 
 
 router.get('/alumnos', function(req, res, next) {
-
+  console.log(req.session.loggedin + " --->");
   var alumnos = [];
   if(req.session.loggedin){
     connection.query('SELECT * FROM alumno', function(err, rows, fields) {
@@ -104,7 +104,7 @@ router.get('/alumnos', function(req, res, next) {
     });
   }
   else  
-    res.end();
+    res.json(alumnos);
 });
 
   
