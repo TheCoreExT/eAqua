@@ -34,7 +34,10 @@ router.post('/', function(request, response) {
           logged = true;
           console.log(logged + "<------");
 				  response.redirect('http://165.22.140.214:3000/home');
-		  }
+      }
+      else{
+        response.redirect('http://165.22.140.214:3000/');
+      }
   
     }
   });
