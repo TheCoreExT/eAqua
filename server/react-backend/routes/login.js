@@ -39,6 +39,7 @@ router.post('/', function(request, response) {
 			for (var r of results){
         if(r.username && r.password)
           request.session.loggedin = true;
+          console.log(request.session.loggedin + "<------");
 				  response.redirect('http://165.22.140.214:3000/home');
 		}
 		}else{
