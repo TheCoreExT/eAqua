@@ -163,8 +163,8 @@ router.post('/eliminarAlumnoFromClase:id', function(req, res, next){
     res.redirect('http://165.22.140.214:3000/clases/'+clase_id );
 });
 
-router.post('/alumnos/addPago:id', function(req, res, next){
-  var id =  req.path.replace('/alumnos/addPago', '');
+router.post('/alumnosAddPago:id', function(req, res, next){
+  var id =  req.path.replace('/alumnosAddPago', '');
 
   var pago ={
     fecha: "",

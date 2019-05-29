@@ -7,7 +7,7 @@ export default class AddPago extends Component {
 
         let form;
         if(this.props.alumno_id){
-            form = <form action={"/login/alumnos/addPago" + this.props.alumno_id} method="post">
+            form = <form action={"/login/alumnosAddPago" + this.props.alumno_id} method="post">
                 <h2 className="NuevoPago">Nuevo Pago</h2>
                 <input type="date" className="InputText" name="fecha" ></input>
                 <br></br>
@@ -17,7 +17,7 @@ export default class AddPago extends Component {
             </form>
         }
         else{
-            form = <form action={"login/instructores/addPago" + this.props.instructor_id} method="post">
+            form = <form action={"/instructores/addPago" + this.props.instructor_id} method="post">
                 <h2 className="NuevoPago">Nuevo Pago</h2>
                 <br></br>
                 <input type="date" className="InputText" name="fecha" ></input>
