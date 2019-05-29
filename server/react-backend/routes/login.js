@@ -59,7 +59,7 @@ router.post('/logout', function(request, response) {
 router.get('/alumnos', function(req, res, next) {
 
   var alumnos = [];
-  if(req.session.username !== ""){
+  if(req.session.username){
     connection.query('SELECT * FROM alumno', function(err, rows, fields) {
     
       if(!err) {      
