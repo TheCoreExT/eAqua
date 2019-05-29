@@ -57,10 +57,10 @@ router.post('/logout', function(request, response) {
 });
 
 
-router.get('/alumnos', function(req, res, next) {
-  console.log(req.session.loggedin + " --->");
+router.get('/alumnos', function(request, response) {
+  console.log(request.session.loggedin + " --->");
   var alumnos = [];
-  if(req.session.loggedin){
+  if(request.session.loggedin){
     connection.query('SELECT * FROM alumno', function(err, rows, fields) {
     
       if(!err) {      
@@ -101,11 +101,11 @@ router.get('/alumnos', function(req, res, next) {
         console.log('Error while performind Query');
       }
   
-      res.json(alumnos);
+      response.json(alumnos);
     });
   }
   else  
-    res.json(alumnos);
+    response.json(alumnos);
 });
 
   
