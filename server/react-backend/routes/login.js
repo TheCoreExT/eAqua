@@ -573,8 +573,8 @@ router.get('/clasesInstructor:id', function(req, res, nex){
   
 });
 
-router.get('/instructorPagos:id', function(req, res, nex){
-  let id = req.path.replace('/instructorPagos', '');
+router.get('/instructoresPagos:id', function(req, res, nex){
+  let id = req.path.replace('/instructoresPagos', '');
 
   var query = "select pago_instructor_id, DATE_FORMAT(fecha, \"%W %d-%M-%Y\") as fecha, monto from pago_instructor where instructor_id = "+ id + " ORDER BY fecha DESC";
 
