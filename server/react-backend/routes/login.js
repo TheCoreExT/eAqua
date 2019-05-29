@@ -785,7 +785,7 @@ router.get('/ClasesDeAlumno:id', function(req, res, nex) {
 
 // -------------------------------------------------------------------------- PAGOS
 
-router.get('/login/pagos', function(req, res, next) {
+router.get('/pagos', function(req, res, next) {
 
   var pagos = [];
 
