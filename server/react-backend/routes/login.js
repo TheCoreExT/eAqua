@@ -12,13 +12,6 @@ var connection = mysql.createConnection({
   database: 'eaqua'
 })
 
-connection.connect();
-
-router.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true
-}));
 
 var logged = false;
 
@@ -42,7 +35,7 @@ router.post('/', function(request, response) {
           console.log(logged + "<------");
 				  response.redirect('http://165.22.140.214:3000/home');
 		  }
-      request.session.loggedin = false;
+  
     }
   });
 });
@@ -55,7 +48,7 @@ router.post('/logout', function(request, response) {
 });
 
 
-router.get('/alumnos', function(request, response) {
+router.get('/alumnos', function(request, res) {
   console.log(logged + " --->");
   var alumnos = [];
   if(logged){
@@ -99,11 +92,11 @@ router.get('/alumnos', function(request, response) {
         console.log('Error while performind Query');
       }
   
-      response.json(alumnos);
+      res.json(alumnos);
     });
   }
   else  
-    response.json(alumnos);
+    res.json(alumnos);
 });
 
   
