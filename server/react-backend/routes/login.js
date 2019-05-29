@@ -337,8 +337,8 @@ router.get('/AlumnosClase:id', function(req, res, nex) {
   
 });
 
-router.get('/pagos:id',  function(req, res, nex){
-  let id = req.path.replace('/pagos', '');
+router.get('/alumnosPagos:id',  function(req, res, nex){
+  let id = req.path.replace('/alumnosPagos', '');
 
   var query = "select pago_alumno_id, DATE_FORMAT(fecha, \"%W %d-%M-%Y\") as fecha, monto  from pago_alumno where alumno_id = "+ id +" ORDER BY fecha DESC";
 
