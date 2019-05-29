@@ -783,6 +783,40 @@ router.get('/ClasesDeAlumno:id', function(req, res, nex) {
 
 });
 
+// -------------------------------------------------------------------------- PAGOS
+
+router.get('/login/pagos', function(req, res, next) {
+
+  var pagos = [];
+
+  
+
+  connection.query(' SELECT a.nombre as nombre, p.pago_alumno_id as pago_id, DATE_FORMAT(p.fecha, "%W %d-%M-%Y") as fecha, p.monto as monto FROM alumno a, pago_alumno p where p.alumno_id = a.alumno_id ORDER BY p.fecha DESC', function(err, rows, fields) {
+    if(!err) {      
+
+     for (var r of rows) {
+      var pago = {
+        pago_id: 0,
+        nombre: "",
+        fecha: "",
+        monto: ""
+      }
+      
+      pago.pago_id = r.pago_id;
+      pago.nombre = r.nombre;
+      pago.fecha = r.fecha;
+      pago.monto = r.monto;
+  
+      pagos.push(pago);
+     }
+    }
+    else {
+      console.log('Error while performind Query');
+    }
+
+    res.json(pagos);
+  });
+});
 
 
 module.exports = router;
