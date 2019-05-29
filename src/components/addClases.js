@@ -6,7 +6,7 @@ export default class AddClases extends Component {
   state = {instructores: []}
 
     componentDidMount() {
-      fetch("/instructores")
+      fetch("/login/instructores")
         .then(res => res.json())
         .then(instructores =>
           this.setState({ instructores })
