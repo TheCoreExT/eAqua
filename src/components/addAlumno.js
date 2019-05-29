@@ -7,7 +7,7 @@ export default class AddAlumno extends Component {
         return (
           <div className="AddAlumno">
               
-              <form action="/alumnos" method="post">
+              <form action="login/alumnos" method="post">
           
                 <div className="DatosBasicos">
                   <h2> Nuevo Alumno </h2>

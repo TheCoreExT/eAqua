@@ -7,7 +7,7 @@ export default class Pagos extends Component {
 
     componentDidMount() {
         if(this.props.alumno_id){
-            fetch('/alumnos/pagos' + this.props.alumno_id)
+            fetch('/login/alumnos/pagos' + this.props.alumno_id)
             .then(res => res.json())
             .then(pagos => this.setState({ pagos }));
         }

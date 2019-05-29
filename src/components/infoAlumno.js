@@ -9,7 +9,7 @@ export default class InfoAlumno extends Component {
 
     componentDidMount() {
     var url =
-        "/alumnos/infoAlumno" + this.props.alumno_id;
+        "/login/infoAlumno" + this.props.alumno_id;
     fetch(url)
     .then(res => res.json())
     .then(data =>
