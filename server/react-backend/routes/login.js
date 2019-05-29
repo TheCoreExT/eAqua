@@ -104,7 +104,7 @@ router.get('/alumnos', function(req, res, next) {
     });
   }
   else  
-    res.send();
+    res.json();
 });
 
   
