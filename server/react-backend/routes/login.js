@@ -20,6 +20,8 @@ router.use(session({
   saveUninitialized: true
 }));
 
+var logged = false;
+
 router.use(bodyParser.urlencoded({extended : true}));
 router.use(bodyParser.json());
   
@@ -36,31 +38,27 @@ router.post('/', function(request, response) {
     }
     else{
 		if (results.length > 0){
-			for (var r of results){
-        if(r.username && r.password)
-          request.session.loggedin = true;
-          console.log(request.session.loggedin + "<------");
+          logged = true;
+          console.log(logged + "<------");
 				  response.redirect('http://165.22.140.214:3000/home');
-		}
-		}else{
-
-			response.redirect('http://165.22.140.214:3000/');  
-		}
+		  }
+      request.session.loggedin = false;
     }
   });
 });
 
 router.post('/logout', function(request, response) {
 
+      logged = false;
     	response.redirect('http://165.22.140.214:3000/');
           
 });
 
 
 router.get('/alumnos', function(request, response) {
-  console.log(request.session.loggedin + " --->");
+  console.log(logged + " --->");
   var alumnos = [];
-  if(request.session.loggedin){
+  if(logged){
     connection.query('SELECT * FROM alumno', function(err, rows, fields) {
     
       if(!err) {      
