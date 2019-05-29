@@ -167,7 +167,7 @@ router.post('/addPago:id', function(req, res, next){
 // Get methods --------------
 
 router.get('/', function(req, res, next) {
-  console.log("dentro del get" + req.session.username);
+
   var alumnos = [];
 
   connection.query('SELECT * FROM alumno', function(err, rows, fields) {
