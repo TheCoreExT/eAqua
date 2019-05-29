@@ -29,8 +29,6 @@ router.post('/', function(request, response) {
   var username = request.body.username;
   var password = request.body.password;
 
-  request.session.username = '';
-  request.session.password = '';
 
   connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
     if(error){
@@ -39,8 +37,6 @@ router.post('/', function(request, response) {
     else{
 		if (results.length > 0){
 			for (var r of results){
-				request.session.username = "jolans";
-				request.session.password = "1234";
 				if(r.username && r.password)
 				  response.redirect('http://165.22.140.214:3000/home');
 		}
@@ -48,7 +44,6 @@ router.post('/', function(request, response) {
 
 			response.redirect('http://165.22.140.214:3000/');  
 		}
-		console.log("login de routes:" + request.session.username);
     }
   });
 });

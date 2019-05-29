@@ -6,7 +6,6 @@ var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
-var cookieSession = require('cookie-session');
 
 var indexRouter = require('./routes/index');
 var instructoresRouter = require('./routes/instructores');
@@ -17,17 +16,6 @@ var loginRouter = require('./routes/login');
 
 var app = express();
 
-// var router = express.Router();
-
-// router.use(session({
-//   secret: 'secret',
-//   resave: true,
-//   saveUninitialized: true
-// }));
-
-// router.use(bodyParser.urlencoded({extended : true}));
-// router.use(bodyParser.json());
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -35,18 +23,8 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.set('trust proxy', 1);
-app.use(cookieSession ({
-  cookieName: 'session',
-  secret: 'hola',
-  httpOnly: true,
-  maxAge: 30 * 60 * 1000,
-  secure: false,
-  overwrite: false
-}));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/instructores', instructoresRouter);
@@ -71,24 +49,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 // ---------- LogIn
 
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
-
-app.use('/auth', function(req, res, next){
-  req.auth = {
-    username: 'jolans'
-  }
-  next();
-}, alumnosRouter);
+// app.use(session({
+// 	secret: 'secret',
+// 	resave: true,
+// 	saveUninitialized: true
+// }));
+// app.use(bodyParser.urlencoded({extended : true}));
+// app.use(bodyParser.json());
 
 // app.post('/auth', function(request, response) {
 // 	var username = request.body.username;
