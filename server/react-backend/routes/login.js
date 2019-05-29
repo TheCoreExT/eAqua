@@ -25,12 +25,12 @@ router.post('/', function(request, response) {
   var password = request.body.password;
 
 
-  connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+  connection.query('SELECT count(username) as count from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
     if(error){
       console.log(error);
     }
     else{
-		if (results.length > 0){
+		if (results.count > 0){
           logged = true;
           console.log(logged + "<------");
 				  response.redirect('http://165.22.140.214:3000/home');
