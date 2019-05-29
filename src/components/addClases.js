@@ -16,7 +16,7 @@ export default class AddClases extends Component {
     render() {
         return (
           <div className="AddClases">
-            <form action="/clases" method="post">
+            <form action="/login/clases" method="post">
             <h2> Nueva clase </h2>
               <div className="Hub">
                 <p>Hora Inicial</p>

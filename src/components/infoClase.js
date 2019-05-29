@@ -11,7 +11,7 @@ export default class InfoClase extends Component {
   }
 
   componentDidMount() {
-    var url = "/clases/infoClase" + this.props.clase_id;
+    var url = "/login/infoClase" + this.props.clase_id;
     fetch(url)
     .then(res => res.json())
     .then(data =>
@@ -67,7 +67,7 @@ export default class InfoClase extends Component {
       
       <div className="AlumnosInscritos">
         <div className="AgregarAlumnos">
-        <form action={"/alumnos/AddAlumno2Clase"+this.props.clase_id} method="post">
+        <form action={"/login/AddAlumno2Clase"+this.props.clase_id} method="post">
           <select name="params">
             {this.state.alumnos.map(alumno => (
               <option value={alumno.id}  >{alumno.nombre}</option>
