@@ -1,10 +1,12 @@
 {
   "name": "electronic-aqua-web",
+  "description": "App to manage a swimming school.",
   "version": "0.1.0",
   "author": "Jolans",
   "private": true,
   "devDependencies": {
     "electron": "^5.0.1",
+    "electron-builder": "^20.41.0",
     "electron-packager": "^13.1.1",
     "foreman": "^3.0.1"
   },
@@ -14,7 +16,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",    
+    "react-scripts": "3.0.0",
     "typescript": "^3.4.5"
   },
   "homepage": "./",
@@ -27,7 +29,9 @@
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
     "react-start": "react-scripts start",
-    "electron-packager": "electron-packager . eAqua"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "electron-packager": "electron-packager ./build eAqua"
   },
   "proxy": "http://157.230.165.99:3001",
   "eslintConfig": {
@@ -44,5 +48,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "build": {
+    "appId": "com.electron.electronic-aqua-web",
+    "productName": "eAqua",
+    "copyright": "Copyright © 2019 Jolans",
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "category": "public.app-category.education"
+    }
   }
 }

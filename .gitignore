@@ -10,6 +10,7 @@
 
 # production
 /build
+/dist
 /eAqua-win32-x64
 
 # misc
