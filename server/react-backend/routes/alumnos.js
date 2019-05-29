@@ -5,6 +5,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql')
+var cookieParser = require('cookie-parser');
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -167,7 +168,7 @@ router.post('/addPago:id', function(req, res, next){
 // Get methods --------------
 
 router.get('/', function(req, res, next) {
-
+  console.log("Cookies :  ", res.cookies);
   var alumnos = [];
 
   connection.query('SELECT * FROM alumno', function(err, rows, fields) {

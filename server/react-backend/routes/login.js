@@ -50,7 +50,7 @@ router.post('/', function(request, response) {
 });
 
 router.post('/logout', function(request, response) {
-      console.log("Cookies :  ", request.cookies);
+      console.log("Cookies :  ", request.cookies.username);
     	response.redirect('http://165.22.140.214:3000/');
           
 });
