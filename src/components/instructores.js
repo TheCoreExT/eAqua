@@ -7,7 +7,7 @@ export default class Instructores extends Component {
     state = {instructores: []}
 
     componentDidMount() {
-        fetch('/instructores')
+        fetch('/login/instructores')
           .then(res => res.json())
           .then(instructores => this.setState({ instructores }));
     }
@@ -62,7 +62,7 @@ export default class Instructores extends Component {
                       </td>
 
                       <td>
-                        <form method="post" action="/instructores/eliminarInstructor" name="eliminarInstructor">
+                        <form method="post" action="/login/eliminarInstructor" name="eliminarInstructor">
                         <button type="submit" className="EliminarInstructor"name="instructor_id" onClick={() => {alert("Instructor Eliminado")}} value={instructor.id}> X </button>
                         </form>
                       </td>

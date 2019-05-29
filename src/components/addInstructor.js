@@ -6,7 +6,7 @@ export default class AddInstructor extends Component {
     render() {
         return (
             <div className="AddInstructores">
-                <form action="/instructores" method="post">    
+                <form action="/login/instructores" method="post">    
                 <h2>Nuevo Instructor </h2>
                     <div className="HubIn">
                         <input type="text" className="text" name="nombre" placeholder="Nombre"/>

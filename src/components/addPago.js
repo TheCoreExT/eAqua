@@ -17,7 +17,7 @@ export default class AddPago extends Component {
             </form>
         }
         else{
-            form = <form action={"/instructores/addPago" + this.props.instructor_id} method="post">
+            form = <form action={"/login/instructoresAddPago" + this.props.instructor_id} method="post">
                 <h2 className="NuevoPago">Nuevo Pago</h2>
                 <br></br>
                 <input type="date" className="InputText" name="fecha" ></input>

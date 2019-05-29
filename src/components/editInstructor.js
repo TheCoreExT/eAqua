@@ -5,7 +5,7 @@ export default class EditInstructor extends Component {
     state = {data: ""}
 
     componentDidMount(){
-        var url = "/instructores/infoInstructor" + this.props.instructor_id;
+        var url = "/login/infoInstructor" + this.props.instructor_id;
         fetch(url)
         .then(res => res.json())
         .then(data => this.setState({ data }));
@@ -14,7 +14,7 @@ export default class EditInstructor extends Component {
         return (
             
             <div className="AddInstructores">
-                <form action={"/instructores/editInstructor"+this.props.instructor_id} method="post">
+                <form action={"/login/editInstructor"+this.props.instructor_id} method="post">
                 <h2>Editar Instructor</h2>
                     <div className="HubIn">
                         <input type="text" className="text" name="nombre" placeholder="Nombre" defaultValue={this.state.data.nombre}/>
