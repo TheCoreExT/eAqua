@@ -11,19 +11,19 @@ export default class InfoClase extends Component {
   }
 
   componentDidMount() {
-    var url = "/clases/infoClase" + this.props.clase_id;
+    var url = "/login/infoClase" + this.props.clase_id;
     fetch(url)
     .then(res => res.json())
     .then(data =>
       this.setState({ data })
       )
 
-    var url2 = "/alumnos/AlumnosClase" + this.props.clase_id;
+    var url2 = "/login/AlumnosClase" + this.props.clase_id;
     fetch(url2)
     .then(res => res.json() )
     .then( alumnos_clase => this.setState({alumnos_clase}))
     
-    fetch("/alumnos")
+    fetch("/login/alumnos")
     .then(res => res.json() )
     .then(alumnos => this.setState({alumnos}))
   }
@@ -67,7 +67,7 @@ export default class InfoClase extends Component {
       
       <div className="AlumnosInscritos">
         <div className="AgregarAlumnos">
-        <form action={"/alumnos/AddAlumno2Clase"+this.props.clase_id} method="post">
+        <form action={"/login/AddAlumno2Clase"+this.props.clase_id} method="post">
           <select name="params">
             {this.state.alumnos.map(alumno => (
               <option value={alumno.id}  >{alumno.nombre}</option>
@@ -90,7 +90,7 @@ export default class InfoClase extends Component {
               <td>{alumno.correo}</td>
               <td>{alumno.telefono}</td>
               <td>
-                <form method="post" action={"/alumnos/eliminarAlumnoFromClase"+ this.props.clase_id} >
+                <form method="post" action={"/login/eliminarAlumnoFromClase"+ this.props.clase_id} >
                   <button type="submit" className="EliminarAlumno" name="alumno_id" onClick={() => {alert("Alumno Eliminado de la Clase")}} value={alumno.alumno_id}> X </button>
                 </form>
               </td>

@@ -6,7 +6,7 @@ export default class ClasesInstructor extends Component {
     state ={clases : []}
 
     componentDidMount(){
-        var url = "/instructores/clasesInstructor" + this.props.instructor_id;
+        var url = "/login/clasesInstructor" + this.props.instructor_id;
         fetch(url)
         .then (res => res.json())
         .then(clases => this.setState({clases}));

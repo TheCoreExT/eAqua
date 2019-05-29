@@ -8,7 +8,7 @@ export default class InfoInstructor extends Component {
     state = {data : ""}
 
     componentDidMount(){
-        var url = "/instructores/infoInstructor" + this.props.instructor_id;
+        var url = "/login/infoInstructor" + this.props.instructor_id;
         fetch(url)
         .then(res => res.json())
         .then(data => this.setState({ data }));

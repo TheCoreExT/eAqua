@@ -8,10 +8,10 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var indexRouter = require('./routes/index');
-var instructoresRouter = require('./routes/instructores');
-var alumnosRouter = require('./routes/alumnos');
-var clasesRouter = require('./routes/clases');
-var pagosRouter = require('./routes/pagos');
+// var instructoresRouter = require('./routes/instructores');
+// var alumnosRouter = require('./routes/alumnos');
+// var clasesRouter = require('./routes/clases');
+// var pagosRouter = require('./routes/pagos');
 var loginRouter = require('./routes/login');
 
 var app = express();
@@ -27,10 +27,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/instructores', instructoresRouter);
-app.use('/alumnos', alumnosRouter);
-app.use('/clases', clasesRouter);
-app.use('/pagos', pagosRouter);
+// app.use('/instructores', instructoresRouter);
+// app.use('/alumnos', alumnosRouter);
+// app.use('/clases', clasesRouter);
+// app.use('/pagos', pagosRouter);
 app.use('/login', loginRouter);
 
 

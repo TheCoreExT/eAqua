@@ -4,7 +4,7 @@ export default class EditAlumno extends Component {
     state = {data: ""}
 
     componentDidMount() {
-        fetch('/alumnos/infoAlumno'+this.props.alumno_id)
+        fetch('/login/infoAlumno'+this.props.alumno_id)
           .then(res => res.json())
           .then(data => this.setState({ data }));
     }
@@ -12,7 +12,7 @@ export default class EditAlumno extends Component {
         return (
           <div className="AddAlumno">
               
-              <form action={"/alumnos/editAlumno"+this.props.alumno_id} method="post">
+              <form action={"/login/editAlumno"+this.props.alumno_id} method="post">
           
                 <div className="DatosBasicos">
                   <h2> Datos del Alumno </h2>

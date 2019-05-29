@@ -6,7 +6,7 @@ export default class AddClases extends Component {
   state = {instructores: []}
 
     componentDidMount() {
-      fetch("/instructores")
+      fetch("/login/instructores")
         .then(res => res.json())
         .then(instructores =>
           this.setState({ instructores })
@@ -16,7 +16,7 @@ export default class AddClases extends Component {
     render() {
         return (
           <div className="AddClases">
-            <form action="/clases" method="post">
+            <form action="/login/clases" method="post">
             <h2> Nueva clase </h2>
               <div className="Hub">
                 <p>Hora Inicial</p>

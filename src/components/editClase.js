@@ -6,13 +6,13 @@ export default class EditClase extends Component {
             data: {}}
 
     componentDidMount() {
-      fetch("/instructores")
+      fetch("/login/instructores")
         .then(res => res.json())
         .then(instructores =>
           this.setState({ instructores })
         );
 
-        var url = "/clases/infoClase" + this.props.clase_id;
+        var url = "/login/infoClase" + this.props.clase_id;
         fetch(url)
         .then(res => res.json())
         .then(data => this.setState({ data }));
@@ -21,7 +21,7 @@ export default class EditClase extends Component {
     render() {
         return (
           <div className="AddClases">
-            <form action={"/clases/editClase"+this.props.clase_id} method="post">
+            <form action={"/login/editClase"+this.props.clase_id} method="post">
             <h2> Editar clase </h2>
               <div className="Hub">
                 <input type="time" className="inputclass" placeholder="Hora Inicial" defaultValue={this.state.data.hora_inicial} name="hora_inicial"/>

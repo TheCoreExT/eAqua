@@ -95,9 +95,26 @@ a{
     float: left;
 }
 
-.navigation form{
-	margin-top: 22rem;
+#navigation {
+	height: 100%;
 }
+.navigation form{
+	height: 40%;
+	padding-bottom: 0rem;
+}
+
+.navigation form button {
+	position: relative;
+	margin-top: 4vh;
+	margin-bottom: 0rem;
+}
+
+
+.navigation form img {
+	padding-bottom: 0rem;
+	margin-bottom: 0rem;
+}
+
 .navigation form p{
 margin-top: 0;
 }
