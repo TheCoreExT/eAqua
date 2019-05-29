@@ -49,8 +49,6 @@ router.post('/', function(request, response) {
 });
 
 router.post('/logout', function(request, response) {
-		delete request.session.username;
-		delete request.session.password;
 
     	response.redirect('http://165.22.140.214:3000/');
           
