@@ -38,7 +38,7 @@ router.post('/', function(request, response) {
 		if (results.length > 0){
 			for (var r of results){
         if(r.username && r.password)
-          request.session.username = r.username;
+          request.session.loggedin = true;
 				  response.redirect('http://165.22.140.214:3000/home');
 		}
 		}else{
@@ -59,7 +59,7 @@ router.post('/logout', function(request, response) {
 router.get('/alumnos', function(req, res, next) {
 
   var alumnos = [];
-  if(req.session.username){
+  if(req.session.loggedin){
     connection.query('SELECT * FROM alumno', function(err, rows, fields) {
     
       if(!err) {      
@@ -104,7 +104,7 @@ router.get('/alumnos', function(req, res, next) {
     });
   }
   else  
-    res.json();
+    res.end();
 });
 
   
