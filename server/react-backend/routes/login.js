@@ -790,7 +790,7 @@ router.get('/pagos', function(req, res, next) {
   var pagos = [];
 
   
-
+if(logged){
   connection.query(' SELECT a.nombre as nombre, p.pago_alumno_id as pago_id, DATE_FORMAT(p.fecha, "%W %d-%M-%Y") as fecha, p.monto as monto FROM alumno a, pago_alumno p where p.alumno_id = a.alumno_id ORDER BY p.fecha DESC', function(err, rows, fields) {
     if(!err) {      
 
@@ -816,6 +816,10 @@ router.get('/pagos', function(req, res, next) {
 
     res.json(pagos);
   });
+  
+}
+else
+  res.json(pagos);
 });
 
 
