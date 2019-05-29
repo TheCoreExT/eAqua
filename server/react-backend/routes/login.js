@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql')
+var mysql = require('mysql');
+var cookieParser = require('cookie-parser');
 // var session = require('express-session');
 // var bodyParser = require('body-parser');
 // var path = require('path');
@@ -28,7 +29,7 @@ router.post('/', function(request, response) {
   
   var username = request.body.username;
   var password = request.body.password;
-
+  response.cookie(username, 'hola');
 
   connection.query('SELECT * from admin WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
     if(error){
@@ -49,7 +50,7 @@ router.post('/', function(request, response) {
 });
 
 router.post('/logout', function(request, response) {
-
+      console.log("Cookies :  ", request.cookies);
     	response.redirect('http://165.22.140.214:3000/');
           
 });
