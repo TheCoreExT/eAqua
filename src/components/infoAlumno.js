@@ -16,7 +16,7 @@ export default class InfoAlumno extends Component {
         this.setState({ data })
     );
 
-    var  url2 = "/clases/ClasesDeAlumno" + this.props.alumno_id;
+    var  url2 = "/login/ClasesDeAlumno" + this.props.alumno_id;
     fetch(url2)
     .then(res => res.json())
     .then(clases =>
